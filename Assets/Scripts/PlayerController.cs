@@ -99,7 +99,7 @@ public class PlayerController : MonoBehaviour {
 			reset.Died ();
 		} else if (other.gameObject.tag == "Checkpoint")
         {
-            reset.setCheckpoint(this.transform.position);
+            reset.setCheckpoint(other.gameObject.transform.position);
             other.gameObject.SetActive(false);
         }
     }
