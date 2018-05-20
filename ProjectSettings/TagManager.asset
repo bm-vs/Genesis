@@ -11,6 +11,10 @@ TagManager:
   - Wall
   - Portal
   - Drop
+  - Level
+  - Checkpoint
+  - LastLevel
+  - Game
   layers:
   - Default
   - TransparentFX

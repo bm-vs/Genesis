@@ -66,7 +66,7 @@ public class PlayerController : MonoBehaviour {
 		shoot = new Shoot (this);
 		dash = new Dash (this);
 		reset = new Reset (this);
-	}
+    }
 
 	void Update () {
 		if (!dashing) {
@@ -97,8 +97,12 @@ public class PlayerController : MonoBehaviour {
 	void OnTriggerEnter(Collider other) {
 		if (other.gameObject.tag == "FallPlane") {
 			reset.Died ();
-		}
-	}
+		} else if (other.gameObject.tag == "Checkpoint")
+        {
+            reset.setCheckpoint(this.transform.position);
+            other.gameObject.SetActive(false);
+        }
+    }
 
 	void OnTriggerStay(Collider other) {
 		if (other.gameObject.tag == "Wall") {
