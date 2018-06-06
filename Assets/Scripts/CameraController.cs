@@ -9,5 +9,6 @@ public class CameraController : MonoBehaviour {
 	void Update () {
 		Vector3 position = game.playerController.transform.position;
 		transform.position = new Vector3(position.x, position.y, position.z) + playerOffset;
+		transform.LookAt (game.playerController.transform);
 	}
 }

@@ -97,11 +97,10 @@ public class PlayerController : MonoBehaviour {
 	void OnTriggerEnter(Collider other) {
 		if (other.gameObject.tag == "FallPlane") {
 			reset.Died ();
-		} else if (other.gameObject.tag == "Checkpoint")
-        {
-            reset.setCheckpoint(other.gameObject.transform.position);
-            other.gameObject.SetActive(false);
-        }
+		} else if (other.gameObject.tag == "Checkpoint") {
+			reset.setCheckpoint (other.gameObject.transform.position);
+			other.gameObject.SetActive (false);
+		}
     }
 
 	void OnTriggerStay(Collider other) {

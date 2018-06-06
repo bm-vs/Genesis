@@ -38,9 +38,17 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _FlowMap:
+        m_Texture: {fileID: 2800000, guid: 6f69c6af0205556439ba73d144413aa2, type: 3}
+        m_Scale: {x: 10, y: 10}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTexture:
+        m_Texture: {fileID: 2800000, guid: ee6dc1be456732d48b3c7bfa74fa6eb0, type: 3}
+        m_Scale: {x: 2, y: 2}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
@@ -54,23 +62,46 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _UndoEffectTexture:
+        m_Texture: {fileID: 2800000, guid: ee6dc1be456732d48b3c7bfa74fa6eb0, type: 3}
+        m_Scale: {x: 1000, y: 1000}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
+    - _EmmisionStrench: 6
+    - _Fresnel: 0
+    - _FresnelStrench: 1
     - _GlossMapScale: 0
     - _Glossiness: 1
     - _GlossyReflections: 1
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
+    - _Outlinefresnel: 1
     - _Parallax: 0.02
+    - _RandomHeight: 0.5
+    - _RandomSpeed: 0.5
+    - _Relief: 1.5
+    - _Shininess: 3
     - _SmoothnessTextureChannel: 1
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _Strench: 0.01
+    - _TextureChangespeed: 0.05
+    - _TextureDistanse: 1
+    - _TextureStrench: 1
     - _UVSec: 0
+    - _U_Speed: 0.01
+    - _V_Speed: 0.01
+    - _WaveHeight: 1
+    - _WaveLength: 20
+    - _WaveSpeed: 10
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.03676468, g: 0.03676468, b: 0.03676468, a: 1}
+    - _Color: {r: 0.8638692, g: 0.9044118, b: 0.67830884, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _SpecColor: {r: 0.6784314, g: 0.8196079, b: 0.9058824, a: 1}
+    - _color: {r: 0.6397059, g: 1, b: 0.9850912, a: 1}

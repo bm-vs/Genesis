@@ -17,6 +17,8 @@ TagManager:
   - Game
   - Boss
   - BossAttack
+  - Fire
+  - Water
   layers:
   - Default
   - TransparentFX
