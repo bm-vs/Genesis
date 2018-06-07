@@ -17,6 +17,5 @@ public class GameController : MonoBehaviour {
 
 		cameraController = camera.GetComponent<CameraController> ();
 		cameraController.game = this;
-		cameraController.playerOffset = camera.transform.position - player.transform.position;
 	}
 }
