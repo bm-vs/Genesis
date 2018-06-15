@@ -26969,7 +26969,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 827677530}
   m_LocalRotation: {x: -0.43656132, y: 0.015633335, z: 0.0075900853, w: 0.8995066}
-  m_LocalPosition: {x: -280.18494, y: -44.62592, z: -32.440548}
+  m_LocalPosition: {x: -253.4435, y: -10.524452, z: -5.611636}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -61740,12 +61740,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b559690d4cabe164eb0e3d8e93918000, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
+  type: 0
   visionRange: 35
   moveBackRange: 15
   speed: 7.5
   kiteSpeed: 5
-  engageSpeed: 10
+  engageSpeed: 15
   anchorPoints:
   - {x: -239, y: 0, z: -5}
   - {x: -239, y: 0, z: 5}

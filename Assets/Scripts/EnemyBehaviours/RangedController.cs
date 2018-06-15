@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System.Linq;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -46,9 +47,9 @@ public class RangedController : MonoBehaviour {
 		bulletSpeed = 40.0f;
 		shootingCooldown = 1.0f;
 		dashCooldown = 2.0f;
-		dashRange = 15f;
+		dashRange = 8f;
 		dashSpeed = 80.0f;
-		visionAngle = 70.0f;
+		visionAngle = 60.0f;
 		lastSeen = Vector3.zero;
 		hit = false;
 		recoverTimer = 0.5f;
@@ -131,7 +132,7 @@ public class RangedController : MonoBehaviour {
 		} else {
 			Vector3 projection = Vector3.Project (movementDirection, direction);
 			DebugWalkOnGround (projection, direction);
-			return (Vector3.Dot (projection, transform.rotation * direction) >= 0);
+			return (Vector3.Dot (projection, transform.rotation * direction) >= 0.01);
 		}
 	}
 
@@ -208,8 +209,10 @@ public class RangedController : MonoBehaviour {
 		// Move towards anchor point
 		if (transitionTimer <= 0.0f) {
 			Vector3 movementDirection = new Vector3 ((pos - transform.position).x, 0.0f, (pos - transform.position).z).normalized;
-			if (!IsGoingToFall(movementDirection)) {
+			if (!IsGoingToFall (movementDirection)) {
 				rigidbody.velocity = movementDirection * speed;
+			} else {
+				positionIndex = (positionIndex + 1) % anchorPoints.Length;
 			}
 		} else {
 			transitionTimer -= Time.fixedDeltaTime;
@@ -227,8 +230,8 @@ public class RangedController : MonoBehaviour {
 
 	void DebugShowVision() {
 		Debug.DrawRay (transform.position, playerDirection.normalized * visionRange, Color.red);
-		Debug.DrawRay (transform.position, Quaternion.AngleAxis(80, Vector3.up) * transform.forward * visionRange, Color.yellow);
-		Debug.DrawRay (transform.position, Quaternion.AngleAxis(-80, Vector3.up) * transform.forward * visionRange, Color.yellow);
+		Debug.DrawRay (transform.position, Quaternion.AngleAxis(60, Vector3.up) * transform.forward * visionRange, Color.yellow);
+		Debug.DrawRay (transform.position, Quaternion.AngleAxis(-60, Vector3.up) * transform.forward * visionRange, Color.yellow);
 	}
 
 	void DebugWalkOnGround(Vector3 projection, Vector3 direction) {
