@@ -6,11 +6,19 @@ public class BulletController : MonoBehaviour {
 	public GameObject owner;
 	private float soundTimer;
 	private bool disabled;
+	private float range;
+	private Vector3 start;
 
 	void Start() {
 		soundTimer = 2.0f;
 		disabled = false;
 		Physics.IgnoreCollision (gameObject.GetComponent<Collider> (), owner.GetComponent<Collider> ());
+		if (owner.tag == "Sniper") {
+			range = 100f;
+		} else {
+			range = 35f;
+		}
+		start = transform.position;
 	}
 
 	void Update() {
@@ -19,14 +27,22 @@ public class BulletController : MonoBehaviour {
 		} else {
 			soundTimer -= Time.deltaTime;
 		}
+
+		if ((transform.position - start).magnitude >= range) {
+			Disable ();
+		}
 	}
 
 	void OnCollisionEnter(Collision other) {
 		GameObject target = other.collider.gameObject;
 		if (target.tag != owner.tag && target.tag != "Portal") {
-			gameObject.GetComponent<MeshRenderer>().enabled = false;
-			gameObject.GetComponent<SphereCollider>().enabled = false;
-			disabled = true;
+			Disable ();
 		}
+	}
+
+	void Disable () {
+		gameObject.GetComponent<MeshRenderer>().enabled = false;
+		gameObject.GetComponent<SphereCollider>().enabled = false;
+		disabled = true;
 	}
 }

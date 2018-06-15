@@ -19,6 +19,7 @@ TagManager:
   - BossAttack
   - Fire
   - Water
+  - Sniper
   layers:
   - Default
   - TransparentFX

@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum EnemyType {melee, ranged, hybrid}
+
 public class RangedController : MonoBehaviour {
 	private GameObject player;
-
-	public bool melee;
+	public EnemyType type;
 
 	// Vision
 	private Vector3 playerDirection;
@@ -34,6 +35,10 @@ public class RangedController : MonoBehaviour {
 	private float bulletSpeed;
 	private float shootingCooldown;
 	private float dashCooldown;
+	private float dashRange;
+	private float dashSpeed; 
+	private bool dashing;
+	private float dashDuration;
 
 	void Start () {
 		player = GameObject.FindGameObjectWithTag ("Player");
@@ -41,6 +46,8 @@ public class RangedController : MonoBehaviour {
 		bulletSpeed = 40.0f;
 		shootingCooldown = 1.0f;
 		dashCooldown = 2.0f;
+		dashRange = 15f;
+		dashSpeed = 80.0f;
 		visionAngle = 70.0f;
 		lastSeen = Vector3.zero;
 		hit = false;
@@ -52,7 +59,9 @@ public class RangedController : MonoBehaviour {
 	void Update () {
 		CheckPlayerOnSight ();
 		DebugShowVision ();
-		if (onSight && !melee) {
+
+		shootingCooldown -= Time.deltaTime;
+		if (onSight && type != EnemyType.melee) {
 			Shoot ();
 		}
 	}
@@ -66,7 +75,16 @@ public class RangedController : MonoBehaviour {
 		}
 
 		// Dont move the character during the knockback and recover time of a hit
-		if (!hit) {
+		dashCooldown -= Time.fixedDeltaTime;
+		if (dashing) {
+			if (dashDuration <= 0.0f) {
+				rigidbody.velocity = Vector3.zero;
+				rigidbody.useGravity = true;
+				dashing = false;
+			} else {
+				dashDuration -= Time.fixedDeltaTime;
+			}
+		} else if (!hit) {
 			if (onSight) {
 				AttackMovement ();
 			} else {
@@ -112,8 +130,7 @@ public class RangedController : MonoBehaviour {
 			return false;
 		} else {
 			Vector3 projection = Vector3.Project (movementDirection, direction);
-			Debug.DrawRay (transform.position + transform.rotation * direction, Vector3.up * Vector3.Dot (projection, transform.rotation * direction) * 10, Color.blue);
-			Debug.Log (Vector3.Dot (projection, transform.rotation * direction));
+			DebugWalkOnGround (projection, direction);
 			return (Vector3.Dot (projection, transform.rotation * direction) >= 0);
 		}
 	}
@@ -129,22 +146,16 @@ public class RangedController : MonoBehaviour {
 			if (hit.collider.gameObject.tag == "Player" && playerAngle < visionAngle) {
 				lastSeen = hit.collider.gameObject.transform.position;
 				onSight = true;
-			}
-			else {
+			} else {
 				onSight = false;
 			}
+		} else {
+			onSight = false;
 		}
 	}
 
-	void DebugShowVision() {
-		Debug.DrawRay (transform.position, playerDirection * visionRange, Color.red);
-		Debug.DrawRay (transform.position, Quaternion.AngleAxis(80, Vector3.up) * transform.forward * visionRange, Color.yellow);
-		Debug.DrawRay (transform.position, Quaternion.AngleAxis(-80, Vector3.up) * transform.forward * visionRange, Color.yellow);
-	}
-
 	void Shoot () {
-		shootingCooldown -= Time.deltaTime;
-		if (shootingCooldown < 0f && playerDirection.magnitude < visionRange) {
+		if (shootingCooldown < 0f) {
 			GameObject bullet = (GameObject) GameObject.Instantiate (bulletPrefab);
 			bullet.GetComponent<BulletController> ().owner = gameObject;
 			bullet.transform.position = gameObject.transform.position;
@@ -153,14 +164,27 @@ public class RangedController : MonoBehaviour {
 		}
 	}
 
+	void Dash (Vector3 movementDirection) {
+		Rigidbody rigidbody = gameObject.GetComponent<Rigidbody> ();
+		rigidbody.velocity = movementDirection * dashSpeed;
+		dashing = true;
+		dashCooldown = 2.0f;
+		dashDuration = 0.1f;
+		rigidbody.useGravity = false;
+	}
 
 	void AttackMovement () {
 		Rigidbody rigidbody = gameObject.GetComponent<Rigidbody> ();
 		Vector3 movementDirection = new Vector3 (playerDirection.x, 0.0f, playerDirection.z).normalized;
-		if (!melee && playerDirection.magnitude <= moveBackRange && !IsGoingToFall(-movementDirection)) {
+		if (type == EnemyType.ranged && playerDirection.magnitude <= moveBackRange && !IsGoingToFall(-movementDirection)) {
 			rigidbody.velocity = -movementDirection * kiteSpeed;
-		} else if (melee && playerDirection.magnitude <= visionRange && !IsGoingToFall(movementDirection)) {
-			rigidbody.velocity = movementDirection * engageSpeed;
+		} else if (type != EnemyType.ranged && !IsGoingToFall(movementDirection)) {
+			if (playerDirection.magnitude <= dashRange && dashCooldown < 0f) {
+				Dash (playerDirection.normalized);
+			}
+			else {
+				rigidbody.velocity = movementDirection * engageSpeed;
+			}
 		}
 	}
 
@@ -199,5 +223,15 @@ public class RangedController : MonoBehaviour {
 		} else {
 			recoverTimer -= Time.fixedDeltaTime;
 		}
+	}
+
+	void DebugShowVision() {
+		Debug.DrawRay (transform.position, playerDirection.normalized * visionRange, Color.red);
+		Debug.DrawRay (transform.position, Quaternion.AngleAxis(80, Vector3.up) * transform.forward * visionRange, Color.yellow);
+		Debug.DrawRay (transform.position, Quaternion.AngleAxis(-80, Vector3.up) * transform.forward * visionRange, Color.yellow);
+	}
+
+	void DebugWalkOnGround(Vector3 projection, Vector3 direction) {
+		Debug.DrawRay (transform.position + transform.rotation * direction, Vector3.up * Vector3.Dot (projection, transform.rotation * direction) * 10, Color.blue);
 	}
 }
