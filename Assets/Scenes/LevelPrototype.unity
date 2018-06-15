@@ -14321,8 +14321,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 403067707}
-  m_LocalRotation: {x: -0.4241757, y: 0.21330383, z: 0.10352603, w: 0.8739902}
-  m_LocalPosition: {x: -0.47253773, y: 14.837539, z: -0.91043234}
+  m_LocalRotation: {x: -0.354026, y: 0.5718017, z: 0.2990308, w: 0.6769704}
+  m_LocalPosition: {x: -255.90277, y: -53.572098, z: -0.9336519}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -24762,7 +24762,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 760965834}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -239.95, y: 20.97, z: -6}
+  m_LocalPosition: {x: -248.85, y: 20.97, z: 5.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -26968,8 +26968,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 827677530}
-  m_LocalRotation: {x: -0.32541662, y: 0.43969887, z: 0.17478073, w: 0.8186701}
-  m_LocalPosition: {x: -256.96686, y: -13.946068, z: -9.308292}
+  m_LocalRotation: {x: -0.51331836, y: 0.4855824, z: 0.4763948, w: 0.52322274}
+  m_LocalPosition: {x: -250.18079, y: -20.233532, z: 5.5148306}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -61722,13 +61722,13 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1936873341}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 55, y: 21, z: 0}
+  m_LocalRotation: {x: 0, y: 0.9238796, z: -0, w: -0.38268325}
+  m_LocalPosition: {x: 55.42, y: 21, z: 0}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 161111911}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 225, z: 0}
 --- !u!114 &1936873343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61740,14 +61740,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b559690d4cabe164eb0e3d8e93918000, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  melee: 0
   visionRange: 70
   moveBackRange: 15
-  speed: 5
+  speed: 7.5
+  kiteSpeed: 5
+  engageSpeed: 10
   anchorPoints:
-  - {x: -250, y: 0, z: -6}
-  - {x: -240, y: 0, z: -6}
-  - {x: -240, y: 0, z: 6}
-  - {x: -250, y: 0, z: 6}
+  - {x: -239, y: 0, z: -5}
+  - {x: -239, y: 0, z: 5}
+  - {x: -249, y: 0, z: 5}
+  - {x: -249, y: 0, z: -5}
+  anchorTransitionTimer:
+  - 0.5
+  - 0.5
+  - 2
+  - 2
 --- !u!65 &1936873344
 BoxCollider:
   m_ObjectHideFlags: 0
