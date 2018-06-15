@@ -10,6 +10,7 @@ public class BulletController : MonoBehaviour {
 	void Start() {
 		soundTimer = 2.0f;
 		disabled = false;
+		Physics.IgnoreCollision (gameObject.GetComponent<Collider> (), owner.GetComponent<Collider> ());
 	}
 
 	void Update() {
@@ -20,8 +21,9 @@ public class BulletController : MonoBehaviour {
 		}
 	}
 
-	void OnTriggerEnter(Collider other) {
-		if (other.gameObject.tag != owner.tag && other.gameObject.tag != "Portal") {
+	void OnCollisionEnter(Collision other) {
+		GameObject target = other.collider.gameObject;
+		if (target.tag != owner.tag && target.tag != "Portal") {
 			gameObject.GetComponent<MeshRenderer>().enabled = false;
 			gameObject.GetComponent<SphereCollider>().enabled = false;
 			disabled = true;

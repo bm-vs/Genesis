@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour {
-	public GameController game { get; set; }
+	public GameObject player;
 	public Vector3 playerOffset = new Vector3(-30f, 45, -30f);
 
 	void Update () {
@@ -11,8 +11,9 @@ public class CameraController : MonoBehaviour {
 			playerOffset = Quaternion.Euler(0, UnityEngine.Input.GetAxisRaw ("RotateCamera"), 0) * playerOffset;
 		}
 
-		Vector3 position = game.playerController.transform.position;
+		PlayerController playerController = player.GetComponents<PlayerController> ()[0];
+		Vector3 position = playerController.transform.position;
 		transform.position = new Vector3(position.x, position.y, position.z) + playerOffset;
-		transform.LookAt (game.playerController.transform);
+		transform.LookAt (playerController.transform);
 	}
 }

@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class BossController : MonoBehaviour
 {
-    public GameController game;
-
     // Actions
     private Rotate rotate;
     private Attack[] attacks;

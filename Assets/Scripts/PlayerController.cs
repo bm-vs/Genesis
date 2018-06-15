@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
-	public GameController game;
-
 	// Actions
 	private Move move;
 	private Jump jump;
