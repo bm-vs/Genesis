@@ -24,6 +24,7 @@ public class RangedController : MonoBehaviour {
 		bulletSpeed = 40.0f;
 		shootingCooldown = 1.0f;
 		visionAngle = 45.0f;
+		lastSeen = Vector3.zero;
 	}
 
 	void Update () {
@@ -48,24 +49,23 @@ public class RangedController : MonoBehaviour {
 				shootingCooldown = 1.0f;
 			}
 		}
-
-		//MoveBack (-playerOffset);
-
-
 	}
 
 	void FixedUpdate () {
-		// Rotate towards target
-		if (onSight) {
-			Vector3 target = new Vector3 (player.transform.position.x, transform.position.y, player.transform.position.z);
+		Rigidbody rigidbody = gameObject.GetComponent<Rigidbody> ();
+
+		if (lastSeen != Vector3.zero) {
+			// Rotate towards target
+			Vector3 target = new Vector3 (lastSeen.x, transform.position.y, lastSeen.z);
 			transform.LookAt (target);
 		}
-	}
 
-	void MoveBack (Vector3 playerOffset) {
-		Rigidbody rigidbody = gameObject.GetComponent<Rigidbody> ();
-		if (playerOffset.magnitude <= moveBackRange) {
-			rigidbody.velocity = playerOffset.normalized * speed;
+
+		if (onSight) {
+			// Kite player
+			if (playerDirection.magnitude <= moveBackRange) {
+				rigidbody.velocity = playerDirection.normalized * speed;
+			}
 		}
 	}
 
