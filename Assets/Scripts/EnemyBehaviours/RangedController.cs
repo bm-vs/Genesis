@@ -12,6 +12,9 @@ public class RangedController : MonoBehaviour {
 	private float visionAngle;
 	private Vector3 lastSeen;
 
+	// Damage received
+	private bool hit;
+
 	private Object bulletPrefab;
 	private float bulletSpeed;
 	private float shootingCooldown;
@@ -25,6 +28,7 @@ public class RangedController : MonoBehaviour {
 		shootingCooldown = 1.0f;
 		visionAngle = 45.0f;
 		lastSeen = Vector3.zero;
+		hit = false;
 	}
 
 	void Update () {
@@ -45,7 +49,7 @@ public class RangedController : MonoBehaviour {
 		if (onSight) {
 			shootingCooldown -= Time.deltaTime;
 			if (shootingCooldown < 0f && playerDirection.magnitude < visionRange) {
-				Shoot (playerDirection);
+				//Shoot (playerDirection);
 				shootingCooldown = 1.0f;
 			}
 		}
@@ -60,12 +64,22 @@ public class RangedController : MonoBehaviour {
 			transform.LookAt (target);
 		}
 
-
-		if (onSight) {
-			// Kite player
-			if (playerDirection.magnitude <= moveBackRange) {
-				rigidbody.velocity = playerDirection.normalized * speed;
+		// Dont move the character during the knockback of a hit
+		if (!hit) {
+			if (onSight) {
+				// Kite player
+				if (playerDirection.magnitude <= moveBackRange) {
+					rigidbody.velocity = -new Vector3 (playerDirection.x, 0.0f, playerDirection.z).normalized * speed;
+				}
 			}
+		} else if (rigidbody.velocity == Vector3.zero) {
+			hit = false;
+		}
+	}
+
+	void OnCollisionEnter (Collision collision) {
+		if (collision.gameObject.tag != "Terrain") {
+			hit = true;
 		}
 	}
 
