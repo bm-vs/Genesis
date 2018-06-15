@@ -114,9 +114,15 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	public bool IsAirborne() {
-		int layerMask = 1 << 8;
-		layerMask = ~layerMask;
-		return !Physics.Raycast (transform.position, -Vector3.up, height / 2 + 0.01f, layerMask);
+		Vector3 dim = gameObject.GetComponent<Renderer> ().bounds.size / 2;
+		Vector3 x = new Vector3 (dim.x, 0.0f, 0.0f);
+		Vector3 z = new Vector3 (0.0f, 0.0f, dim.z);
+		bool edge1 = Physics.Raycast (transform.position + x + z, -Vector3.up, dim.y + 0.01f);
+		bool edge2 = Physics.Raycast (transform.position + x - z, -Vector3.up, dim.y + 0.01f);
+		bool edge3 = Physics.Raycast (transform.position - x + z, -Vector3.up, dim.y + 0.01f);
+		bool edge4 = Physics.Raycast (transform.position - x - z, -Vector3.up, dim.y + 0.01f);
+
+		return !(edge1 || edge2 || edge3 || edge4);
 	}
 
 	public void PlaySound(string type) {
