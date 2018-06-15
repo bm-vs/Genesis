@@ -49,7 +49,7 @@ public class RangedController : MonoBehaviour {
 		if (onSight) {
 			shootingCooldown -= Time.deltaTime;
 			if (shootingCooldown < 0f && playerDirection.magnitude < visionRange) {
-				//Shoot (playerDirection);
+				Shoot (playerDirection);
 				shootingCooldown = 1.0f;
 			}
 		}
@@ -80,6 +80,12 @@ public class RangedController : MonoBehaviour {
 	void OnCollisionEnter (Collision collision) {
 		if (collision.gameObject.tag != "Terrain") {
 			hit = true;
+
+			// Rotate to side of colision 
+			if (!onSight) {
+				Vector3 target = new Vector3 (player.transform.position.x, transform.position.y, player.transform.position.z);
+				transform.LookAt (target);
+			}
 		}
 	}
 
