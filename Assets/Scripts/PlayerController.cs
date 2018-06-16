@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour {
 	// Health
 	private float health;
 	private float velocityY;
+	private float timeLastHit;
 
 	// Actions
 	private Move move;
@@ -104,6 +105,14 @@ public class PlayerController : MonoBehaviour {
 			updateHealth (-((4.0f/7.0f)*(velF - velocityY)-(250.0f/7.0f)));
 		}
 		velocityY = velF;
+
+		if (timeLastHit > 0.0f) {
+			timeLastHit -= Time.fixedDeltaTime;
+		}
+
+		if (health < 100.0f & timeLastHit < 0.0f) {
+			updateHealth (100.0f/(5.0f/Time.fixedDeltaTime));
+		}
 	}
 
 	void OnTriggerEnter(Collider other) {
@@ -144,11 +153,14 @@ public class PlayerController : MonoBehaviour {
 
 	public void updateHealth (float value) {
 		health += value;
+		Debug.Log (health);
+		if (value < 0.0f) {
+			timeLastHit = 3.0f;
+		}
 		if (health <= 0.0f) {
 			health = 100.0f;
 			reset.Died ();
 		}
-		Debug.Log (health);
 	}
 
 	public bool IsAirborne() {

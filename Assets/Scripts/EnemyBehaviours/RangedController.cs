@@ -12,11 +12,12 @@ public class RangedController : MonoBehaviour {
 
 	// Vision
 	private Vector3 playerDirection;
-	private bool onSight;
+	public bool onSight;
 	public float visionRange;
 	private float visionAngle;
 	private Vector3 lastSeen;
 	private float loseSightTimeout;
+	public GameObject[] buddies;
 
 	// Movement
 	public float moveBackRange;
@@ -84,8 +85,8 @@ public class RangedController : MonoBehaviour {
 	}
 
 	void FixedUpdate () {
+		Rigidbody rigidbody = gameObject.GetComponent<Rigidbody> ();
 		if (health > 0.0f) {
-			Rigidbody rigidbody = gameObject.GetComponent<Rigidbody> ();
 			if (lastSeen != Vector3.zero) {
 				// Rotate towards target
 				Vector3 target = new Vector3 (lastSeen.x, transform.position.y, lastSeen.z);
@@ -123,6 +124,10 @@ public class RangedController : MonoBehaviour {
 				updateHealth (-80.0f);
 			}
 			velocityY = velF;
+		} else {
+			rigidbody.velocity = Vector3.zero;
+			rigidbody.useGravity = true;
+			dashing = false;
 		}
 	}
 
@@ -187,25 +192,44 @@ public class RangedController : MonoBehaviour {
 	void CheckPlayerOnSight () {
 		playerDirection = player.transform.position - transform.position;
 
+
+
 		if (loseSightTimeout > 0.0f) {
 			lastSeen = player.transform.position;
 			loseSightTimeout -= Time.deltaTime;
 			onSight = true;
 		} else {
-			float playerAngle = Vector3.Angle (playerDirection, transform.forward);
-			int layerMask = 1 << 11;
-			layerMask = ~layerMask;
-			RaycastHit hit;
-			if (Physics.Raycast (transform.position, playerDirection, out hit, visionRange, layerMask)) {
-				if (hit.collider.gameObject.tag == "Player" && playerAngle < visionAngle) {
-					lastSeen = hit.collider.gameObject.transform.position;
-					loseSightTimeout = 3.0f;
-					onSight = true;
+			bool buddyOnSight = false;
+			foreach (GameObject buddy in buddies) {
+				Vector3 buddyDirection = buddy.transform.position - transform.position;
+				int layerMask = 1 << 11;
+				layerMask = ~layerMask;
+				RaycastHit hit;
+				if (Physics.Raycast (transform.position, buddyDirection, out hit, visionRange, layerMask)) {
+					if (hit.collider.gameObject.GetComponent<RangedController> () != null && buddy.GetComponent<RangedController> ().health <= 0.0f) {
+						lastSeen = buddy.transform.position;
+						onSight = true;
+						buddyOnSight = true;
+					}
+				}
+			}
+
+			if (!buddyOnSight) {
+				float playerAngle = Vector3.Angle (playerDirection, transform.forward);
+				int layerMask = 1 << 11;
+				layerMask = ~layerMask;
+				RaycastHit hit;
+				if (Physics.Raycast (transform.position, playerDirection, out hit, visionRange, layerMask)) {
+					if (hit.collider.gameObject.tag == "Player" && playerAngle < visionAngle) {
+						lastSeen = hit.collider.gameObject.transform.position;
+						loseSightTimeout = 3.0f;
+						onSight = true;
+					} else {
+						onSight = false;
+					}
 				} else {
 					onSight = false;
 				}
-			} else {
-				onSight = false;
 			}
 		}
 	}

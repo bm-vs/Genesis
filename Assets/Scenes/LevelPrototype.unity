@@ -7635,7 +7635,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
+  health: 0
+  onSight: 0
   visionRange: 35
+  buddies: []
   moveBackRange: 15
   speed: 7.5
   kiteSpeed: 5
@@ -25064,7 +25067,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
+  health: 0
+  onSight: 0
   visionRange: 35
+  buddies: []
   moveBackRange: 15
   speed: 7.5
   kiteSpeed: 5
@@ -27051,8 +27057,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 827677530}
-  m_LocalRotation: {x: -0.2218932, y: 0.5299241, z: 0.14600459, w: 0.80537355}
-  m_LocalPosition: {x: -177.9447, y: -64.68806, z: -11.740986}
+  m_LocalRotation: {x: -0.3505517, y: 0.5040667, z: 0.23444742, w: 0.75370073}
+  m_LocalPosition: {x: -253.17578, y: -77.18294, z: -22.756544}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -27879,7 +27885,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
+  health: 0
+  onSight: 0
   visionRange: 35
+  buddies: []
   moveBackRange: 15
   speed: 7.5
   kiteSpeed: 5
@@ -32046,7 +32055,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
+  health: 0
+  onSight: 0
   visionRange: 35
+  buddies:
+  - {fileID: 1013390785}
   moveBackRange: 15
   speed: 7.5
   kiteSpeed: 5
@@ -32201,7 +32214,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
+  health: 0
+  onSight: 0
   visionRange: 35
+  buddies:
+  - {fileID: 1009221717}
   moveBackRange: 15
   speed: 7.5
   kiteSpeed: 5
@@ -38784,7 +38801,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
+  health: 0
+  onSight: 0
   visionRange: 35
+  buddies: []
   moveBackRange: 15
   speed: 7.5
   kiteSpeed: 5
@@ -61543,7 +61563,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
+  health: 0
+  onSight: 0
   visionRange: 35
+  buddies: []
   moveBackRange: 15
   speed: 7.5
   kiteSpeed: 5
