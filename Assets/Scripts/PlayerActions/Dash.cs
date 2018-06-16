@@ -43,6 +43,7 @@ public class Dash {
 			durationTimer = currTime;
 			rb.velocity = direction * player.dashSpeed;
 			player.PlaySound ("MonkeyAttack");
+			player.gameObject.transform.LookAt (player.gameObject.transform.position + new Vector3(direction.x, 0.0f, direction.z));
 		}
 
 		if (player.dashing && currTime - durationTimer >= player.dashDuration) {

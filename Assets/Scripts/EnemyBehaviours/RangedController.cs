@@ -9,6 +9,7 @@ public class RangedController : MonoBehaviour {
 	private GameObject player;
 	public EnemyType type;
 	public float health;
+	private float deathTimer;
 
 	// Vision
 	private Vector3 playerDirection;
@@ -61,6 +62,7 @@ public class RangedController : MonoBehaviour {
 		transitionTimer = 0.0f;
 		loseSightTimeout = 0.0f;
 		velocityY = 0.0f;
+		deathTimer = 1.0f;
 
 		if (type == EnemyType.hybrid) {
 			health = 80.0f;
@@ -128,6 +130,11 @@ public class RangedController : MonoBehaviour {
 			rigidbody.velocity = Vector3.zero;
 			rigidbody.useGravity = true;
 			dashing = false;
+		} else {
+			deathTimer -= Time.fixedDeltaTime;
+			if (deathTimer <= 0.0f) {
+				Destroy (gameObject);
+			}
 		}
 	}
 
@@ -199,15 +206,17 @@ public class RangedController : MonoBehaviour {
 		} else {
 			bool buddyOnSight = false;
 			foreach (GameObject buddy in buddies) {
-				Vector3 buddyDirection = buddy.transform.position - transform.position;
-				int layerMask = 1 << 11;
-				layerMask = ~layerMask;
-				RaycastHit hit;
-				if (Physics.Raycast (transform.position, buddyDirection, out hit, visionRange, layerMask)) {
-					if (buddy != null && hit.collider.gameObject.GetComponent<RangedController> () != null && buddy.GetComponent<RangedController> ().health <= 0.0f) {
-						lastSeen = buddy.transform.position;
-						onSight = true;
-						buddyOnSight = true;
+				if (buddy != null) {
+					Vector3 buddyDirection = buddy.transform.position - transform.position;
+					int layerMask = 1 << 11;
+					layerMask = ~layerMask;
+					RaycastHit hit;
+					if (Physics.Raycast (transform.position, buddyDirection, out hit, visionRange, layerMask)) {
+						if (buddy != null && hit.collider.gameObject.GetComponent<RangedController> () != null && buddy.GetComponent<RangedController> ().health <= 0.0f) {
+							lastSeen = player.transform.position;
+							onSight = true;
+							buddyOnSight = true;
+						}
 					}
 				}
 			}

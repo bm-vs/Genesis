@@ -5,6 +5,7 @@ using UnityEngine;
 public class Move {
 	private PlayerController player;
 	private Vector3 direction;
+	private Vector3 ledgePosition;
 	private Vector3 ledgeNormal;
 
 	public Move (PlayerController player) {
@@ -25,6 +26,7 @@ public class Move {
 			rigidbody.velocity = Vector3.Project (new Vector3 (move.x, rigidbody.velocity.y, move.z), Vector3.Cross (ledgeNormal, Vector3.up));
 		} else {
 			rigidbody.velocity = new Vector3 (move.x, rigidbody.velocity.y, move.z);
+			player.gameObject.transform.LookAt (player.gameObject.transform.position + new Vector3(move.x, 0.0f, move.z));
 		}
 
 		if ((player.isPlayingSound ("Walk") && rigidbody.velocity.magnitude == 0) || player.airborne || player.onLedge) {
@@ -38,6 +40,7 @@ public class Move {
 		if (!player.isHuman && player.gameObject.GetComponent<Rigidbody> ().velocity.y <= 0){
 			MeshFilter filter = collider.gameObject.GetComponent<MeshFilter> ();
 			ledgeNormal = filter.transform.TransformDirection(filter.mesh.normals [0]);
+			ledgePosition = collider.gameObject.transform.position;
 			setPlayerOnLedge ();
 		} else {
 			removePlayerOnLedge ();
@@ -46,8 +49,14 @@ public class Move {
 
 	public void setPlayerOnLedge() {
 		player.onLedge = true;
-		player.gameObject.GetComponent<Rigidbody> ().constraints |= RigidbodyConstraints.FreezePositionY;
 		player.gameObject.layer = 9; //PlayerLedge
+		player.gameObject.GetComponent<Rigidbody> ().constraints |= RigidbodyConstraints.FreezePositionY;
+		player.gameObject.transform.forward = - ledgeNormal.normalized;
+		if (ledgeNormal.x != 0) {
+			player.gameObject.transform.position = new Vector3 (ledgePosition.x + ledgeNormal.x * player.z / 2.0f, player.gameObject.transform.position.y, player.gameObject.transform.position.z);
+		} else if (ledgeNormal.z != 0) {
+			player.gameObject.transform.position = new Vector3 (player.gameObject.transform.position.x, player.gameObject.transform.position.y, ledgePosition.z + ledgeNormal.z * player.z / 2.0f);
+		}
 	}
 
 	public void removePlayerOnLedge() {

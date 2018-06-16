@@ -26,7 +26,9 @@ public class PlayerController : MonoBehaviour {
 	public bool onLedge;
 
 	// Attributes
-	public float height;
+	public float y;
+	public float z;
+
 	public float moveSpeed;
 	public float ledgeSpeed;
 	public float grabLedgeOffset;
@@ -52,7 +54,8 @@ public class PlayerController : MonoBehaviour {
 		isHuman = true;
 		onLedge = false;
 
-		height = gameObject.GetComponent<Renderer> ().bounds.size.y;
+		y = gameObject.GetComponent<Renderer> ().bounds.size.y;
+		z = gameObject.GetComponent<Renderer> ().bounds.size.z;
 		moveSpeed = 600.0f;
 		ledgeSpeed = 300.0f;
 		grabLedgeOffset = 0.5f;
@@ -87,6 +90,7 @@ public class PlayerController : MonoBehaviour {
 			dash.Input ();
 		}
 		reset.Input ();
+		DebugLookDirection ();
 	}
 
 	void FixedUpdate() {
@@ -153,7 +157,7 @@ public class PlayerController : MonoBehaviour {
 
 	public void updateHealth (float value) {
 		health += value;
-		Debug.Log (health);
+		//Debug.Log (health);
 		if (value < 0.0f) {
 			timeLastHit = 3.0f;
 		}
@@ -161,6 +165,10 @@ public class PlayerController : MonoBehaviour {
 			health = 100.0f;
 			reset.Died ();
 		}
+	}
+
+	void DebugLookDirection () {
+		Debug.DrawRay (transform.position, transform.forward * 35.0f, Color.magenta);
 	}
 
 	public bool IsAirborne() {
