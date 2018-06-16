@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{e29f9ab0-522c-4b60-9bbe-716743a89988}">
+        <property name="assetPath">
+            <value>CAIXAS ATIVAR.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>48</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>3.4133333333333336</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{a42b4905-144e-4668-82a8-7c2ccc352e90}</destination>
+        </relationship>
+    </object>
+</objects>

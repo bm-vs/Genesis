@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{d47804ad-042d-4965-bc76-83afb5c1eb03}">
+        <property name="assetPath">
+            <value>Energy Ball.wav</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>48</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>17.749333333333333</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{a42b4905-144e-4668-82a8-7c2ccc352e90}</destination>
+        </relationship>
+    </object>
+</objects>

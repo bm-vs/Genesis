@@ -33,7 +33,6 @@ public class Jump {
 
 		if (!player.airborne || player.onLedge) {
 			if (player.jumping && !player.onLedge) {
-				player.PlaySound ("JumpImpact");
 			}
 
 			player.jumping = false;
@@ -44,7 +43,6 @@ public class Jump {
 			rigidbody.AddForce (new Vector3 (0, player.jumpForce, 0), ForceMode.Impulse);
 			startJump = false;
 			player.jumping = true;
-			player.PlaySound ("JumpStart");
 		}
 
 		if (continueJump && currTime - jumpTimer <= player.jumpHoldDuration) {

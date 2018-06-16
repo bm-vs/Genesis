@@ -28,12 +28,6 @@ public class Move {
 			rigidbody.velocity = new Vector3 (move.x, rigidbody.velocity.y, move.z);
 			player.gameObject.transform.LookAt (player.gameObject.transform.position + new Vector3(move.x, 0.0f, move.z));
 		}
-
-		if ((player.isPlayingSound ("Walk") && rigidbody.velocity.magnitude == 0) || player.airborne || player.onLedge) {
-			player.StopSound ("Walk");
-		} else if (!player.isPlayingSound ("Walk") && rigidbody.velocity.magnitude != 0 && !player.airborne && !player.onLedge) {
-			player.PlaySound ("Walk");
-		}
 	}
 
 	public void CheckOnLedge(Collider collider) {
