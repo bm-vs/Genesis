@@ -15,6 +15,7 @@ public class RangedController : MonoBehaviour {
 	public float visionRange;
 	private float visionAngle;
 	private Vector3 lastSeen;
+	private float loseSightTimeout;
 
 	// Movement
 	public float moveBackRange;
@@ -55,6 +56,7 @@ public class RangedController : MonoBehaviour {
 		recoverTimer = 0.5f;
 		previousPosition = transform.position;
 		transitionTimer = 0.0f;
+		loseSightTimeout = 0.0f;
 	}
 
 	void Update () {
@@ -75,8 +77,12 @@ public class RangedController : MonoBehaviour {
 			transform.LookAt (target);
 		}
 
-		// Dont move the character during the knockback and recover time of a hit
-		dashCooldown -= Time.fixedDeltaTime;
+		if (onSight) {
+			dashCooldown -= Time.fixedDeltaTime;
+		} else {
+			dashCooldown = 0.5f;
+		}
+
 		if (dashing) {
 			if (dashDuration <= 0.0f) {
 				rigidbody.velocity = Vector3.zero;
@@ -88,7 +94,7 @@ public class RangedController : MonoBehaviour {
 		} else if (!hit) {
 			if (onSight) {
 				AttackMovement ();
-			} else {
+			} else if (anchorPoints.Length > 0) {
 				PatrolMovement ();
 			}
 
@@ -103,7 +109,7 @@ public class RangedController : MonoBehaviour {
 			hit = true;
 
 			// Rotate to side of colision 
-			if (!onSight) {
+			if (!onSight && player != null) {
 				Vector3 target = new Vector3 (player.transform.position.x, transform.position.y, player.transform.position.z);
 				transform.LookAt (target);
 			}
@@ -139,19 +145,27 @@ public class RangedController : MonoBehaviour {
 
 	void CheckPlayerOnSight () {
 		playerDirection = player.transform.position - transform.position;
-		float playerAngle = Vector3.Angle (playerDirection, transform.forward);
-		int layerMask = 1 << 11;
-		layerMask = ~layerMask;
-		RaycastHit hit;
-		if (Physics.Raycast (transform.position, playerDirection, out hit, visionRange, layerMask)) {
-			if (hit.collider.gameObject.tag == "Player" && playerAngle < visionAngle) {
-				lastSeen = hit.collider.gameObject.transform.position;
-				onSight = true;
+
+		if (loseSightTimeout > 0.0f) {
+			lastSeen = player.transform.position;
+			loseSightTimeout -= Time.deltaTime;
+			onSight = true;
+		} else {
+			float playerAngle = Vector3.Angle (playerDirection, transform.forward);
+			int layerMask = 1 << 11;
+			layerMask = ~layerMask;
+			RaycastHit hit;
+			if (Physics.Raycast (transform.position, playerDirection, out hit, visionRange, layerMask)) {
+				if (hit.collider.gameObject.tag == "Player" && playerAngle < visionAngle) {
+					lastSeen = hit.collider.gameObject.transform.position;
+					loseSightTimeout = 3.0f;
+					onSight = true;
+				} else {
+					onSight = false;
+				}
 			} else {
 				onSight = false;
 			}
-		} else {
-			onSight = false;
 		}
 	}
 
@@ -194,7 +208,8 @@ public class RangedController : MonoBehaviour {
 		Vector3 pos = anchorPoints[positionIndex];
 
 		// Change anchor point
-		if ((previousPosition.x > pos.x && transform.position.x < pos.x) || (previousPosition.x < pos.x && transform.position.x > pos.x) || (previousPosition.z > pos.z && transform.position.z < pos.z) || (previousPosition.z < pos.z && transform.position.z > pos.z)) {
+		float error = 0.00001f;
+		if ((previousPosition.x > pos.x + error && transform.position.x < pos.x - error) || (previousPosition.x < pos.x - error && transform.position.x > pos.x + error) || (previousPosition.z > pos.z + error && transform.position.z < pos.z - error) || (previousPosition.z < pos.z - error && transform.position.z > pos.z + error)) {
 			if (transitionTimer <= 0.0f) {
 				positionIndex = (positionIndex + 1) % anchorPoints.Length;
 				pos = anchorPoints [positionIndex];
@@ -202,14 +217,12 @@ public class RangedController : MonoBehaviour {
 			}
 		}
 
-		// Rotate towards anchor point
-		Vector3 target = new Vector3 (pos.x, transform.position.y, pos.z);
-		transform.LookAt (target);
-
-		// Move towards anchor point
+		// Move and rotate towards anchor point
 		if (transitionTimer <= 0.0f) {
 			Vector3 movementDirection = new Vector3 ((pos - transform.position).x, 0.0f, (pos - transform.position).z).normalized;
 			if (!IsGoingToFall (movementDirection)) {
+				Vector3 target = new Vector3 (pos.x, transform.position.y, pos.z);
+				transform.LookAt (target);
 				rigidbody.velocity = movementDirection * speed;
 			} else {
 				positionIndex = (positionIndex + 1) % anchorPoints.Length;

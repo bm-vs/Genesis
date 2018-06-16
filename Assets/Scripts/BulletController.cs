@@ -33,9 +33,13 @@ public class BulletController : MonoBehaviour {
 		}
 	}
 
-	void OnCollisionEnter(Collision other) {
-		GameObject target = other.collider.gameObject;
-		if (target.tag != owner.tag && target.tag != "Portal") {
+	void OnTriggerEnter(Collider other) {
+		if (other != null) {
+			GameObject target = other.gameObject;
+			if (target.tag != owner.tag && target.tag != "Portal") {
+				Disable ();
+			}
+		} else {
 			Disable ();
 		}
 	}
