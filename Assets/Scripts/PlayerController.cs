@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -97,15 +98,17 @@ public class PlayerController : MonoBehaviour {
 		}
 		reset.Action ();
 
-		float velY = gameObject.GetComponent<Rigidbody> ().velocity.y;
-		if (velY - velocityY > 80.0f) {
-			updateHealth (-((4.0f/7.0f)*(velY - velocityY)-(250.0f/7.0f)));
+		float velF = gameObject.GetComponent<Rigidbody> ().velocity.y;
+		if (velF - velocityY > 80.0f && velocityY < 0.0f && velF >= -1f) {
+			updateHealth (-((4.0f/7.0f)*(velF - velocityY)-(250.0f/7.0f)));
 		}
-		velocityY = velY;
+		velocityY = velF;
 	}
 
 	void OnTriggerEnter(Collider other) {
 		if (other.gameObject.tag == "Shot" && other.gameObject.GetComponent<BulletController> ().owner.tag != "Player") {
+			updateHealth (-20.0f);
+		} else if (other.gameObject.tag == "Fire") {
 			updateHealth (-20.0f);
 		} else if (other.gameObject.tag == "FallPlane") {
 			reset.Died ();
@@ -140,6 +143,7 @@ public class PlayerController : MonoBehaviour {
 
 	public void updateHealth (float value) {
 		health += value;
+		Debug.Log (health);
 		if (health <= 0.0f) {
 			health = 100.0f;
 			reset.Died ();
