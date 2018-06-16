@@ -7638,7 +7638,9 @@ MonoBehaviour:
   health: 0
   onSight: 0
   visionRange: 35
-  buddies: []
+  buddies:
+  - {fileID: 1181381739}
+  - {fileID: 840553768}
   moveBackRange: 15
   speed: 7.5
   kiteSpeed: 5
@@ -27057,8 +27059,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 827677530}
-  m_LocalRotation: {x: -0.3505517, y: 0.5040667, z: 0.23444742, w: 0.75370073}
-  m_LocalPosition: {x: -253.17578, y: -77.18294, z: -22.756544}
+  m_LocalRotation: {x: -0.3079427, y: 0.65001947, z: 0.32639295, w: 0.613281}
+  m_LocalPosition: {x: -165.17606, y: -94.17075, z: -2.987834}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -27888,7 +27890,9 @@ MonoBehaviour:
   health: 0
   onSight: 0
   visionRange: 35
-  buddies: []
+  buddies:
+  - {fileID: 1181381739}
+  - {fileID: 188474884}
   moveBackRange: 15
   speed: 7.5
   kiteSpeed: 5
@@ -38804,7 +38808,9 @@ MonoBehaviour:
   health: 0
   onSight: 0
   visionRange: 35
-  buddies: []
+  buddies:
+  - {fileID: 840553768}
+  - {fileID: 188474884}
   moveBackRange: 15
   speed: 7.5
   kiteSpeed: 5
