@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
+	// Health
+	private float health;
+	private float velocityY;
+
 	// Actions
 	private Move move;
 	private Jump jump;
@@ -36,6 +40,8 @@ public class PlayerController : MonoBehaviour {
 
 	void Start () {
 		gameObject.GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.FreezeRotation; // disable rotation through physics
+
+		health = 100.0f;
 
 		airborne = false;
 		shooting = false;
@@ -90,10 +96,18 @@ public class PlayerController : MonoBehaviour {
 			dash.Action ();
 		}
 		reset.Action ();
+
+		float velY = gameObject.GetComponent<Rigidbody> ().velocity.y;
+		if (velY - velocityY > 80.0f) {
+			updateHealth (-((4.0f/7.0f)*(velY - velocityY)-(250.0f/7.0f)));
+		}
+		velocityY = velY;
 	}
 
 	void OnTriggerEnter(Collider other) {
-		if (other.gameObject.tag == "FallPlane") {
+		if (other.gameObject.tag == "Shot" && other.gameObject.GetComponent<BulletController> ().owner.tag != "Player") {
+			updateHealth (-20.0f);
+		} else if (other.gameObject.tag == "FallPlane") {
 			reset.Died ();
 		} else if (other.gameObject.tag == "Checkpoint") {
 			reset.setCheckpoint (other.gameObject.transform.position);
@@ -110,6 +124,25 @@ public class PlayerController : MonoBehaviour {
 	void OnTriggerExit(Collider other) {
 		if (other.gameObject.tag == "Wall") {
 			move.removePlayerOnLedge ();
+		}
+	}
+
+	void OnCollisionEnter(Collision collision) {
+		RangedController enemy = collision.collider.gameObject.GetComponent<RangedController> ();
+		if (enemy != null && enemy.dashing) {
+			if (enemy.type == EnemyType.hybrid) {
+				updateHealth (-50.0f);
+			} else {
+				updateHealth (-35.0f);
+			}
+		}
+	}
+
+	public void updateHealth (float value) {
+		health += value;
+		if (health <= 0.0f) {
+			health = 100.0f;
+			reset.Died ();
 		}
 	}
 

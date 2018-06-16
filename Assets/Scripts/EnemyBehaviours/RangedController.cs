@@ -39,7 +39,7 @@ public class RangedController : MonoBehaviour {
 	private float dashCooldown;
 	private float dashRange;
 	private float dashSpeed; 
-	private bool dashing;
+	public bool dashing;
 	private float dashDuration;
 
 	void Start () {
