@@ -17,6 +17,8 @@ public class GroundActivatorController : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other) {
+		Debug.Log (other);
+		Debug.Log (activated);
 		activated.Add (other);
 		if (activated.Count == 1) {
 			gameObject.GetComponent<Renderer> ().material = activatorOnMaterial;

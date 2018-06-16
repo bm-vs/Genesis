@@ -18,14 +18,21 @@ public class GateController : MonoBehaviour {
 		bool temp = true;
 		if (!open) {
 			foreach (GameObject activator in activators) {
-				temp &= activator.GetComponent<ActivatorController> ().activated;
+				if (activator.GetComponent<ActivatorController> () != null) {
+					temp &= activator.GetComponent<ActivatorController> ().activated;
+				}
+				else if (activator.GetComponent<GeneratorController> () != null) {
+					temp &= activator.GetComponent<GeneratorController> ().activated;
+				}
 			}
 		}
 
 		if (!open && temp) {
 			open = true;
 			foreach (GameObject activator in activators) {
-				activator.GetComponent<ActivatorController> ().SetDone ();
+				if (activator.GetComponent<ActivatorController> () != null) {
+					activator.GetComponent<ActivatorController> ().SetDone ();
+				}
 			}
 		}
 
