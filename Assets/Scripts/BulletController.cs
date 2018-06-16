@@ -7,7 +7,7 @@ public class BulletController : MonoBehaviour {
 	private string ownerTag;
 	private float soundTimer;
 	private bool disabled;
-	private float range;
+	public float range = 0.0f;
 	private Vector3 start;
 
 	void Start() {
@@ -15,9 +15,7 @@ public class BulletController : MonoBehaviour {
 		soundTimer = 2.0f;
 		disabled = false;
 		Physics.IgnoreCollision (gameObject.GetComponent<Collider> (), owner.GetComponent<Collider> ());
-		if (owner.tag == "Sniper") {
-			range = 100f;
-		} else {
+		if (range == 0.0f) {
 			range = 35f;
 		}
 		start = transform.position;

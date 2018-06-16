@@ -124,7 +124,7 @@ public class RangedController : MonoBehaviour {
 				updateHealth (-80.0f);
 			}
 			velocityY = velF;
-		} else {
+		} else if (dashing) {
 			rigidbody.velocity = Vector3.zero;
 			rigidbody.useGravity = true;
 			dashing = false;
@@ -192,8 +192,6 @@ public class RangedController : MonoBehaviour {
 	void CheckPlayerOnSight () {
 		playerDirection = player.transform.position - transform.position;
 
-
-
 		if (loseSightTimeout > 0.0f) {
 			lastSeen = player.transform.position;
 			loseSightTimeout -= Time.deltaTime;
@@ -206,7 +204,7 @@ public class RangedController : MonoBehaviour {
 				layerMask = ~layerMask;
 				RaycastHit hit;
 				if (Physics.Raycast (transform.position, buddyDirection, out hit, visionRange, layerMask)) {
-					if (hit.collider.gameObject.GetComponent<RangedController> () != null && buddy.GetComponent<RangedController> ().health <= 0.0f) {
+					if (buddy != null && hit.collider.gameObject.GetComponent<RangedController> () != null && buddy.GetComponent<RangedController> ().health <= 0.0f) {
 						lastSeen = buddy.transform.position;
 						onSight = true;
 						buddyOnSight = true;
@@ -238,6 +236,7 @@ public class RangedController : MonoBehaviour {
 		if (shootingCooldown < 0f) {
 			GameObject bullet = (GameObject) GameObject.Instantiate (bulletPrefab);
 			bullet.GetComponent<BulletController> ().owner = gameObject;
+			bullet.GetComponent<BulletController> ().range = visionRange;
 			bullet.transform.position = gameObject.transform.position;
 			bullet.GetComponent<Rigidbody>().velocity = playerDirection.normalized * bulletSpeed;
 			shootingCooldown = 1.0f;

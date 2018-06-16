@@ -165,6 +165,8 @@ public class PlayerController : MonoBehaviour {
 
 	public bool IsAirborne() {
 		Vector3 dim = gameObject.GetComponent<Renderer> ().bounds.size / 2;
+		int layerMask = 1 << 11;
+		layerMask = ~layerMask;
 		/*
 		Vector3 x = new Vector3 (dim.x, 0.0f, 0.0f);
 		Vector3 z = new Vector3 (0.0f, 0.0f, dim.z);
@@ -174,7 +176,7 @@ public class PlayerController : MonoBehaviour {
 		bool edge4 = Physics.Raycast (transform.position - x - z, -Vector3.up, dim.y + 0.01f);
 		return !(edge1 || edge2 || edge3 || edge4);
 		*/
-		return !Physics.Raycast (transform.position, -Vector3.up, dim.y + 0.01f);
+		return !Physics.Raycast (transform.position, -Vector3.up, dim.y + 0.01f, layerMask);
 	}
 
 	public void PlaySound(string type) {
