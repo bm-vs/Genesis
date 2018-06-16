@@ -47,6 +47,14 @@ public class RangedController : MonoBehaviour {
 	public bool dashing;
 	private float dashDuration;
 
+	// Sounds
+	[FMODUnity.EventRef]
+	public string attackSound;
+	public float attackVolume;
+	private FMOD.Studio.EventInstance attackEvent;
+
+	public float soundMaxDistance;
+
 	void Start () {
 		player = GameObject.FindGameObjectWithTag ("Player");
 		bulletPrefab = Resources.Load ("Prefabs/BulletEnemy");
@@ -73,9 +81,14 @@ public class RangedController : MonoBehaviour {
 			health = 20.0f;
 		}
 
+		attackEvent = FMODUnity.RuntimeManager.CreateInstance (attackSound);
 	}
 
 	void Update () {
+		FMODUnity.RuntimeManager.AttachInstanceToGameObject (attackEvent, GetComponent<Transform> (), GetComponent<Rigidbody> ());
+		attackEvent.setVolume (attackVolume);
+		attackEvent.setProperty (FMOD.Studio.EVENT_PROPERTY.MAXIMUM_DISTANCE, soundMaxDistance);
+
 		if (health > 0.0f) {
 			CheckPlayerOnSight ();
 			DebugShowVision ();
@@ -250,6 +263,7 @@ public class RangedController : MonoBehaviour {
 			bullet.transform.position = gameObject.transform.position;
 			bullet.GetComponent<Rigidbody>().velocity = playerDirection.normalized * bulletSpeed;
 			shootingCooldown = 1.0f;
+			attackEvent.start ();
 		}
 	}
 
@@ -260,6 +274,7 @@ public class RangedController : MonoBehaviour {
 		dashCooldown = 2.0f;
 		dashDuration = 0.1f;
 		rigidbody.useGravity = false;
+		attackEvent.start ();
 	}
 
 	void AttackMovement () {

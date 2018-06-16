@@ -238,7 +238,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 744992}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -189.64, y: 53.1, z: -0.13}
+  m_LocalPosition: {x: -196.74, y: 53.1, z: -0.13}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 1015149577}
@@ -4770,6 +4770,9 @@ MonoBehaviour:
   anchorPoints: []
   anchorTransitionTimer: []
   dashing: 0
+  attackSound: event:/Inimigos snake attack
+  attackVolume: 0.5
+  soundMaxDistance: 40
 --- !u!1 &93204207
 GameObject:
   m_ObjectHideFlags: 0
@@ -9834,6 +9837,9 @@ MonoBehaviour:
   - 0.25
   - 0.25
   dashing: 0
+  attackSound: event:/Inimigos snake attack
+  attackVolume: 0.5
+  soundMaxDistance: 40
 --- !u!1 &175833531
 GameObject:
   m_ObjectHideFlags: 0
@@ -10746,6 +10752,9 @@ MonoBehaviour:
   anchorPoints: []
   anchorTransitionTimer: []
   dashing: 0
+  attackSound: event:/Inimigos snake attack
+  attackVolume: 0.5
+  soundMaxDistance: 40
 --- !u!1 &188201237
 GameObject:
   m_ObjectHideFlags: 0
@@ -10986,6 +10995,9 @@ MonoBehaviour:
   anchorPoints: []
   anchorTransitionTimer: []
   dashing: 0
+  attackSound: event:/Inimigos snake attack
+  attackVolume: 0.5
+  soundMaxDistance: 40
 --- !u!1 &189304300
 GameObject:
   m_ObjectHideFlags: 0
@@ -12040,6 +12052,9 @@ MonoBehaviour:
   - 1
   - 1
   dashing: 0
+  attackSound: event:/Inimigos snake attack
+  attackVolume: 0.5
+  soundMaxDistance: 40
 --- !u!1 &210548325
 GameObject:
   m_ObjectHideFlags: 0
@@ -18852,6 +18867,9 @@ MonoBehaviour:
   - 1
   - 1
   dashing: 0
+  attackSound: event:/Inimigos snake attack
+  attackVolume: 0.5
+  soundMaxDistance: 40
 --- !u!1 &356896111
 GameObject:
   m_ObjectHideFlags: 0
@@ -24326,6 +24344,9 @@ MonoBehaviour:
   - 2
   - 2
   dashing: 0
+  attackSound: event:/Inimigos snake attack
+  attackVolume: 0.5
+  soundMaxDistance: 40
 --- !u!4 &508655243
 Transform:
   m_ObjectHideFlags: 0
@@ -26337,6 +26358,9 @@ MonoBehaviour:
   anchorPoints: []
   anchorTransitionTimer: []
   dashing: 0
+  attackSound: event:/Inimigos snake attack
+  attackVolume: 0.5
+  soundMaxDistance: 40
 --- !u!1 &549814930
 GameObject:
   m_ObjectHideFlags: 0
@@ -26928,6 +26952,9 @@ MonoBehaviour:
   - 0.5
   - 0.5
   dashing: 0
+  attackSound: event:/Inimigos snake attack
+  attackVolume: 0.5
+  soundMaxDistance: 40
 --- !u!1 &553782793
 GameObject:
   m_ObjectHideFlags: 0
@@ -30852,6 +30879,9 @@ MonoBehaviour:
   - 1
   - 1
   dashing: 0
+  attackSound: event:/Inimigos snake attack
+  attackVolume: 0.5
+  soundMaxDistance: 40
 --- !u!1 &643465225
 GameObject:
   m_ObjectHideFlags: 0
@@ -35356,7 +35386,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &776028116
 Transform:
   m_ObjectHideFlags: 0
@@ -35470,6 +35500,9 @@ MonoBehaviour:
   - 1
   - 1
   dashing: 0
+  attackSound: event:/Inimigos snake attack
+  attackVolume: 0.5
+  soundMaxDistance: 40
 --- !u!1 &776632563
 GameObject:
   m_ObjectHideFlags: 0
@@ -35985,6 +36018,9 @@ MonoBehaviour:
   - 1
   - 1
   dashing: 0
+  attackSound: event:/Inimigos snake attack
+  attackVolume: 0.5
+  soundMaxDistance: 40
 --- !u!1 &784124519
 GameObject:
   m_ObjectHideFlags: 0
@@ -38783,7 +38819,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 827677530}
   m_LocalRotation: {x: -0.38880193, y: 0.4000904, z: 0.19270197, w: 0.807234}
-  m_LocalPosition: {x: -195.87788, y: -48.820946, z: -7.074566}
+  m_LocalPosition: {x: -211.75377, y: -60.801254, z: -13.671722}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -40081,6 +40117,9 @@ MonoBehaviour:
   anchorPoints: []
   anchorTransitionTimer: []
   dashing: 0
+  attackSound: event:/Inimigos snake attack
+  attackVolume: 0.5
+  soundMaxDistance: 40
 --- !u!1 &840679189
 GameObject:
   m_ObjectHideFlags: 0
@@ -41740,6 +41779,9 @@ MonoBehaviour:
   anchorPoints: []
   anchorTransitionTimer: []
   dashing: 0
+  attackSound: event:/Inimigos snake attack
+  attackVolume: 0.5
+  soundMaxDistance: 40
 --- !u!1 &892355674
 GameObject:
   m_ObjectHideFlags: 0
@@ -41987,6 +42029,9 @@ MonoBehaviour:
   - 2
   - 2
   dashing: 0
+  attackSound: event:/Inimigos snake attack
+  attackVolume: 0.5
+  soundMaxDistance: 40
 --- !u!1 &893792984
 GameObject:
   m_ObjectHideFlags: 0
@@ -43015,6 +43060,9 @@ MonoBehaviour:
   - 2
   - 0.25
   dashing: 0
+  attackSound: event:/Inimigos snake attack
+  attackVolume: 0.5
+  soundMaxDistance: 40
 --- !u!4 &940456931
 Transform:
   m_ObjectHideFlags: 0
@@ -44093,6 +44141,9 @@ MonoBehaviour:
   - 1
   - 1
   dashing: 0
+  attackSound: event:/Inimigos snake attack
+  attackVolume: 0.5
+  soundMaxDistance: 40
 --- !u!1 &975949940
 GameObject:
   m_ObjectHideFlags: 0
@@ -45737,6 +45788,9 @@ MonoBehaviour:
   anchorPoints: []
   anchorTransitionTimer: []
   dashing: 0
+  attackSound: event:/Inimigos snake attack
+  attackVolume: 0.5
+  soundMaxDistance: 40
 --- !u!4 &1009312650
 Transform:
   m_ObjectHideFlags: 0
@@ -45995,6 +46049,9 @@ MonoBehaviour:
   - 2
   - 2
   dashing: 0
+  attackSound: event:/Inimigos snake attack
+  attackVolume: 0.5
+  soundMaxDistance: 40
 --- !u!1 &1014240390
 GameObject:
   m_ObjectHideFlags: 0
@@ -48219,6 +48276,9 @@ MonoBehaviour:
   - 2
   - 2
   dashing: 0
+  attackSound: event:/Inimigos snake attack
+  attackVolume: 0.5
+  soundMaxDistance: 40
 --- !u!4 &1052754187
 Transform:
   m_ObjectHideFlags: 0
@@ -53637,6 +53697,9 @@ MonoBehaviour:
   anchorPoints: []
   anchorTransitionTimer: []
   dashing: 0
+  attackSound: event:/Inimigos snake attack
+  attackVolume: 0.5
+  soundMaxDistance: 40
 --- !u!1 &1182498836
 GameObject:
   m_ObjectHideFlags: 0
@@ -60214,6 +60277,9 @@ MonoBehaviour:
   anchorPoints: []
   anchorTransitionTimer: []
   dashing: 0
+  attackSound: event:/Inimigos snake attack
+  attackVolume: 0.5
+  soundMaxDistance: 40
 --- !u!1 &1333906066
 GameObject:
   m_ObjectHideFlags: 0
@@ -64208,6 +64274,9 @@ MonoBehaviour:
   anchorPoints: []
   anchorTransitionTimer: []
   dashing: 0
+  attackSound: event:/Inimigos snake attack
+  attackVolume: 0.5
+  soundMaxDistance: 40
 --- !u!1 &1418516991
 GameObject:
   m_ObjectHideFlags: 0
@@ -70774,6 +70843,9 @@ MonoBehaviour:
   - 0.5
   - 0.5
   dashing: 0
+  attackSound: event:/Inimigos snake attack
+  attackVolume: 0.5
+  soundMaxDistance: 40
 --- !u!1 &1566403254
 GameObject:
   m_ObjectHideFlags: 0
@@ -72629,6 +72701,9 @@ MonoBehaviour:
   - 2
   - 0.25
   dashing: 0
+  attackSound: event:/Inimigos snake attack
+  attackVolume: 0.5
+  soundMaxDistance: 40
 --- !u!1 &1609518825
 GameObject:
   m_ObjectHideFlags: 0
@@ -74455,6 +74530,9 @@ MonoBehaviour:
   - 1
   - 1
   dashing: 0
+  attackSound: event:/Inimigos snake attack
+  attackVolume: 0.5
+  soundMaxDistance: 40
 --- !u!1 &1670300470
 GameObject:
   m_ObjectHideFlags: 0
@@ -85055,6 +85133,9 @@ MonoBehaviour:
   - 2
   - 0.25
   dashing: 0
+  attackSound: event:/Inimigos snake attack
+  attackVolume: 0.5
+  soundMaxDistance: 40
 --- !u!65 &1936873344
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -85358,6 +85439,9 @@ MonoBehaviour:
   - 1
   - 1
   dashing: 0
+  attackSound: event:/Inimigos snake attack
+  attackVolume: 0.5
+  soundMaxDistance: 40
 --- !u!1 &1940762996
 GameObject:
   m_ObjectHideFlags: 0
@@ -89700,6 +89784,9 @@ MonoBehaviour:
   - 0.5
   - 0.5
   dashing: 0
+  attackSound: event:/Inimigos snake attack
+  attackVolume: 0.5
+  soundMaxDistance: 40
 --- !u!1 &2016615804
 GameObject:
   m_ObjectHideFlags: 0
