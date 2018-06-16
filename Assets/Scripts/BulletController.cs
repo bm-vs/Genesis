@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour {
 	public GameObject owner;
+	private string ownerTag;
 	private float soundTimer;
 	private bool disabled;
 	private float range;
 	private Vector3 start;
 
 	void Start() {
+		ownerTag = owner.tag;
 		soundTimer = 2.0f;
 		disabled = false;
 		Physics.IgnoreCollision (gameObject.GetComponent<Collider> (), owner.GetComponent<Collider> ());
@@ -34,12 +36,8 @@ public class BulletController : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other) {
-		if (other != null) {
-			GameObject target = other.gameObject;
-			if (target.tag != owner.tag && target.tag != "Portal") {
-				Disable ();
-			}
-		} else {
+		GameObject target = other.gameObject;
+		if (target.tag != ownerTag && target.tag != "Portal" && target.tag != "Shot") {
 			Disable ();
 		}
 	}

@@ -64,6 +64,7 @@ public class PlayerController : MonoBehaviour {
 		dashSpeed = 80.0f;
 		dashCooldown = 0.5f;
 		dashDuration = 0.1f;
+		velocityY = 0.0f;
 
 		move = new Move (this);
 		jump = new Jump (this);
@@ -143,11 +144,11 @@ public class PlayerController : MonoBehaviour {
 
 	public void updateHealth (float value) {
 		health += value;
-		Debug.Log (health);
 		if (health <= 0.0f) {
 			health = 100.0f;
 			reset.Died ();
 		}
+		Debug.Log (health);
 	}
 
 	public bool IsAirborne() {

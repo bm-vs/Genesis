@@ -8,6 +8,7 @@ public enum EnemyType {melee, ranged, hybrid}
 public class RangedController : MonoBehaviour {
 	private GameObject player;
 	public EnemyType type;
+	public float health;
 
 	// Vision
 	private Vector3 playerDirection;
@@ -27,6 +28,7 @@ public class RangedController : MonoBehaviour {
 	private float transitionTimer;
 	private Vector3 previousPosition;
 	private int positionIndex;
+	private float velocityY;
 
 	// Damage received
 	private bool hit;
@@ -57,63 +59,102 @@ public class RangedController : MonoBehaviour {
 		previousPosition = transform.position;
 		transitionTimer = 0.0f;
 		loseSightTimeout = 0.0f;
+		velocityY = 0.0f;
+
+		if (type == EnemyType.hybrid) {
+			health = 80.0f;
+		} else if (type == EnemyType.melee) {
+			health = 30.0f;
+		} else if (type == EnemyType.ranged) {
+			health = 20.0f;
+		}
+
 	}
 
 	void Update () {
-		CheckPlayerOnSight ();
-		DebugShowVision ();
+		if (health > 0.0f) {
+			CheckPlayerOnSight ();
+			DebugShowVision ();
 
-		shootingCooldown -= Time.deltaTime;
-		if (onSight && type != EnemyType.melee) {
-			Shoot ();
+			shootingCooldown -= Time.deltaTime;
+			if (onSight && type != EnemyType.melee) {
+				Shoot ();
+			}
 		}
 	}
 
 	void FixedUpdate () {
-		Rigidbody rigidbody = gameObject.GetComponent<Rigidbody> ();
-		if (lastSeen != Vector3.zero) {
-			// Rotate towards target
-			Vector3 target = new Vector3 (lastSeen.x, transform.position.y, lastSeen.z);
-			transform.LookAt (target);
-		}
-
-		if (onSight) {
-			dashCooldown -= Time.fixedDeltaTime;
-		} else {
-			dashCooldown = 0.5f;
-		}
-
-		if (dashing) {
-			if (dashDuration <= 0.0f) {
-				rigidbody.velocity = Vector3.zero;
-				rigidbody.useGravity = true;
-				dashing = false;
-			} else {
-				dashDuration -= Time.fixedDeltaTime;
+		if (health > 0.0f) {
+			Rigidbody rigidbody = gameObject.GetComponent<Rigidbody> ();
+			if (lastSeen != Vector3.zero) {
+				// Rotate towards target
+				Vector3 target = new Vector3 (lastSeen.x, transform.position.y, lastSeen.z);
+				transform.LookAt (target);
 			}
-		} else if (!hit) {
+
 			if (onSight) {
-				AttackMovement ();
-			} else if (anchorPoints.Length > 0) {
-				PatrolMovement ();
+				dashCooldown -= Time.fixedDeltaTime;
+			} else {
+				dashCooldown = 0.5f;
 			}
 
-			previousPosition = transform.position;
-		} else if (rigidbody.velocity == Vector3.zero) {
-			RecoverFromAttack ();
+			if (dashing) {
+				if (dashDuration <= 0.0f) {
+					rigidbody.velocity = Vector3.zero;
+					rigidbody.useGravity = true;
+					dashing = false;
+				} else {
+					dashDuration -= Time.fixedDeltaTime;
+				}
+			} else if (!hit) {
+				if (onSight) {
+					AttackMovement ();
+				} else if (anchorPoints.Length > 0) {
+					PatrolMovement ();
+				}
+
+				previousPosition = transform.position;
+			} else if (rigidbody.velocity == Vector3.zero) {
+				RecoverFromAttack ();
+			}
+
+			float velF = gameObject.GetComponent<Rigidbody> ().velocity.y;
+			if (velF - velocityY > 50.0f && velocityY < 0.0f && velF >= -1f) {
+				updateHealth (-80.0f);
+			}
+			velocityY = velF;
 		}
 	}
 
 	void OnCollisionEnter (Collision collision) {
-		if (collision.gameObject.tag != "Terrain") {
-			hit = true;
-
-			// Rotate to side of colision 
-			if (!onSight && player != null) {
-				Vector3 target = new Vector3 (player.transform.position.x, transform.position.y, player.transform.position.z);
-				transform.LookAt (target);
+		if (health > 0.0f) {
+			PlayerController player = collision.collider.gameObject.GetComponent<PlayerController> ();
+			if (player != null && player.dashing) {
+				updateHealth (-30.0f);
+				hit = true;
+				if (!onSight && player != null) {
+					Vector3 target = new Vector3 (player.transform.position.x, transform.position.y, player.transform.position.z);
+					transform.LookAt (target);
+				}
 			}
 		}
+	}
+
+	void OnTriggerEnter (Collider other) {
+		if (health > 0.0f) {
+			if (other.gameObject.tag == "Shot" && other.gameObject.GetComponent<BulletController> ().owner.tag == "Player") {
+				updateHealth (-20.0f);
+				hit = true;
+				if (!onSight && player != null) {
+					Vector3 target = new Vector3 (player.transform.position.x, transform.position.y, player.transform.position.z);
+					transform.LookAt (target);
+				}
+			}
+		}
+	}
+
+	public void updateHealth (float value) {
+		health += value;
 	}
 
 	bool IsGoingToFall (Vector3 movementDirection) {
