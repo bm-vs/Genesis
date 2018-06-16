@@ -5,6 +5,7 @@ using UnityEngine;
 public class BridgeController : MonoBehaviour {
 	public GameObject firstPlank;
 	public GameObject nextPlank;
+	public GameObject soundSource;
 	public bool falling;
 	private float gravityCounter;
 	private float nextPlankTimer;
@@ -38,5 +39,6 @@ public class BridgeController : MonoBehaviour {
 		gravityCounter = 0.0f;
 		falling = true;
 		gameObject.GetComponent<Rigidbody> ().constraints &= ~RigidbodyConstraints.FreezePositionY;
+		soundSource.GetComponent<BridgeFallController> ().start = true;
 	}
 }

@@ -8,13 +8,25 @@ public class GateController : MonoBehaviour {
 	private float height;
 	private float startingPosition;
 
+	[FMODUnity.EventRef]
+	public string openSound;
+	public float openVolume;
+	private FMOD.Studio.EventInstance openEvent;
+
+	public float soundMaxDistance;
+
 	void Start() {
 		open = false;
 		height = gameObject.GetComponent<MeshRenderer> ().bounds.size.y;
 		startingPosition = transform.position.y;
+		openEvent = FMODUnity.RuntimeManager.CreateInstance (openSound);
 	}
 
 	void Update() {
+		FMODUnity.RuntimeManager.AttachInstanceToGameObject (openEvent, GetComponent<Transform> (), GetComponent<Rigidbody> ());
+		openEvent.setVolume (openVolume);
+		openEvent.setProperty (FMOD.Studio.EVENT_PROPERTY.MAXIMUM_DISTANCE, soundMaxDistance);
+
 		bool temp = true;
 		if (!open) {
 			foreach (GameObject activator in activators) {
@@ -29,6 +41,7 @@ public class GateController : MonoBehaviour {
 
 		if (!open && temp) {
 			open = true;
+			openEvent.start ();
 			foreach (GameObject activator in activators) {
 				if (activator.GetComponent<ActivatorController> () != null) {
 					activator.GetComponent<ActivatorController> ().SetDone ();

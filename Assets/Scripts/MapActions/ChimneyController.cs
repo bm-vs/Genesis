@@ -11,15 +11,47 @@ public class ChimneyController : MonoBehaviour {
 	private bool flameOn;
 	private Vector3 flameOrigin;
 
+	[FMODUnity.EventRef]
+	public string upSound;
+	public float upVolume;
+	private FMOD.Studio.EventInstance upEvent;
+
+	[FMODUnity.EventRef]
+	public string downSound;
+	public float downVolume;
+	private FMOD.Studio.EventInstance downEvent;
+
+	[FMODUnity.EventRef]
+	public string exhaustSound;
+	public float exhaustVolume;
+	private FMOD.Studio.EventInstance exhaustEvent;
+
+	public float soundMaxDistance;
+
 	void Start() {
 		activated = false;
 		operational = false;
 		flameOn = false;
 		flameTimer = 1f;
 		flameOrigin = flame.transform.position;
+
+		upEvent = FMODUnity.RuntimeManager.CreateInstance (upSound);
+		downEvent = FMODUnity.RuntimeManager.CreateInstance (downSound);
+		exhaustEvent = FMODUnity.RuntimeManager.CreateInstance (exhaustSound);
 	}
 
 	void Update() {
+		FMODUnity.RuntimeManager.AttachInstanceToGameObject (upEvent, GetComponent<Transform> (), GetComponent<Rigidbody> ());
+		upEvent.setVolume (upVolume);
+		upEvent.setProperty (FMOD.Studio.EVENT_PROPERTY.MAXIMUM_DISTANCE, soundMaxDistance);
+		FMODUnity.RuntimeManager.AttachInstanceToGameObject (downEvent, GetComponent<Transform> (), GetComponent<Rigidbody> ());
+		downEvent.setVolume (downVolume);
+		downEvent.setProperty (FMOD.Studio.EVENT_PROPERTY.MAXIMUM_DISTANCE, soundMaxDistance);
+		FMODUnity.RuntimeManager.AttachInstanceToGameObject (exhaustEvent, GetComponent<Transform> (), GetComponent<Rigidbody> ());
+		exhaustEvent.setVolume (exhaustVolume);
+		exhaustEvent.setProperty (FMOD.Studio.EVENT_PROPERTY.MAXIMUM_DISTANCE, soundMaxDistance);
+
+
 		// Control chimney height
 		if (activated) {
 			if (gameObject.transform.position.y < 81.8f) {
@@ -41,6 +73,7 @@ public class ChimneyController : MonoBehaviour {
 			if (operational) {
 				flameOn = true;
 				flameTimer = 1f;
+				exhaustEvent.start ();
 			}
 		}
 
@@ -51,6 +84,7 @@ public class ChimneyController : MonoBehaviour {
 
 		if (flameTimer <= 0 || !operational) {
 			flame.transform.position = flameOrigin;
+			exhaustEvent.stop (FMOD.Studio.STOP_MODE.IMMEDIATE);
 		} else {
 			flameTimer -= Time.deltaTime;
 		}
@@ -58,5 +92,10 @@ public class ChimneyController : MonoBehaviour {
 
 	public void activate() {
 		activated = !activated;
+		if (activated) {
+			upEvent.start ();
+		} else {
+			downEvent.start ();
+		}
 	}
 }

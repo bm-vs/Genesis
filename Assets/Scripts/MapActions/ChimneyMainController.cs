@@ -11,13 +11,25 @@ public class ChimneyMainController : MonoBehaviour {
 	private bool operational;
 	public GameObject[] chimneys;
 
+	[FMODUnity.EventRef]
+	public string exhaustSound;
+	public float exhaustVolume;
+	private FMOD.Studio.EventInstance exhaustEvent;
+
+	public float soundMaxDistance;
+
 	void Start() {
 		flameOn = false;
 		flameTimer = 1f;
 		flameOrigin = flame.transform.position;
+		exhaustEvent = FMODUnity.RuntimeManager.CreateInstance (exhaustSound);
 	}
 
 	void Update() {
+		FMODUnity.RuntimeManager.AttachInstanceToGameObject (exhaustEvent, GetComponent<Transform> (), GetComponent<Rigidbody> ());
+		exhaustEvent.setVolume (exhaustVolume);
+		exhaustEvent.setProperty (FMOD.Studio.EVENT_PROPERTY.MAXIMUM_DISTANCE, soundMaxDistance);
+
 		operational = true;
 		foreach (GameObject chimney in chimneys) {
 			operational &= chimney.GetComponent<ChimneyController> ().operational;
@@ -31,6 +43,7 @@ public class ChimneyMainController : MonoBehaviour {
 			if (operational) {
 				flameOn = true;
 				flameTimer = 1f;
+				exhaustEvent.start ();
 			}
 		}
 
@@ -41,6 +54,7 @@ public class ChimneyMainController : MonoBehaviour {
 
 		if (flameTimer <= 0 || !operational) {
 			flame.transform.position = flameOrigin;
+			exhaustEvent.stop (FMOD.Studio.STOP_MODE.IMMEDIATE);
 		} else {
 			flameTimer -= Time.deltaTime;
 		}

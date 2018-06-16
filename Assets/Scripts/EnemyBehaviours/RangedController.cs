@@ -6,6 +6,7 @@ using UnityEngine;
 public enum EnemyType {melee, ranged, hybrid}
 
 public class RangedController : MonoBehaviour {
+	// Vital
 	private GameObject player;
 	public EnemyType type;
 	public float health;

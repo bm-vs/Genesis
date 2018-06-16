@@ -238,7 +238,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 744992}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -300, y: 21, z: 0}
+  m_LocalPosition: {x: -189.64, y: 53.1, z: -0.13}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 1015149577}
@@ -1415,6 +1415,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstPlank: {fileID: 494088471}
   nextPlank: {fileID: 336572566}
+  soundSource: {fileID: 1522844007}
   falling: 0
 --- !u!54 &26039524
 Rigidbody:
@@ -6446,6 +6447,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chimney1: {fileID: 532145871}
   chimney2: {fileID: 1779770450}
+  activationSound: event:/CAIXAS ATIVAR
+  volume: 0.5
 --- !u!1 &118177332
 GameObject:
   m_ObjectHideFlags: 0
@@ -7735,7 +7738,7 @@ Transform:
   m_LocalScale: {x: 0.75, y: 2, z: 0.75}
   m_Children: []
   m_Father: {fileID: 678844479}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &142975331
 MeshRenderer:
@@ -8872,6 +8875,13 @@ MonoBehaviour:
   operational: 0
   cooldownTimer: 2
   flame: {fileID: 43871873}
+  upSound: event:/tubos Cidade UP
+  upVolume: 0.75
+  downSound: event:/tubos down
+  downVolume: 0.75
+  exhaustSound: event:/Vapor
+  exhaustVolume: 0.75
+  soundMaxDistance: 40
 --- !u!4 &166766968
 Transform:
   m_ObjectHideFlags: 0
@@ -9579,6 +9589,7 @@ GameObject:
   - component: {fileID: 174716258}
   - component: {fileID: 174716261}
   - component: {fileID: 174716259}
+  - component: {fileID: 174716262}
   m_Layer: 0
   m_Name: Box0
   m_TagString: Untagged
@@ -9669,6 +9680,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 2
+--- !u!114 &174716262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 174716256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 621075b4b6caec5469303aa1ef8bcd1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pushSound: event:/ARRASTAR
+  volume: 0.15
 --- !u!1 &174837251
 GameObject:
   m_ObjectHideFlags: 0
@@ -11202,6 +11226,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chimney1: {fileID: 164211935}
   chimney2: {fileID: 372312462}
+  activationSound: event:/CAIXAS ATIVAR
+  volume: 0.5
 --- !u!1 &200470658
 GameObject:
   m_ObjectHideFlags: 0
@@ -17739,6 +17765,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstPlank: {fileID: 494088471}
   nextPlank: {fileID: 2121947323}
+  soundSource: {fileID: 1522844007}
   falling: 0
 --- !u!54 &336572568
 Rigidbody:
@@ -18215,6 +18242,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activated: 0
   done: 0
+  activationSound: event:/ATIVATION
+  activationSoundVolume: 1
+  activationCompleteSound: event:/ATIVATION COMPLETE
+  activationCompleteSoundVolume: 1
+  soundMaxDistance: 40
 --- !u!23 &348554825
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20127,6 +20159,13 @@ MonoBehaviour:
   operational: 0
   cooldownTimer: 1
   flame: {fileID: 241493143}
+  upSound: event:/tubos Cidade UP
+  upVolume: 0.75
+  downSound: event:/tubos down
+  downVolume: 0.75
+  exhaustSound: event:/Vapor
+  exhaustVolume: 0.75
+  soundMaxDistance: 40
 --- !u!1 &377199959
 GameObject:
   m_ObjectHideFlags: 0
@@ -20567,6 +20606,9 @@ MonoBehaviour:
   activators:
   - {fileID: 1489146037}
   - {fileID: 348554822}
+  openSound: event:/DOOR OPEN
+  openVolume: 1
+  soundMaxDistance: 40
 --- !u!23 &387083104
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20635,6 +20677,7 @@ GameObject:
   - component: {fileID: 391165078}
   - component: {fileID: 391165077}
   - component: {fileID: 391165079}
+  - component: {fileID: 391165081}
   m_Layer: 0
   m_Name: Box2
   m_TagString: Untagged
@@ -20725,6 +20768,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 391165075}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &391165081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 391165075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 621075b4b6caec5469303aa1ef8bcd1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pushSound: event:/ARRASTAR
+  volume: 0.15
 --- !u!1 &392617889
 GameObject:
   m_ObjectHideFlags: 0
@@ -21847,7 +21903,7 @@ Transform:
   m_LocalScale: {x: 0.75, y: 2, z: 0.75}
   m_Children: []
   m_Father: {fileID: 678844479}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &424524540
 MeshRenderer:
@@ -24060,6 +24116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstPlank: {fileID: 494088471}
   nextPlank: {fileID: 1613304339}
+  soundSource: {fileID: 1522844007}
   falling: 0
 --- !u!54 &494088473
 Rigidbody:
@@ -25154,6 +25211,9 @@ MonoBehaviour:
   - {fileID: 1779770450}
   - {fileID: 164211935}
   - {fileID: 372312462}
+  exhaustSound: event:/Vapor
+  exhaustVolume: 1
+  soundMaxDistance: 40
 --- !u!1 &523357999
 GameObject:
   m_ObjectHideFlags: 0
@@ -25544,6 +25604,13 @@ MonoBehaviour:
   operational: 0
   cooldownTimer: 4
   flame: {fileID: 1115894405}
+  upSound: event:/tubos Cidade UP
+  upVolume: 0.75
+  downSound: event:/tubos down
+  downVolume: 0.75
+  exhaustSound: event:/Vapor
+  exhaustVolume: 0.75
+  soundMaxDistance: 40
 --- !u!1 &532625472
 GameObject:
   m_ObjectHideFlags: 0
@@ -28977,6 +29044,9 @@ MonoBehaviour:
   - {fileID: 1779770450}
   - {fileID: 164211935}
   - {fileID: 372312462}
+  exhaustSound: event:/Vapor
+  exhaustVolume: 1
+  soundMaxDistance: 40
 --- !u!1 &592606085
 GameObject:
   m_ObjectHideFlags: 0
@@ -30037,7 +30107,7 @@ Transform:
   m_LocalScale: {x: 0.75, y: 2, z: 0.75}
   m_Children: []
   m_Father: {fileID: 678844479}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &630162386
 MeshRenderer:
@@ -31911,6 +31981,7 @@ Transform:
   m_LocalPosition: {x: 117, y: 51.625, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1522844008}
   - {fileID: 142975330}
   - {fileID: 424524539}
   - {fileID: 630162385}
@@ -31975,6 +32046,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activated: 0
+  health: 0
+  electricSound: event:/Energy Ball (gerador)
+  electricVolume: 0.5
+  explosionSound: event:/Explosions
+  explosionVolume: 1
+  soundMaxDistance: 40
 --- !u!23 &679798760
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -34278,7 +34355,7 @@ Transform:
   m_LocalScale: {x: 2, y: 0.75, z: 4}
   m_Children: []
   m_Father: {fileID: 678844479}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &757266673
 GameObject:
@@ -35279,7 +35356,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &776028116
 Transform:
   m_ObjectHideFlags: 0
@@ -36009,7 +36086,7 @@ Transform:
   m_LocalScale: {x: 2, y: 0.75, z: 4}
   m_Children: []
   m_Father: {fileID: 678844479}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &785036255
 GameObject:
@@ -38705,8 +38782,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 827677530}
-  m_LocalRotation: {x: -0.40316838, y: 0.40995738, z: 0.20894398, w: 0.7910327}
-  m_LocalPosition: {x: -306.3401, y: -35.81868, z: -18.1095}
+  m_LocalRotation: {x: -0.38880193, y: 0.4000904, z: 0.19270197, w: 0.807234}
+  m_LocalPosition: {x: -195.87788, y: -48.820946, z: -7.074566}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -39754,6 +39831,9 @@ MonoBehaviour:
   activators:
   - {fileID: 1800892218}
   - {fileID: 1356267556}
+  openSound: 
+  openVolume: 0
+  soundMaxDistance: 0
 --- !u!1 &840200232
 GameObject:
   m_ObjectHideFlags: 0
@@ -42079,6 +42159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstPlank: {fileID: 494088471}
   nextPlank: {fileID: 1585788982}
+  soundSource: {fileID: 1522844007}
   falling: 0
 --- !u!54 &902053930
 Rigidbody:
@@ -42649,6 +42730,7 @@ GameObject:
   - component: {fileID: 928692594}
   - component: {fileID: 928692597}
   - component: {fileID: 928692595}
+  - component: {fileID: 928692598}
   m_Layer: 0
   m_Name: Box3
   m_TagString: Untagged
@@ -42739,6 +42821,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 2
+--- !u!114 &928692598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 928692592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 621075b4b6caec5469303aa1ef8bcd1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pushSound: event:/ARRASTAR
+  volume: 0.15
 --- !u!1 &935982196
 GameObject:
   m_ObjectHideFlags: 0
@@ -43501,7 +43596,7 @@ Transform:
   m_LocalScale: {x: 2, y: 0.75, z: 4}
   m_Children: []
   m_Father: {fileID: 678844479}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &967663140
 GameObject:
@@ -43601,6 +43696,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chimney1: {fileID: 532145871}
   chimney2: {fileID: 372312462}
+  activationSound: event:/CAIXAS ATIVAR
+  volume: 0.5
 --- !u!1 &973152840
 GameObject:
   m_ObjectHideFlags: 0
@@ -46359,6 +46456,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activated: 0
+  health: 0
+  electricSound: event:/Energy Ball (gerador)
+  electricVolume: 0.25
+  explosionSound: event:/Explosions
+  explosionVolume: 1
+  soundMaxDistance: 40
 --- !u!1 &1016620074
 GameObject:
   m_ObjectHideFlags: 0
@@ -46604,6 +46707,7 @@ GameObject:
   - component: {fileID: 1018943794}
   - component: {fileID: 1018943797}
   - component: {fileID: 1018943795}
+  - component: {fileID: 1018943798}
   m_Layer: 0
   m_Name: Box1
   m_TagString: Untagged
@@ -46694,6 +46798,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 2
+--- !u!114 &1018943798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1018943792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 621075b4b6caec5469303aa1ef8bcd1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pushSound: event:/ARRASTAR
+  volume: 0.15
 --- !u!1 &1020070874
 GameObject:
   m_ObjectHideFlags: 0
@@ -48128,6 +48245,7 @@ GameObject:
   - component: {fileID: 1053346426}
   - component: {fileID: 1053346429}
   - component: {fileID: 1053346427}
+  - component: {fileID: 1053346430}
   m_Layer: 0
   m_Name: Box0
   m_TagString: Untagged
@@ -48218,6 +48336,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 2
+--- !u!114 &1053346430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1053346424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 621075b4b6caec5469303aa1ef8bcd1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pushSound: event:/ARRASTAR
+  volume: 0.15
 --- !u!1 &1053982372
 GameObject:
   m_ObjectHideFlags: 0
@@ -50588,6 +50719,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstPlank: {fileID: 494088471}
   nextPlank: {fileID: 1670300470}
+  soundSource: {fileID: 1522844007}
   falling: 0
 --- !u!54 &1119984718
 Rigidbody:
@@ -51726,7 +51858,7 @@ Transform:
   m_LocalScale: {x: 2, y: 0.75, z: 4}
   m_Children: []
   m_Father: {fileID: 678844479}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1141009179
 GameObject:
@@ -52656,7 +52788,7 @@ Transform:
   m_LocalScale: {x: 2, y: 0.75, z: 4}
   m_Children: []
   m_Father: {fileID: 678844479}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1165573702
 GameObject:
@@ -52845,6 +52977,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chimney1: {fileID: 1779770450}
   chimney2: {fileID: 164211935}
+  activationSound: event:/CAIXAS ATIVAR
+  volume: 0.5
 --- !u!1 &1166286413
 GameObject:
   m_ObjectHideFlags: 0
@@ -55209,7 +55343,7 @@ Transform:
   m_LocalScale: {x: 2, y: 0.75, z: 4}
   m_Children: []
   m_Father: {fileID: 678844479}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1221243620
 GameObject:
@@ -55246,6 +55380,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstPlank: {fileID: 494088471}
   nextPlank: {fileID: 0}
+  soundSource: {fileID: 1522844007}
   falling: 0
 --- !u!54 &1221243622
 Rigidbody:
@@ -55986,7 +56121,7 @@ Transform:
   m_LocalScale: {x: 2, y: 0.75, z: 4}
   m_Children: []
   m_Father: {fileID: 678844479}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1232533728
 GameObject:
@@ -60327,6 +60462,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstPlank: {fileID: 494088471}
   nextPlank: {fileID: 26039522}
+  soundSource: {fileID: 1522844007}
   falling: 0
 --- !u!54 &1340113584
 Rigidbody:
@@ -60858,6 +60994,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activated: 0
   done: 0
+  activationSound: 
+  activationSoundVolume: 0
+  activationCompleteSound: 
+  activationCompleteSoundVolume: 0
+  soundMaxDistance: 0
 --- !u!23 &1356267558
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -67000,6 +67141,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activated: 0
   done: 0
+  activationSound: event:/ATIVATION
+  activationSoundVolume: 1
+  activationCompleteSound: event:/ATIVATION COMPLETE
+  activationCompleteSoundVolume: 1
+  soundMaxDistance: 40
 --- !u!23 &1489146040
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -67082,7 +67228,7 @@ Transform:
   m_LocalScale: {x: 2, y: 0.75, z: 4}
   m_Children: []
   m_Father: {fileID: 678844479}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1495217945
 GameObject:
@@ -68488,7 +68634,7 @@ Transform:
   m_LocalScale: {x: 2, y: 0.75, z: 4}
   m_Children: []
   m_Father: {fileID: 678844479}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1521834866
 GameObject:
@@ -68900,6 +69046,50 @@ Transform:
   m_Father: {fileID: 1663797773}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1522844007
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1522844008}
+  - component: {fileID: 1522844009}
+  m_Layer: 0
+  m_Name: SoundSource
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1522844008
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1522844007}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 14.92, y: -14.18, z: -3.63}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 678844479}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1522844009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1522844007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e7a54ce20a544b4ca05b20ab138415e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  start: 0
+  fallingSound: event:/Final fall
+  fallingVolume: 1
+  soundMaxDistance: 40
 --- !u!4 &1523801595
 Transform:
   m_ObjectHideFlags: 0
@@ -71264,6 +71454,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstPlank: {fileID: 494088471}
   nextPlank: {fileID: 1836961728}
+  soundSource: {fileID: 1522844007}
   falling: 0
 --- !u!54 &1585788984
 Rigidbody:
@@ -72596,6 +72787,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstPlank: {fileID: 494088471}
   nextPlank: {fileID: 1119984716}
+  soundSource: {fileID: 1522844007}
   falling: 0
 --- !u!54 &1613304341
 Rigidbody:
@@ -73152,6 +73344,7 @@ GameObject:
   - component: {fileID: 1635878007}
   - component: {fileID: 1635878010}
   - component: {fileID: 1635878008}
+  - component: {fileID: 1635878011}
   m_Layer: 0
   m_Name: Box1
   m_TagString: Untagged
@@ -73242,6 +73435,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 2
+--- !u!114 &1635878011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1635878005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 621075b4b6caec5469303aa1ef8bcd1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pushSound: event:/ARRASTAR
+  volume: 0.15
 --- !u!1 &1639697429
 GameObject:
   m_ObjectHideFlags: 0
@@ -73958,7 +74164,7 @@ Transform:
   m_LocalScale: {x: 2, y: 0.75, z: 4}
   m_Children: []
   m_Father: {fileID: 678844479}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1665908319
 GameObject:
@@ -74284,6 +74490,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstPlank: {fileID: 494088471}
   nextPlank: {fileID: 1735507417}
+  soundSource: {fileID: 1522844007}
   falling: 0
 --- !u!54 &1670300472
 Rigidbody:
@@ -75479,7 +75686,7 @@ Transform:
   m_LocalScale: {x: 0.75, y: 2, z: 0.75}
   m_Children: []
   m_Father: {fileID: 678844479}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1701491780
 MeshRenderer:
@@ -76403,6 +76610,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstPlank: {fileID: 494088471}
   nextPlank: {fileID: 1340113582}
+  soundSource: {fileID: 1522844007}
   falling: 0
 --- !u!54 &1735507419
 Rigidbody:
@@ -77080,6 +77288,7 @@ GameObject:
   - component: {fileID: 1750896651}
   - component: {fileID: 1750896654}
   - component: {fileID: 1750896652}
+  - component: {fileID: 1750896655}
   m_Layer: 0
   m_Name: Box2
   m_TagString: Untagged
@@ -77170,6 +77379,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 2
+--- !u!114 &1750896655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1750896649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 621075b4b6caec5469303aa1ef8bcd1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pushSound: event:/ARRASTAR
+  volume: 0.15
 --- !u!1 &1753350360
 GameObject:
   m_ObjectHideFlags: 0
@@ -78115,6 +78337,13 @@ MonoBehaviour:
   operational: 0
   cooldownTimer: 3
   flame: {fileID: 1070060707}
+  upSound: event:/tubos Cidade UP
+  upVolume: 0.75
+  downSound: event:/tubos down
+  downVolume: 0.75
+  exhaustSound: event:/Vapor
+  exhaustVolume: 0.75
+  soundMaxDistance: 40
 --- !u!1 &1779923343
 GameObject:
   m_ObjectHideFlags: 0
@@ -78968,6 +79197,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activated: 0
   done: 0
+  activationSound: 
+  activationSoundVolume: 0
+  activationCompleteSound: 
+  activationCompleteSoundVolume: 0
+  soundMaxDistance: 0
 --- !u!23 &1800892220
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -80740,7 +80974,7 @@ Transform:
   m_LocalScale: {x: 2, y: 0.75, z: 4}
   m_Children: []
   m_Father: {fileID: 678844479}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1836961730
 MonoBehaviour:
@@ -80756,6 +80990,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstPlank: {fileID: 494088471}
   nextPlank: {fileID: 1221243620}
+  soundSource: {fileID: 1522844007}
   falling: 0
 --- !u!54 &1836961731
 Rigidbody:
@@ -83647,7 +83882,7 @@ Transform:
   m_LocalScale: {x: 2, y: 0.75, z: 4}
   m_Children: []
   m_Father: {fileID: 678844479}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1912661254
 GameObject:
@@ -86492,7 +86727,7 @@ Transform:
   m_LocalScale: {x: 2, y: 0.75, z: 4}
   m_Children: []
   m_Father: {fileID: 678844479}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1967182118
 GameObject:
@@ -91891,6 +92126,9 @@ MonoBehaviour:
   activators:
   - {fileID: 679798757}
   - {fileID: 1016617163}
+  openSound: event:/DOOR OPEN
+  openVolume: 1
+  soundMaxDistance: 40
 --- !u!23 &2087509461
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -93475,6 +93713,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstPlank: {fileID: 494088471}
   nextPlank: {fileID: 902053928}
+  soundSource: {fileID: 1522844007}
   falling: 0
 --- !u!54 &2121947325
 Rigidbody:
