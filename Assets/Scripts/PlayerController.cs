@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
-	// Sounds
+	// Sounds and animations
 	public PlayerSoundsController sounds;
+	public PlayerAnimationsController animations;
 
 	// Health
 	private float health;
@@ -28,6 +29,7 @@ public class PlayerController : MonoBehaviour {
 	public bool isHuman;
 	public bool onLedge;
 	public bool dead;
+	public bool running;
 
 	// Attributes
 	public float y;
@@ -50,6 +52,7 @@ public class PlayerController : MonoBehaviour {
 		gameObject.GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.FreezeRotation; // disable rotation through physics
 
 		sounds = gameObject.GetComponent<PlayerSoundsController> ();
+		animations = gameObject.GetComponent<PlayerAnimationsController> ();
 		health = 100.0f;
 
 		airborne = false;
@@ -59,6 +62,7 @@ public class PlayerController : MonoBehaviour {
 		isHuman = true;
 		onLedge = false;
 		dead = false;
+		running = false;
 
 		y = gameObject.GetComponent<Renderer> ().bounds.size.y;
 		z = gameObject.GetComponent<Renderer> ().bounds.size.z;
@@ -105,7 +109,7 @@ public class PlayerController : MonoBehaviour {
 		if (!dead) {
 			airborne = IsAirborne ();
 			if (!dashing) {
-				move.Action (Time.deltaTime);
+				move.Action ();
 				jump.Action ();
 			}
 			if (!onLedge) {

@@ -142,6 +142,7 @@
         <relationship name="effects">
             <destination>{6cf797a1-46f7-47c7-acc7-14621e357737}</destination>
             <destination>{88850660-f1c0-4e5e-a762-c61d4c41630a}</destination>
+            <destination>{d2914e91-89c4-40d1-93cf-9fd4725d1e2d}</destination>
         </relationship>
     </object>
     <object class="MixerBusPanner" id="{cf4866d9-dbf1-4b2f-b5ef-a06ad6e1d743}"/>
@@ -174,4 +175,5 @@
             <value>30</value>
         </property>
     </object>
+    <object class="LowpassSimpleEffect" id="{d2914e91-89c4-40d1-93cf-9fd4725d1e2d}"/>
 </objects>

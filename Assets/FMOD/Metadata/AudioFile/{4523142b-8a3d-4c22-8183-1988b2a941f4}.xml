@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{4523142b-8a3d-4c22-8183-1988b2a941f4}">
+        <property name="assetPath">
+            <value>African Kit_bip.wav</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>23.777233560090703</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{a42b4905-144e-4668-82a8-7c2ccc352e90}</destination>
+        </relationship>
+    </object>
+</objects>

@@ -34,13 +34,19 @@ public class Jump {
 		if (!player.airborne || player.onLedge) {
 			if (player.jumping && !player.onLedge) {
 				player.sounds.PlaySound (PlayerSounds.JUMP_IMPACT);
+				player.animations.TriggerTransition (player.animations.JUMP_LANDED);
 			}
-
 			player.jumping = false;
 		}
 
 		if (startJump) {
 			player.sounds.PlaySound (PlayerSounds.JUMP_START);
+			if (player.running) {
+				player.animations.TriggerTransition (player.animations.JUMP_RUN);
+			} else {
+				player.animations.TriggerTransition (player.animations.JUMP);
+			}
+
 			rigidbody.constraints &= ~RigidbodyConstraints.FreezePositionY;
 			rigidbody.AddForce (new Vector3 (0, player.jumpForce, 0), ForceMode.Impulse);
 			startJump = false;

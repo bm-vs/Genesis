@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{e6e7debf-ee78-47b9-9720-050470e6c3f9}">
+        <property name="assetPath">
+            <value>Drone Ocean.wav</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>51.276326530612245</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{a42b4905-144e-4668-82a8-7c2ccc352e90}</destination>
+        </relationship>
+    </object>
+</objects>
