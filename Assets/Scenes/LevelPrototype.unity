@@ -285,13 +285,13 @@ MonoBehaviour:
   - 1
   - 0.15
   - 1
+  - 0.25
+  - 0.25
+  - 0.25
   - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
+  - 0.25
+  - 0.2
+  - 0.2
   soundMaxDistance: 40
 --- !u!114 &744998
 MonoBehaviour:
@@ -38857,8 +38857,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 827677530}
-  m_LocalRotation: {x: -0.2322564, y: 0.25854203, z: 0.06419023, w: 0.9354639}
-  m_LocalPosition: {x: -300.46225, y: -9.475128, z: -10.195978}
+  m_LocalRotation: {x: -0.3829289, y: 0.36271822, z: 0.16672672, w: 0.83306855}
+  m_LocalPosition: {x: -325.04626, y: -49.37394, z: -11.848957}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

@@ -24,9 +24,15 @@ public class Move {
 		Rigidbody rigidbody = player.gameObject.GetComponent<Rigidbody> ();
 		if (player.onLedge) {
 			rigidbody.velocity = Vector3.Project (new Vector3 (move.x, rigidbody.velocity.y, move.z), Vector3.Cross (ledgeNormal, Vector3.up));
+			if (!player.sounds.CheckIfPlaying(PlayerSounds.CLIMB) && rigidbody.velocity.magnitude > 0.5f) {
+				player.sounds.PlaySound (PlayerSounds.CLIMB);
+			}
 		} else {
 			rigidbody.velocity = new Vector3 (move.x, rigidbody.velocity.y, move.z);
 			player.gameObject.transform.LookAt (player.gameObject.transform.position + new Vector3(move.x, 0.0f, move.z));
+			if (!player.sounds.CheckIfPlaying(PlayerSounds.STEPS) && new Vector3(rigidbody.velocity.x, 0.0f, rigidbody.velocity.z).magnitude > 0.5f && !player.airborne) {
+				player.sounds.PlaySound (PlayerSounds.STEPS);
+			}
 		}
 	}
 

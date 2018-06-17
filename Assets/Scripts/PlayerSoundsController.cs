@@ -47,4 +47,10 @@ public class PlayerSoundsController : MonoBehaviour {
 	public void PlaySound (PlayerSounds sound) {
 		events [(int)sound].start ();
 	}
+
+	public bool CheckIfPlaying (PlayerSounds sound) {
+		FMOD.Studio.PLAYBACK_STATE state;
+		events [(int)sound].getPlaybackState (out state);
+		return state == FMOD.Studio.PLAYBACK_STATE.PLAYING;
+	}
 }
