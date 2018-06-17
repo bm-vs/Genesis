@@ -362,6 +362,7 @@ MonoBehaviour:
   dashSpeed: 0
   dashCooldown: 0
   dashDuration: 0
+  moveDirection: {x: 0, y: 0, z: 0}
 --- !u!114 &744999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -376,7 +377,6 @@ MonoBehaviour:
   JUMP: Jump
   JUMP_RUN: JumpRun
   JUMP_LANDED: JumpLanded
-  RUN: Run
   RUN_STOP: RunStop
 --- !u!54 &745000
 Rigidbody:
@@ -90101,7 +90101,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1985156629
 Transform:
   m_ObjectHideFlags: 0

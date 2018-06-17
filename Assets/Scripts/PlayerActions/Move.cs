@@ -7,39 +7,29 @@ public class Move {
 	private Vector3 direction;
 	private Vector3 ledgePosition;
 	private Vector3 ledgeNormal;
-	private Vector3 move;
 
 	public Move (PlayerController player) {
 		this.player = player;
 	}
 
 	public void Input() {
-		bool stop = player.running;
-		bool go = player.running;
-
 		direction = new Vector3 (UnityEngine.Input.GetAxis ("Horizontal"), 0f, UnityEngine.Input.GetAxis ("Vertical"));
 		Transform cameraTransform = Camera.main.transform;
 		Vector3 cameraRight = (new Vector3 (cameraTransform.right.x, 0f, cameraTransform.right.z)).normalized;
 		Vector3 cameraForward = (new Vector3 (cameraTransform.forward.x, 0f, cameraTransform.forward.z)).normalized;
-		move = (cameraRight * direction.x + cameraForward * direction.z) * Time.deltaTime * player.moveSpeed;
-
-		player.running = move.magnitude > 0.5f;
-		stop = stop && !player.running;
-		go = !go && player.running;
-			
-		controlAnimation (go, stop);
+		player.moveDirection = (cameraRight * direction.x + cameraForward * direction.z) * Time.deltaTime * player.moveSpeed;
 	}
 
 	public void Action() {
 		Rigidbody rigidbody = player.gameObject.GetComponent<Rigidbody> ();
 		if (player.onLedge) {
-			rigidbody.velocity = Vector3.Project (new Vector3 (move.x, rigidbody.velocity.y, move.z), Vector3.Cross (ledgeNormal, Vector3.up));
+			rigidbody.velocity = Vector3.Project (new Vector3 (player.moveDirection.x, rigidbody.velocity.y, player.moveDirection.z), Vector3.Cross (ledgeNormal, Vector3.up));
 			if (!player.sounds.CheckIfPlaying(PlayerSounds.CLIMB) && rigidbody.velocity.magnitude > 0.5f) {
 				player.sounds.PlaySound (PlayerSounds.CLIMB);
 			}
 		} else {
-			rigidbody.velocity = new Vector3 (move.x, rigidbody.velocity.y, move.z);
-			player.gameObject.transform.LookAt (player.gameObject.transform.position + new Vector3(move.x, 0.0f, move.z));
+			rigidbody.velocity = new Vector3 (player.moveDirection.x, rigidbody.velocity.y, player.moveDirection.z);
+			player.gameObject.transform.LookAt (player.gameObject.transform.position + new Vector3(player.moveDirection.x, 0.0f, player.moveDirection.z));
 			if (!player.sounds.CheckIfPlaying(PlayerSounds.STEPS) && player.running && !player.airborne) {
 				player.sounds.PlaySound (PlayerSounds.STEPS);
 			}
@@ -74,16 +64,5 @@ public class Move {
 		player.onLedge = false;
 		player.gameObject.GetComponent<Rigidbody> ().constraints &= ~RigidbodyConstraints.FreezePositionY;
 		player.gameObject.layer = 0; //Default
-	}
-
-	public void controlAnimation(bool go, bool stop) {
-		if (!player.airborne) {
-			if (stop) {
-				player.animations.TriggerTransition (player.animations.RUN_STOP);
-			}
-			else if (go) {
-				player.animations.TriggerTransition (player.animations.RUN);
-			}
-		}
 	}
 }

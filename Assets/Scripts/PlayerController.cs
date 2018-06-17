@@ -48,6 +48,8 @@ public class PlayerController : MonoBehaviour {
 	public float dashCooldown;
 	public float dashDuration;
 
+	public Vector3 moveDirection;
+
 	void Start () {
 		gameObject.GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.FreezeRotation; // disable rotation through physics
 
@@ -79,6 +81,7 @@ public class PlayerController : MonoBehaviour {
 		dashCooldown = 0.5f;
 		dashDuration = 0.1f;
 		velocityY = 0.0f;
+		moveDirection = Vector3.zero;
 
 		move = new Move (this);
 		jump = new Jump (this);
@@ -90,6 +93,8 @@ public class PlayerController : MonoBehaviour {
 
 	void Update () {
 		if (!dead) {
+			bool stop = running;
+
 			if (!dashing) {
 				move.Input ();
 				jump.Input ();
@@ -102,6 +107,10 @@ public class PlayerController : MonoBehaviour {
 			}
 			reset.Input ();
 			DebugLookDirection ();
+
+			running = moveDirection.magnitude > 0.5f;
+			stop = stop && !running;
+			controlAnimation (stop);
 		}
 	}
 
@@ -210,5 +219,16 @@ public class PlayerController : MonoBehaviour {
 		return !(edge1 || edge2 || edge3 || edge4);
 		*/
 		return !Physics.Raycast (transform.position, -Vector3.up, dim.y + 0.01f, layerMask);
+	}
+
+	public void controlAnimation(bool stop) {
+		if (!airborne) {
+			if (stop) {
+				animations.TriggerTransition (animations.RUN_STOP);
+			}
+			else if (running) {
+				animations.TriggerTransitionRun (moveDirection, transform.forward);
+			}
+		}
 	}
 }
