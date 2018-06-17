@@ -22,10 +22,10 @@ public class ChangeForm {
 			player.isHuman = !player.isHuman;
 			if (player.isHuman) {
 				// Tranformation to human here
-				player.gameObject.GetComponent<MeshRenderer> ().material = humanMaterial;
+
 			} else {
 				// Transformation to monkey here
-				player.gameObject.GetComponent<MeshRenderer> ().material = monkeyMaterial;
+
 			}
 		}
 	}

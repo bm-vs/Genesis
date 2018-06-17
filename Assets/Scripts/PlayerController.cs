@@ -66,8 +66,8 @@ public class PlayerController : MonoBehaviour {
 		dead = false;
 		running = false;
 
-		y = gameObject.GetComponent<Renderer> ().bounds.size.y;
-		z = gameObject.GetComponent<Renderer> ().bounds.size.z;
+		y = gameObject.GetComponent<BoxCollider> ().bounds.size.y;
+		z = gameObject.GetComponent<BoxCollider> ().bounds.size.z;
 		moveSpeed = 600.0f;
 		ledgeSpeed = 300.0f;
 		grabLedgeOffset = 0.5f;
@@ -206,7 +206,6 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	public bool IsAirborne() {
-		Vector3 dim = gameObject.GetComponent<Renderer> ().bounds.size / 2;
 		int layerMask = 1 << 11;
 		layerMask = ~layerMask;
 		/*
@@ -218,7 +217,7 @@ public class PlayerController : MonoBehaviour {
 		bool edge4 = Physics.Raycast (transform.position - x - z, -Vector3.up, dim.y + 0.01f);
 		return !(edge1 || edge2 || edge3 || edge4);
 		*/
-		return !Physics.Raycast (transform.position, -Vector3.up, dim.y + 0.01f, layerMask);
+		return !Physics.Raycast (transform.position, -Vector3.up, y / 2 + 0.01f, layerMask);
 	}
 
 	public void controlAnimation(bool stop) {
