@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour {
 	public bool onLedge;
 	public bool dead;
 	public bool running;
+	private bool stopped;
 
 	// Attributes
 	public float y;
@@ -65,6 +66,7 @@ public class PlayerController : MonoBehaviour {
 		onLedge = false;
 		dead = false;
 		running = false;
+		stopped = true;
 
 		y = gameObject.GetComponent<BoxCollider> ().bounds.size.y;
 		z = gameObject.GetComponent<BoxCollider> ().bounds.size.z;
@@ -93,8 +95,6 @@ public class PlayerController : MonoBehaviour {
 
 	void Update () {
 		if (!dead) {
-			bool stop = running;
-
 			if (!dashing) {
 				move.Input ();
 				jump.Input ();
@@ -109,8 +109,7 @@ public class PlayerController : MonoBehaviour {
 			DebugLookDirection ();
 
 			running = moveDirection.magnitude > 0.5f;
-			stop = stop && !running;
-			controlAnimation (stop);
+			controlAnimation ();
 		}
 	}
 
@@ -177,6 +176,8 @@ public class PlayerController : MonoBehaviour {
 	void OnCollisionEnter(Collision collision) {
 		if (collision.gameObject.tag == "FallPlane") {
 			reset.Died ();
+		} else if (dashing && collision.gameObject.tag == "Enemy") {
+			sounds.PlaySound (PlayerSounds.DASH_IMPACT);
 		} else {
 			RangedController enemy = collision.collider.gameObject.GetComponent<RangedController> ();
 			if (enemy != null && enemy.dashing) {
@@ -208,25 +209,21 @@ public class PlayerController : MonoBehaviour {
 	public bool IsAirborne() {
 		int layerMask = 1 << 11;
 		layerMask = ~layerMask;
-		/*
-		Vector3 x = new Vector3 (dim.x, 0.0f, 0.0f);
-		Vector3 z = new Vector3 (0.0f, 0.0f, dim.z);
-		bool edge1 = Physics.Raycast (transform.position + x + z, -Vector3.up, dim.y + 0.01f);
-		bool edge2 = Physics.Raycast (transform.position + x - z, -Vector3.up, dim.y + 0.01f);
-		bool edge3 = Physics.Raycast (transform.position - x + z, -Vector3.up, dim.y + 0.01f);
-		bool edge4 = Physics.Raycast (transform.position - x - z, -Vector3.up, dim.y + 0.01f);
-		return !(edge1 || edge2 || edge3 || edge4);
-		*/
 		return !Physics.Raycast (transform.position, -Vector3.up, y / 2 + 0.01f, layerMask);
 	}
 
-	public void controlAnimation(bool stop) {
+	public void controlAnimation() {
 		if (!airborne) {
-			if (stop) {
-				animations.TriggerTransition (animations.RUN_STOP);
-			}
-			else if (running) {
-				animations.TriggerTransitionRun (moveDirection, transform.forward);
+			if (running) {
+				animations.TriggerTransitionRun (moveDirection, transform.forward, isHuman, false);
+				stopped = false;
+			} else if (!stopped) {
+				if (isHuman) {
+					animations.TriggerTransitionDiff (animations.RUN_STOP);
+				} else {
+					animations.TriggerTransitionDiff (animations.RUN_STOP_MONKEY);
+				}
+				stopped = true;
 			}
 		}
 	}

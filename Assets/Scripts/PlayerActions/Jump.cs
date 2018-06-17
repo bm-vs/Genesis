@@ -34,7 +34,11 @@ public class Jump {
 		if (!player.airborne || player.onLedge) {
 			if (player.jumping && !player.onLedge) {
 				player.sounds.PlaySound (PlayerSounds.JUMP_IMPACT);
-				player.animations.TriggerTransition (player.animations.JUMP_LANDED);
+				if (player.running) {
+					player.animations.TriggerTransitionRun (player.moveDirection, player.transform.forward, player.isHuman, true);
+				} else {
+					player.animations.TriggerTransitionSame (player.animations.JUMP_LANDED);
+				}
 			}
 			player.jumping = false;
 		}
@@ -42,9 +46,9 @@ public class Jump {
 		if (startJump) {
 			player.sounds.PlaySound (PlayerSounds.JUMP_START);
 			if (player.running) {
-				player.animations.TriggerTransition (player.animations.JUMP_RUN);
+				player.animations.TriggerTransitionDiff (player.animations.JUMP_RUN);
 			} else {
-				player.animations.TriggerTransition (player.animations.JUMP);
+				player.animations.TriggerTransitionSame (player.animations.JUMP);
 			}
 
 			rigidbody.constraints &= ~RigidbodyConstraints.FreezePositionY;

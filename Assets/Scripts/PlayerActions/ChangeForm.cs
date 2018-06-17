@@ -20,12 +20,8 @@ public class ChangeForm {
 		if (UnityEngine.Input.GetAxisRaw ("ChangeForm") != 0 && currTime - timer >= player.changeFormCooldown) {
 			timer = currTime;
 			player.isHuman = !player.isHuman;
-			if (player.isHuman) {
-				// Tranformation to human here
-
-			} else {
-				// Transformation to monkey here
-
+			if (!player.running) {
+				player.animations.TriggerTransitionSame (player.animations.CHANGE_FORM);
 			}
 		}
 	}

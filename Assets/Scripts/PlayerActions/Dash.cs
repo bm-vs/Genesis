@@ -44,13 +44,13 @@ public class Dash {
 			rb.velocity = direction * player.dashSpeed;
 			player.gameObject.transform.LookAt (player.gameObject.transform.position + new Vector3(direction.x, 0.0f, direction.z));
 			player.sounds.PlaySound (PlayerSounds.DASH_START);
+			player.animations.TriggerTransitionSame (player.animations.DASH);
 		}
 
 		if (player.dashing && currTime - durationTimer >= player.dashDuration) {
 			player.dashing = false;
 			rb.velocity = Vector3.zero;
 			rb.useGravity = true;
-			player.sounds.PlaySound (PlayerSounds.DASH_IMPACT);
 		}
 	}
 
