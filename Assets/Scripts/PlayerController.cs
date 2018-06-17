@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
+	// Sounds
+	public PlayerSoundsController sounds;
+
 	// Health
 	private float health;
 	private float velocityY;
@@ -24,6 +27,7 @@ public class PlayerController : MonoBehaviour {
 	public bool jumping;
 	public bool isHuman;
 	public bool onLedge;
+	public bool dead;
 
 	// Attributes
 	public float y;
@@ -45,6 +49,7 @@ public class PlayerController : MonoBehaviour {
 	void Start () {
 		gameObject.GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.FreezeRotation; // disable rotation through physics
 
+		sounds = gameObject.GetComponent<PlayerSoundsController> ();
 		health = 100.0f;
 
 		airborne = false;
@@ -53,6 +58,7 @@ public class PlayerController : MonoBehaviour {
 		jumping = false;
 		isHuman = true;
 		onLedge = false;
+		dead = false;
 
 		y = gameObject.GetComponent<Renderer> ().bounds.size.y;
 		z = gameObject.GetComponent<Renderer> ().bounds.size.z;
@@ -79,44 +85,55 @@ public class PlayerController : MonoBehaviour {
     }
 
 	void Update () {
-		if (!dashing) {
-			move.Input ();
-			jump.Input ();
-			form.Input ();
+		if (!dead) {
+			if (!dashing) {
+				move.Input ();
+				jump.Input ();
+				form.Input ();
+			}
+			if (isHuman) {
+				shoot.Input ();
+			} else if (!isHuman && !onLedge) {
+				dash.Input ();
+			}
+			reset.Input ();
+			DebugLookDirection ();
 		}
-		if (isHuman) {
-			shoot.Input ();
-		} else if (!isHuman && !onLedge) {
-			dash.Input ();
-		}
-		reset.Input ();
-		DebugLookDirection ();
 	}
 
 	void FixedUpdate() {
-		airborne = IsAirborne ();
-		if (!dashing) {
-			move.Action (Time.deltaTime);
-			jump.Action ();
+		if (!dead) {
+			airborne = IsAirborne ();
+			if (!dashing) {
+				move.Action (Time.deltaTime);
+				jump.Action ();
+			}
+			if (!onLedge) {
+				dash.Action ();
+			}
+
+			float velF = gameObject.GetComponent<Rigidbody> ().velocity.y;
+			if (velF - velocityY > 80.0f && velocityY < 0.0f && velF >= -1f) {
+				updateHealth (-((4.0f / 7.0f) * (velF - velocityY) - (250.0f / 7.0f)));
+			}
+			velocityY = velF;
+
+			if (timeLastHit > 0.0f) {
+				timeLastHit -= Time.fixedDeltaTime;
+			}
+
+			if (health < 100.0f & timeLastHit < 0.0f) {
+				updateHealth (100.0f / (5.0f / Time.fixedDeltaTime));
+			}
 		}
-		if (!onLedge) {
-			dash.Action ();
+		else if (dashing) {
+			Rigidbody rigidbody = gameObject.GetComponent<Rigidbody> ();
+			rigidbody.velocity = Vector3.zero;
+			rigidbody.useGravity = true;
+			dashing = false;
 		}
+
 		reset.Action ();
-
-		float velF = gameObject.GetComponent<Rigidbody> ().velocity.y;
-		if (velF - velocityY > 80.0f && velocityY < 0.0f && velF >= -1f) {
-			updateHealth (-((4.0f/7.0f)*(velF - velocityY)-(250.0f/7.0f)));
-		}
-		velocityY = velF;
-
-		if (timeLastHit > 0.0f) {
-			timeLastHit -= Time.fixedDeltaTime;
-		}
-
-		if (health < 100.0f & timeLastHit < 0.0f) {
-			updateHealth (100.0f/(5.0f/Time.fixedDeltaTime));
-		}
 	}
 
 	void OnTriggerEnter(Collider other) {
@@ -124,11 +141,11 @@ public class PlayerController : MonoBehaviour {
 			updateHealth (-20.0f);
 		} else if (other.gameObject.tag == "Fire") {
 			updateHealth (-20.0f);
-		} else if (other.gameObject.tag == "FallPlane") {
-			reset.Died ();
 		} else if (other.gameObject.tag == "Checkpoint") {
 			reset.setCheckpoint (other.gameObject.transform.position);
 			other.gameObject.SetActive (false);
+		} else if (other.gameObject.tag == "Water") {
+			sounds.PlaySound (PlayerSounds.SPLASH);
 		}
     }
 
@@ -145,12 +162,16 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision collision) {
-		RangedController enemy = collision.collider.gameObject.GetComponent<RangedController> ();
-		if (enemy != null && enemy.dashing) {
-			if (enemy.type == EnemyType.hybrid) {
-				updateHealth (-50.0f);
-			} else {
-				updateHealth (-35.0f);
+		if (collision.gameObject.tag == "FallPlane") {
+			reset.Died ();
+		} else {
+			RangedController enemy = collision.collider.gameObject.GetComponent<RangedController> ();
+			if (enemy != null && enemy.dashing) {
+				if (enemy.type == EnemyType.hybrid) {
+					updateHealth (-50.0f);
+				} else {
+					updateHealth (-35.0f);
+				}
 			}
 		}
 	}

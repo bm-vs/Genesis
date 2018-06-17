@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Reset {
 	private PlayerController player;
-	private bool resetting;
 	private Vector3 checkpoint;
     private GameObject lastLevel;
     private GameObject level;
     private Transform game; // to add object as its children
+	private float dyingTimeout;
 
     public Reset (PlayerController player) {
 		this.player = player;
-		this.resetting = false;
+		this.dyingTimeout = 4.0f;
 		this.checkpoint = player.transform.position;
         this.game = GameObject.FindGameObjectWithTag("Game").transform;
         this.level = GameObject.FindGameObjectWithTag("Level");
@@ -34,24 +34,28 @@ public class Reset {
 
 	public void Input() {
 		if (UnityEngine.Input.GetAxisRaw ("Reset") != 0) {
-			resetting = true;
+			Died();
 		}
 	}
 
 	public void Action() {
-		if (resetting) {
-			resetting = false;
-			player.transform.position = checkpoint;
-
-            GameObject.Destroy(this.level);
-            this.level = GameObject.Instantiate(this.lastLevel, this.game);
-            this.level.SetActive(true);
-            this.level.tag = "Level";
-            this.level.name = "Level";
+		if (player.dead) {
+			if (dyingTimeout > 0.0f) {
+				dyingTimeout -= Time.fixedDeltaTime;
+			} else {
+				dyingTimeout = 4.0f;
+				player.dead = false;
+				player.transform.position = checkpoint;
+				GameObject.Destroy(this.level);
+				this.level = GameObject.Instantiate(this.lastLevel, this.game);
+				this.level.SetActive(true);
+				this.level.tag = "Level";
+				this.level.name = "Level";
+			}
         }
 	}
 
 	public void Died() {
-		resetting = true;
+		player.dead = true;
 	}
 }

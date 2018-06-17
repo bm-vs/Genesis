@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BridgeFallController : MonoBehaviour {
 	public bool start;
+	private bool fell;
 
 	[FMODUnity.EventRef]
 	public string fallingSound;
@@ -14,6 +15,7 @@ public class BridgeFallController : MonoBehaviour {
 
 	void Start() {
 		start = false;
+		fell = false;
 		fallingEvent = FMODUnity.RuntimeManager.CreateInstance (fallingSound);
 	}
 
@@ -24,8 +26,9 @@ public class BridgeFallController : MonoBehaviour {
 
 		FMOD.Studio.PLAYBACK_STATE fallingState;
 		fallingEvent.getPlaybackState (out fallingState);
-		if (fallingState != FMOD.Studio.PLAYBACK_STATE.PLAYING && start) {
+		if (fallingState != FMOD.Studio.PLAYBACK_STATE.PLAYING && start && !fell) {
 			fallingEvent.start ();
+			fell = true;
 		}
 	}
 }
