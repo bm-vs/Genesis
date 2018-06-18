@@ -53,6 +53,12 @@ public class RangedController : MonoBehaviour {
 	public float attackVolume;
 	private FMOD.Studio.EventInstance attackEvent;
 
+	[FMODUnity.EventRef]
+	public string attackRangedSound;
+	public float attackRangedVolume;
+	private FMOD.Studio.EventInstance attackRangedEvent;
+
+
 	public float soundMaxDistance;
 
 	void Start () {
@@ -82,12 +88,17 @@ public class RangedController : MonoBehaviour {
 		}
 
 		attackEvent = FMODUnity.RuntimeManager.CreateInstance (attackSound);
+		attackRangedEvent = FMODUnity.RuntimeManager.CreateInstance (attackRangedSound);
 	}
 
 	void Update () {
 		FMODUnity.RuntimeManager.AttachInstanceToGameObject (attackEvent, GetComponent<Transform> (), GetComponent<Rigidbody> ());
 		attackEvent.setVolume (attackVolume);
 		attackEvent.setProperty (FMOD.Studio.EVENT_PROPERTY.MAXIMUM_DISTANCE, soundMaxDistance);
+
+		FMODUnity.RuntimeManager.AttachInstanceToGameObject (attackRangedEvent, GetComponent<Transform> (), GetComponent<Rigidbody> ());
+		attackRangedEvent.setVolume (attackRangedVolume);
+		attackRangedEvent.setProperty (FMOD.Studio.EVENT_PROPERTY.MAXIMUM_DISTANCE, soundMaxDistance);
 
 		if (health > 0.0f) {
 			CheckPlayerOnSight ();
@@ -263,7 +274,7 @@ public class RangedController : MonoBehaviour {
 			bullet.transform.position = gameObject.transform.position;
 			bullet.GetComponent<Rigidbody>().velocity = playerDirection.normalized * bulletSpeed;
 			shootingCooldown = 1.0f;
-			attackEvent.start ();
+			attackRangedEvent.start ();
 		}
 	}
 

@@ -4626,6 +4626,8 @@ MonoBehaviour:
   dashing: 0
   attackSound: event:/Inimigos snake attack
   attackVolume: 0.15
+  attackRangedSound: event:/ATtack serpent 2
+  attackRangedVolume: 0.2
   soundMaxDistance: 40
 --- !u!1 &93204207
 GameObject:
@@ -9520,6 +9522,8 @@ MonoBehaviour:
   dashing: 0
   attackSound: event:/Inimigos snake attack
   attackVolume: 0.15
+  attackRangedSound: event:/ATtack serpent 2
+  attackRangedVolume: 0.2
   soundMaxDistance: 40
 --- !u!1 &175833531
 GameObject:
@@ -10375,6 +10379,8 @@ MonoBehaviour:
   dashing: 0
   attackSound: event:/Inimigos snake attack
   attackVolume: 0.15
+  attackRangedSound: event:/ATtack serpent 2
+  attackRangedVolume: 0.2
   soundMaxDistance: 40
 --- !u!1 &188201237
 GameObject:
@@ -10618,6 +10624,8 @@ MonoBehaviour:
   dashing: 0
   attackSound: event:/Inimigos snake attack
   attackVolume: 0.15
+  attackRangedSound: event:/ATtack serpent 2
+  attackRangedVolume: 0.2
   soundMaxDistance: 40
 --- !u!1 &189304300
 GameObject:
@@ -11824,6 +11832,8 @@ MonoBehaviour:
   dashing: 0
   attackSound: event:/Inimigos snake attack
   attackVolume: 0.15
+  attackRangedSound: event:/ATtack serpent 2
+  attackRangedVolume: 0.2
   soundMaxDistance: 40
 --- !u!1 &210548325
 GameObject:
@@ -18742,6 +18752,8 @@ MonoBehaviour:
   dashing: 0
   attackSound: event:/Inimigos snake attack
   attackVolume: 0.15
+  attackRangedSound: event:/ATtack serpent 2
+  attackRangedVolume: 0.2
   soundMaxDistance: 40
 --- !u!1 &356896111
 GameObject:
@@ -23519,6 +23531,8 @@ MonoBehaviour:
   dashing: 0
   attackSound: event:/Inimigos snake attack
   attackVolume: 0.15
+  attackRangedSound: event:/ATtack serpent 2
+  attackRangedVolume: 0.2
   soundMaxDistance: 40
 --- !u!4 &508655243
 Transform:
@@ -25267,6 +25281,8 @@ MonoBehaviour:
   dashing: 0
   attackSound: event:/Inimigos snake attack
   attackVolume: 0.15
+  attackRangedSound: event:/ATtack serpent 2
+  attackRangedVolume: 0.2
   soundMaxDistance: 40
 --- !u!1 &549814930
 GameObject:
@@ -25772,6 +25788,8 @@ MonoBehaviour:
   dashing: 0
   attackSound: event:/Inimigos snake attack
   attackVolume: 0.15
+  attackRangedSound: event:/ATtack serpent 2
+  attackRangedVolume: 0.2
   soundMaxDistance: 40
 --- !u!1 &553782793
 GameObject:
@@ -29811,6 +29829,8 @@ MonoBehaviour:
   dashing: 0
   attackSound: event:/Inimigos snake attack
   attackVolume: 0.15
+  attackRangedSound: event:/ATtack serpent 2
+  attackRangedVolume: 0.2
   soundMaxDistance: 40
 --- !u!1 &643465225
 GameObject:
@@ -33907,6 +33927,8 @@ MonoBehaviour:
   dashing: 0
   attackSound: event:/Inimigos snake attack
   attackVolume: 0.15
+  attackRangedSound: event:/ATtack serpent 2
+  attackRangedVolume: 0.2
   soundMaxDistance: 40
 --- !u!1001 &777191138
 Prefab:
@@ -34386,6 +34408,8 @@ MonoBehaviour:
   dashing: 0
   attackSound: event:/Inimigos snake attack
   attackVolume: 0.15
+  attackRangedSound: event:/ATtack serpent 2
+  attackRangedVolume: 0.2
   soundMaxDistance: 40
 --- !u!4 &784184645
 Transform:
@@ -37020,7 +37044,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 827677530}
   m_LocalRotation: {x: -0.2813712, y: 0.58741194, z: 0.22841866, w: 0.7236037}
-  m_LocalPosition: {x: -217.3778, y: -256.10138, z: -79.36977}
+  m_LocalPosition: {x: -169.74042, y: -188.27243, z: 7.577339}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -38184,6 +38208,8 @@ MonoBehaviour:
   dashing: 0
   attackSound: event:/Inimigos snake attack
   attackVolume: 0.15
+  attackRangedSound: event:/ATtack serpent 2
+  attackRangedVolume: 0.2
   soundMaxDistance: 40
 --- !u!1 &840679189
 GameObject:
@@ -39695,6 +39721,8 @@ MonoBehaviour:
   dashing: 0
   attackSound: event:/Inimigos snake attack
   attackVolume: 0.15
+  attackRangedSound: event:/ATtack serpent 2
+  attackRangedVolume: 0.2
   soundMaxDistance: 40
 --- !u!1 &892355674
 GameObject:
@@ -39945,6 +39973,8 @@ MonoBehaviour:
   dashing: 0
   attackSound: event:/Inimigos snake attack
   attackVolume: 0.15
+  attackRangedSound: event:/ATtack serpent 2
+  attackRangedVolume: 0.2
   soundMaxDistance: 40
 --- !u!1 &897921774
 GameObject:
@@ -40855,6 +40885,8 @@ MonoBehaviour:
   dashing: 0
   attackSound: event:/Inimigos snake attack
   attackVolume: 0.15
+  attackRangedSound: event:/ATtack serpent 2
+  attackRangedVolume: 0.2
   soundMaxDistance: 40
 --- !u!4 &942165230
 Transform:
@@ -42049,6 +42081,8 @@ MonoBehaviour:
   dashing: 0
   attackSound: event:/Inimigos snake attack
   attackVolume: 0.15
+  attackRangedSound: event:/ATtack serpent 2
+  attackRangedVolume: 0.2
   soundMaxDistance: 40
 --- !u!4 &976196518
 Transform:
@@ -43690,6 +43724,8 @@ MonoBehaviour:
   dashing: 0
   attackSound: event:/Inimigos snake attack
   attackVolume: 0.15
+  attackRangedSound: event:/ATtack serpent 2
+  attackRangedVolume: 0.2
   soundMaxDistance: 40
 --- !u!4 &1009312650
 Transform:
@@ -43951,6 +43987,8 @@ MonoBehaviour:
   dashing: 0
   attackSound: event:/Inimigos snake attack
   attackVolume: 0.15
+  attackRangedSound: event:/ATtack serpent 2
+  attackRangedVolume: 0.2
   soundMaxDistance: 40
 --- !u!1 &1014240390
 GameObject:
@@ -45805,6 +45843,8 @@ MonoBehaviour:
   dashing: 0
   attackSound: event:/Inimigos snake attack
   attackVolume: 0.15
+  attackRangedSound: event:/ATtack serpent 2
+  attackRangedVolume: 0.2
   soundMaxDistance: 40
 --- !u!1001 &1049414218
 Prefab:
@@ -50647,6 +50687,8 @@ MonoBehaviour:
   dashing: 0
   attackSound: event:/Inimigos snake attack
   attackVolume: 0.15
+  attackRangedSound: event:/ATtack serpent 2
+  attackRangedVolume: 0.2
   soundMaxDistance: 40
 --- !u!1 &1182498836
 GameObject:
@@ -57064,6 +57106,8 @@ MonoBehaviour:
   dashing: 0
   attackSound: event:/Inimigos snake attack
   attackVolume: 0.15
+  attackRangedSound: event:/ATtack serpent 2
+  attackRangedVolume: 0.2
   soundMaxDistance: 40
 --- !u!1 &1333906066
 GameObject:
@@ -61168,6 +61212,8 @@ MonoBehaviour:
   dashing: 0
   attackSound: event:/Inimigos snake attack
   attackVolume: 0.15
+  attackRangedSound: event:/ATtack serpent 2
+  attackRangedVolume: 0.2
   soundMaxDistance: 40
 --- !u!1 &1418516991
 GameObject:
@@ -67444,6 +67490,8 @@ MonoBehaviour:
   dashing: 0
   attackSound: event:/Inimigos snake attack
   attackVolume: 0.15
+  attackRangedSound: event:/ATtack serpent 2
+  attackRangedVolume: 0.2
   soundMaxDistance: 40
 --- !u!1 &1566403254
 GameObject:
@@ -69183,6 +69231,8 @@ MonoBehaviour:
   dashing: 0
   attackSound: event:/Inimigos snake attack
   attackVolume: 0.15
+  attackRangedSound: event:/ATtack serpent 2
+  attackRangedVolume: 0.2
   soundMaxDistance: 40
 --- !u!1 &1609518825
 GameObject:
@@ -71297,6 +71347,8 @@ MonoBehaviour:
   dashing: 0
   attackSound: event:/Inimigos snake attack
   attackVolume: 0.15
+  attackRangedSound: event:/ATtack serpent 2
+  attackRangedVolume: 0.2
   soundMaxDistance: 40
 --- !u!1 &1670300470
 GameObject:
@@ -81090,6 +81142,8 @@ MonoBehaviour:
   dashing: 0
   attackSound: event:/Inimigos snake attack
   attackVolume: 0.15
+  attackRangedSound: event:/ATtack serpent 2
+  attackRangedVolume: 0.2
   soundMaxDistance: 40
 --- !u!65 &1936873344
 BoxCollider:
@@ -81396,6 +81450,8 @@ MonoBehaviour:
   dashing: 0
   attackSound: event:/Inimigos snake attack
   attackVolume: 0.15
+  attackRangedSound: event:/ATtack serpent 2
+  attackRangedVolume: 0.2
   soundMaxDistance: 40
 --- !u!1 &1940075532
 GameObject:
@@ -85080,6 +85136,8 @@ MonoBehaviour:
   dashing: 0
   attackSound: event:/Inimigos snake attack
   attackVolume: 0.15
+  attackRangedSound: event:/ATtack serpent 2
+  attackRangedVolume: 0.2
   soundMaxDistance: 40
 --- !u!4 &2017787858
 Transform:
