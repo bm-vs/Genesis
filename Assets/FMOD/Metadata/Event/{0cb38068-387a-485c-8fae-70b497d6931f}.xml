@@ -101,7 +101,7 @@
     </object>
     <object class="EventMixerGroup" id="{678cf31f-0d23-4ae6-b520-196ec42bd370}">
         <property name="volume">
-            <value>4</value>
+            <value>10</value>
         </property>
         <property name="name">
             <value>Audio 1</value>
@@ -156,7 +156,7 @@
     <object class="MixerBusFader" id="{efb362fd-9c55-4c4f-b125-143153d83029}"/>
     <object class="LowpassEffect" id="{f86232d3-cc69-4ce7-9de8-c6a1a25da00e}">
         <property name="cutoff">
-            <value>1150</value>
+            <value>1250</value>
         </property>
     </object>
 </objects>

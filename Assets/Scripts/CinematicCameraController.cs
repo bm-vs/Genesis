@@ -53,7 +53,6 @@ public class CinematicCameraController : MonoBehaviour
 				if (transform.position == finalStop) {
 					gameObject.SetActive (false);
 					gameCamera.SetActive (true);
-					player.GetComponent<PlayerController> ().cutscene = false;
 				}
 			}
 		}

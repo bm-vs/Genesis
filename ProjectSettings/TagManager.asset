@@ -24,6 +24,7 @@ TagManager:
   - Box
   - Metal
   - LevelChange
+  - Fade
   layers:
   - Default
   - TransparentFX

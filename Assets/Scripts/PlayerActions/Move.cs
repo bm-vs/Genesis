@@ -17,11 +17,13 @@ public class Move {
 		Transform cameraTransform = Camera.main.transform;
 		Vector3 cameraRight = (new Vector3 (cameraTransform.right.x, 0f, cameraTransform.right.z)).normalized;
 		Vector3 cameraForward = (new Vector3 (cameraTransform.forward.x, 0f, cameraTransform.forward.z)).normalized;
-		player.moveDirection = (cameraRight * direction.x + cameraForward * direction.z).normalized * Time.deltaTime * (player.onLedge ? player.ledgeSpeed : player.moveSpeed);
+		player.moveDirection = (cameraRight * direction.x + cameraForward * direction.z) * Time.fixedDeltaTime * (player.onLedge ? player.ledgeSpeed : player.moveSpeed);
 	}
 
 	public void Action() {
 		Rigidbody rigidbody = player.gameObject.GetComponent<Rigidbody> ();
+
+
 		if (player.onLedge) {
 			rigidbody.velocity = Vector3.Project (new Vector3 (player.moveDirection.x, rigidbody.velocity.y, player.moveDirection.z), Vector3.Cross (ledgeNormal, Vector3.up));
 			if (!player.sounds.CheckIfPlaying(PlayerSounds.CLIMB) && rigidbody.velocity.magnitude > 0.5f) {
@@ -62,6 +64,7 @@ public class Move {
 		player.gameObject.layer = 9; //PlayerLedge
 		player.gameObject.GetComponent<Rigidbody> ().constraints |= RigidbodyConstraints.FreezePositionY;
 		player.gameObject.transform.forward = - ledgeNormal.normalized;
+		Debug.Log (player.z);
 		if (ledgeNormal.x != 0) {
 			player.gameObject.transform.position = new Vector3 (ledgePosition.x + ledgeNormal.x * player.z / 2.0f, ledgePosition.y - 1.0f, player.gameObject.transform.position.z);
 		} else if (ledgeNormal.z != 0) {

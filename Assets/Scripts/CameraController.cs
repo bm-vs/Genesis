@@ -6,6 +6,10 @@ public class CameraController : MonoBehaviour {
 	public GameObject player;
 	public Vector3 playerOffset = new Vector3(-30f, 45, -30f);
 
+	void Start () {
+		player.GetComponent<PlayerController> ().cutscene = false;
+	}
+
 	void Update () {
 		if (UnityEngine.Input.GetAxisRaw ("RotateCamera") != 0) {
 			playerOffset = Quaternion.Euler(0, UnityEngine.Input.GetAxisRaw ("RotateCamera")*2, 0) * playerOffset;

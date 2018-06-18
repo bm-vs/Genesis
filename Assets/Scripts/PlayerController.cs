@@ -92,7 +92,7 @@ public class PlayerController : MonoBehaviour {
 
 		y = gameObject.GetComponent<BoxCollider> ().bounds.size.y;
 		z = gameObject.GetComponent<BoxCollider> ().bounds.size.z;
-		moveSpeed = 600.0f;
+		moveSpeed = 650.0f;
 		ledgeSpeed = 200.0f;
 		grabLedgeOffset = 0.5f;
 		jumpForce = 32.0f;
