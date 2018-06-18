@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour {
 	// Sounds and animations
 	public PlayerSoundsController sounds;
 	public PlayerAnimationsController animations;
+	public bool cutscene;
 
 	public GameObject hips;
 	public GameObject leftLeg;
@@ -70,6 +71,7 @@ public class PlayerController : MonoBehaviour {
 	public Vector3 moveDirection;
 
 	void Start () {
+		cutscene = true;
 		gameObject.GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.FreezeRotation; // disable rotation through physics
 
 		sounds = gameObject.GetComponent<PlayerSoundsController> ();
@@ -117,7 +119,7 @@ public class PlayerController : MonoBehaviour {
     }
 
 	void Update () {
-		if (!dead) {
+		if (!dead && !cutscene) {
 			if (!dashing) {
 				move.Input ();
 				jump.Input ();
@@ -129,7 +131,6 @@ public class PlayerController : MonoBehaviour {
 				dash.Input ();
 			}
 			reset.Input ();
-			DebugLookDirection ();
 
 			running = moveDirection.magnitude > 0.5f;
 			controlAnimation ();
@@ -140,7 +141,7 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
-		if (!dead) {
+		if (!dead && !cutscene) {
 			airborne = IsAirborne ();
 			if (!dashing) {
 				move.Action ();
