@@ -6,6 +6,16 @@ public class GeneratorController : MonoBehaviour {
 	public bool activated;
 	public float health;
 
+	public GameObject ok1;
+	public GameObject ok2;
+	public GameObject danger1;
+	public GameObject danger2;
+	public GameObject critical1;
+
+	private Material okMat;
+	private Material dangerMat;
+	private Material criticalMat;
+
 	[FMODUnity.EventRef]
 	public string electricSound;
 	public float electricVolume;
@@ -23,6 +33,10 @@ public class GeneratorController : MonoBehaviour {
 		health = 120.0f;
 		electricEvent = FMODUnity.RuntimeManager.CreateInstance (electricSound);
 		explosionEvent = FMODUnity.RuntimeManager.CreateInstance (explosionSound);
+
+		okMat = Resources.Load ("Materials/GeneratorOk", typeof(Material)) as Material;
+		dangerMat = Resources.Load ("Materials/GeneratorDanger", typeof(Material)) as Material;
+		criticalMat = Resources.Load ("Materials/GeneratorCritical", typeof(Material)) as Material;
 	}
 
 	void Update() {
@@ -49,6 +63,17 @@ public class GeneratorController : MonoBehaviour {
 	void OnTriggerEnter(Collider other) {
 		if (other.gameObject.tag == "Shot" && other.gameObject.GetComponent<BulletController> ().owner.tag == "Player") {
 			health -= 20.0f;
+			if (health == 100.0f) {
+				ok1.GetComponent<Renderer>().material = okMat;
+			} else if (health == 80.0f) {
+				ok2.GetComponent<Renderer>().material = okMat;
+			} else if (health == 60.0f) {
+				danger1.GetComponent<Renderer>().material = dangerMat;
+			} else if (health == 40.0f) {
+				danger2.GetComponent<Renderer>().material = dangerMat;
+			} else if (health == 20.0f) {
+				critical1.GetComponent<Renderer>().material = criticalMat;
+			}
 		}
 	}
 }
