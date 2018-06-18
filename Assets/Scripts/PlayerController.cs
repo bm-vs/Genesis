@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour {
 	// Sounds and animations
 	public PlayerSoundsController sounds;
 	public PlayerAnimationsController animations;
+	public GameObject gun;
 
 	// Health
 	private float health;

@@ -34,7 +34,7 @@ public class Shoot {
 
 			GameObject bullet = (GameObject) GameObject.Instantiate (bulletPrefab);
 			bullet.GetComponent<BulletController> ().owner = player.gameObject;
-			bullet.transform.position = player.gameObject.transform.position;
+			bullet.transform.position = player.gameObject.transform.position + player.gameObject.transform.forward * 1.5f;
 			bullet.GetComponent<Rigidbody>().velocity = direction * player.bulletSpeed;
 			player.sounds.PlaySound (PlayerSounds.SHOOT);
 		}
