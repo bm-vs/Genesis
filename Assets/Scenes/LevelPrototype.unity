@@ -1321,7 +1321,7 @@ GameObject:
   - component: {fileID: 26039523}
   m_Layer: 10
   m_Name: Bridge06
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1987,7 +1987,7 @@ GameObject:
   - component: {fileID: 37541971}
   m_Layer: 0
   m_Name: -X
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3359,7 +3359,7 @@ GameObject:
   - component: {fileID: 69074685}
   m_Layer: 0
   m_Name: +X
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4732,7 +4732,7 @@ GameObject:
   - component: {fileID: 94550800}
   m_Layer: 0
   m_Name: +Y
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7443,7 +7443,7 @@ GameObject:
   - component: {fileID: 140680884}
   m_Layer: 0
   m_Name: -X
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11037,7 +11037,7 @@ GameObject:
   - component: {fileID: 201030798}
   m_Layer: 0
   m_Name: +Y
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11128,7 +11128,7 @@ GameObject:
   - component: {fileID: 201744448}
   m_Layer: 0
   m_Name: +Y
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11493,7 +11493,7 @@ GameObject:
   - component: {fileID: 205074514}
   m_Layer: 0
   m_Name: +Z
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13112,7 +13112,7 @@ GameObject:
   - component: {fileID: 251194036}
   m_Layer: 0
   m_Name: +X
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13231,7 +13231,7 @@ GameObject:
   - component: {fileID: 252753018}
   m_Layer: 0
   m_Name: +Z
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14945,7 +14945,7 @@ GameObject:
   - component: {fileID: 277601981}
   m_Layer: 0
   m_Name: +X
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15284,7 +15284,7 @@ GameObject:
   - component: {fileID: 282274206}
   m_Layer: 0
   m_Name: BalanceBeam1
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15316,7 +15316,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 2c12405f3ef31f8428d02810e19064b8, type: 2}
+  - {fileID: 2100000, guid: 37a8ec7ad78b5be4e98828ea9936d68d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15369,7 +15369,7 @@ GameObject:
   - component: {fileID: 282564252}
   m_Layer: 0
   m_Name: +Y
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15705,7 +15705,7 @@ GameObject:
   - component: {fileID: 291528201}
   m_Layer: 0
   m_Name: +Z
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17420,7 +17420,7 @@ GameObject:
   - component: {fileID: 336422568}
   m_Layer: 0
   m_Name: +X
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17513,7 +17513,7 @@ GameObject:
   - component: {fileID: 336572567}
   m_Layer: 10
   m_Name: Bridge05
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18219,7 +18219,7 @@ GameObject:
   - component: {fileID: 349585625}
   m_Layer: 0
   m_Name: -Y
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21253,7 +21253,7 @@ GameObject:
   - component: {fileID: 431230336}
   m_Layer: 0
   m_Name: -Y
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22515,7 +22515,7 @@ GameObject:
   - component: {fileID: 454536778}
   m_Layer: 0
   m_Name: +Z
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23288,7 +23288,7 @@ GameObject:
   - component: {fileID: 494088472}
   m_Layer: 10
   m_Name: Bridge12
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24745,7 +24745,7 @@ GameObject:
   - component: {fileID: 533942394}
   m_Layer: 0
   m_Name: -X
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26199,7 +26199,7 @@ GameObject:
   - component: {fileID: 556917287}
   m_Layer: 0
   m_Name: -Y
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26515,7 +26515,7 @@ GameObject:
   - component: {fileID: 559054362}
   m_Layer: 0
   m_Name: +X
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27211,7 +27211,7 @@ GameObject:
   - component: {fileID: 582470458}
   m_Layer: 0
   m_Name: -Z
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27484,7 +27484,7 @@ GameObject:
   - component: {fileID: 586679686}
   m_Layer: 0
   m_Name: +Y
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27683,7 +27683,7 @@ GameObject:
   - component: {fileID: 588841132}
   m_Layer: 0
   m_Name: +Y
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30377,7 +30377,7 @@ GameObject:
   - component: {fileID: 668090081}
   m_Layer: 0
   m_Name: -Y
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31325,7 +31325,7 @@ GameObject:
   - component: {fileID: 693807658}
   m_Layer: 0
   m_Name: -X
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32538,7 +32538,7 @@ GameObject:
   - component: {fileID: 742235272}
   m_Layer: 0
   m_Name: +X
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32790,7 +32790,7 @@ GameObject:
   - component: {fileID: 754258400}
   m_Layer: 0
   m_Name: -X
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33311,7 +33311,7 @@ GameObject:
   - component: {fileID: 763715381}
   m_Layer: 0
   m_Name: -Z
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35556,7 +35556,7 @@ GameObject:
   - component: {fileID: 814050214}
   m_Layer: 0
   m_Name: -X
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37019,8 +37019,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 827677530}
-  m_LocalRotation: {x: -0.3037194, y: 0.41560847, z: 0.14952998, w: 0.8441948}
-  m_LocalPosition: {x: -319.32175, y: -47.0172, z: -32.07194}
+  m_LocalRotation: {x: -0.2813712, y: 0.58741194, z: 0.22841866, w: 0.7236037}
+  m_LocalPosition: {x: -217.3778, y: -256.10138, z: -79.36977}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -37192,7 +37192,7 @@ GameObject:
   - component: {fileID: 828598107}
   m_Layer: 0
   m_Name: -Y
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37388,7 +37388,7 @@ GameObject:
   - component: {fileID: 831955219}
   m_Layer: 0
   m_Name: -Z
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37551,7 +37551,7 @@ GameObject:
   - component: {fileID: 834749073}
   m_Layer: 0
   m_Name: +Z
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39318,7 +39318,7 @@ GameObject:
   - component: {fileID: 874401879}
   m_Layer: 0
   m_Name: +Z
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40010,7 +40010,7 @@ GameObject:
   - component: {fileID: 902053929}
   m_Layer: 10
   m_Name: Bridge03
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42643,7 +42643,7 @@ GameObject:
   - component: {fileID: 990527290}
   m_Layer: 0
   m_Name: -X
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42960,7 +42960,7 @@ GameObject:
   - component: {fileID: 994757625}
   m_Layer: 0
   m_Name: -Z
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44111,7 +44111,7 @@ GameObject:
   - component: {fileID: 1015002644}
   m_Layer: 0
   m_Name: -Y
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45479,7 +45479,7 @@ GameObject:
   - component: {fileID: 1047791994}
   m_Layer: 0
   m_Name: +Z
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46801,7 +46801,7 @@ GameObject:
   - component: {fileID: 1083651203}
   m_Layer: 0
   m_Name: +Y
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48173,7 +48173,7 @@ GameObject:
   - component: {fileID: 1119984717}
   m_Layer: 10
   m_Name: Bridge10
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49594,7 +49594,7 @@ GameObject:
   - component: {fileID: 1151656585}
   m_Layer: 0
   m_Name: -Y
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49820,7 +49820,7 @@ GameObject:
   - component: {fileID: 1157778717}
   m_Layer: 0
   m_Name: -Y
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51009,7 +51009,7 @@ GameObject:
   - component: {fileID: 1184613361}
   m_Layer: 0
   m_Name: +X
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51635,7 +51635,7 @@ GameObject:
   - component: {fileID: 1203018405}
   m_Layer: 0
   m_Name: +Z
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51740,7 +51740,7 @@ GameObject:
   - component: {fileID: 1204800458}
   m_Layer: 0
   m_Name: +Z
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52514,7 +52514,7 @@ GameObject:
   - component: {fileID: 1221243621}
   m_Layer: 10
   m_Name: Bridge00
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55949,7 +55949,7 @@ GameObject:
   - component: {fileID: 1313981997}
   m_Layer: 0
   m_Name: -X
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57294,7 +57294,7 @@ GameObject:
   - component: {fileID: 1340113583}
   m_Layer: 10
   m_Name: Bridge07
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57401,7 +57401,7 @@ GameObject:
   - component: {fileID: 1341945514}
   m_Layer: 0
   m_Name: -X
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59962,7 +59962,7 @@ GameObject:
   - component: {fileID: 1397816480}
   m_Layer: 0
   m_Name: -Z
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61810,7 +61810,7 @@ GameObject:
   - component: {fileID: 1435643189}
   m_Layer: 0
   m_Name: +Z
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62051,7 +62051,7 @@ GameObject:
   - component: {fileID: 1443164198}
   m_Layer: 0
   m_Name: +X
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63150,7 +63150,7 @@ GameObject:
   - component: {fileID: 1474257529}
   m_Layer: 0
   m_Name: -Y
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -66240,7 +66240,7 @@ GameObject:
   - component: {fileID: 1545801543}
   m_Layer: 0
   m_Name: -Z
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68019,7 +68019,7 @@ GameObject:
   - component: {fileID: 1585788983}
   m_Layer: 10
   m_Name: Bridge02
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68126,7 +68126,7 @@ GameObject:
   - component: {fileID: 1585928723}
   m_Layer: 0
   m_Name: -Y
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68597,7 +68597,7 @@ GameObject:
   - component: {fileID: 1593111787}
   m_Layer: 0
   m_Name: +X
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69323,7 +69323,7 @@ GameObject:
   - component: {fileID: 1613304340}
   m_Layer: 10
   m_Name: Bridge11
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71314,7 +71314,7 @@ GameObject:
   - component: {fileID: 1670300471}
   m_Layer: 10
   m_Name: Bridge09
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73282,7 +73282,7 @@ GameObject:
   - component: {fileID: 1735507418}
   m_Layer: 10
   m_Name: Bridge08
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73571,7 +73571,7 @@ GameObject:
   - component: {fileID: 1741377297}
   m_Layer: 0
   m_Name: +Y
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73662,7 +73662,7 @@ GameObject:
   - component: {fileID: 1744580680}
   m_Layer: 0
   m_Name: +Y
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74384,7 +74384,7 @@ GameObject:
   - component: {fileID: 1762233802}
   m_Layer: 0
   m_Name: -X
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75276,7 +75276,7 @@ GameObject:
   - component: {fileID: 1782378998}
   m_Layer: 0
   m_Name: -X
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75930,7 +75930,7 @@ GameObject:
   - component: {fileID: 1802471783}
   m_Layer: 0
   m_Name: +Y
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77524,7 +77524,7 @@ GameObject:
   - component: {fileID: 1836961730}
   m_Layer: 10
   m_Name: Bridge01
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77645,7 +77645,7 @@ GameObject:
   - component: {fileID: 1841783973}
   m_Layer: 0
   m_Name: -Z
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77827,7 +77827,7 @@ GameObject:
   - component: {fileID: 1845280026}
   m_Layer: 0
   m_Name: +Y
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78610,7 +78610,7 @@ GameObject:
   - component: {fileID: 1868666021}
   m_Layer: 0
   m_Name: -Z
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79732,7 +79732,7 @@ GameObject:
   - component: {fileID: 1896323665}
   m_Layer: 0
   m_Name: +Z
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81177,7 +81177,7 @@ GameObject:
   - component: {fileID: 1936963681}
   m_Layer: 0
   m_Name: -Y
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82558,7 +82558,7 @@ GameObject:
   - component: {fileID: 1967076915}
   m_Layer: 0
   m_Name: BalanceBeam0
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82590,7 +82590,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 2c12405f3ef31f8428d02810e19064b8, type: 2}
+  - {fileID: 2100000, guid: 37a8ec7ad78b5be4e98828ea9936d68d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -83606,7 +83606,7 @@ GameObject:
   - component: {fileID: 1989986241}
   m_Layer: 0
   m_Name: +X
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84007,7 +84007,7 @@ GameObject:
   - component: {fileID: 1997169163}
   m_Layer: 0
   m_Name: +Z
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84341,7 +84341,7 @@ GameObject:
   - component: {fileID: 2001575985}
   m_Layer: 0
   m_Name: -Y
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86381,7 +86381,7 @@ GameObject:
   - component: {fileID: 2070390695}
   m_Layer: 0
   m_Name: -X
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86917,7 +86917,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 4a63d940feada014ca907936d6faaf20, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -87386,7 +87386,7 @@ GameObject:
   - component: {fileID: 2090244244}
   m_Layer: 0
   m_Name: +Y
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -88576,7 +88576,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2120804735
 Transform:
   m_ObjectHideFlags: 0
@@ -88609,7 +88609,7 @@ GameObject:
   - component: {fileID: 2121947324}
   m_Layer: 10
   m_Name: Bridge04
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -88822,7 +88822,7 @@ GameObject:
   - component: {fileID: 2124332203}
   m_Layer: 0
   m_Name: -Z
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

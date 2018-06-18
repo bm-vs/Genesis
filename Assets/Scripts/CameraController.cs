@@ -8,7 +8,7 @@ public class CameraController : MonoBehaviour {
 
 	void Update () {
 		if (UnityEngine.Input.GetAxisRaw ("RotateCamera") != 0) {
-			playerOffset = Quaternion.Euler(0, UnityEngine.Input.GetAxisRaw ("RotateCamera"), 0) * playerOffset;
+			playerOffset = Quaternion.Euler(0, UnityEngine.Input.GetAxisRaw ("RotateCamera")*2, 0) * playerOffset;
 		}
 
 		PlayerController playerController = player.GetComponents<PlayerController> ()[0];
