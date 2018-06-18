@@ -38,7 +38,7 @@ public class Move {
 	}
 
 	public void CheckOnLedge(Collider collider) {
-		if (!player.isHuman && player.gameObject.GetComponent<Rigidbody> ().velocity.y <= 0){
+		if (!player.isHuman && player.gameObject.GetComponent<Rigidbody> ().velocity.y <= 0 && collider.gameObject.transform.position.y >= player.transform.position.y + player.y / 2){
 			MeshFilter filter = collider.gameObject.GetComponent<MeshFilter> ();
 			ledgeNormal = filter.transform.TransformDirection(filter.mesh.normals [0]);
 			ledgePosition = collider.gameObject.transform.position;
@@ -49,6 +49,11 @@ public class Move {
 	}
 
 	public void setPlayerOnLedge() {
+		if (!player.onLedge) {
+			player.animations.TriggerTransition (player.animations.HANG);
+			player.hangStopped = true;
+		}
+
 		player.onLedge = true;
 		player.gameObject.layer = 9; //PlayerLedge
 		player.gameObject.GetComponent<Rigidbody> ().constraints |= RigidbodyConstraints.FreezePositionY;
@@ -64,5 +69,9 @@ public class Move {
 		player.onLedge = false;
 		player.gameObject.GetComponent<Rigidbody> ().constraints &= ~RigidbodyConstraints.FreezePositionY;
 		player.gameObject.layer = 0; //Default
+		if (!player.jumping) {
+			player.animations.TriggerTransition (player.animations.JUMP);
+			player.jumping = true;
+		}
 	}
 }

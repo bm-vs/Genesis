@@ -18,23 +18,19 @@ public class PlayerAnimationsController : MonoBehaviour {
 	public string RUN_STOP_MONKEY = "RunStopMonkey";
 	public string CHANGE_FORM = "ChangeForm";
 	public string DASH = "Dash";
+	public string HANG = "Hang";
+	public static string HANG_RIGHT = "HangRight";
+	public static string HANG_LEFT = "HangLeft";
+	public string PUSH = "Push";
 
 	private string runDirection;
+	private string hangDirection;
 
 	void Start () {
 		anim = gameObject.GetComponent<Animator> ();
 	}
 
-	public void TriggerTransitionSame (string animation) {
-		anim.SetTrigger (animation);
-		if (animation == JUMP || animation == JUMP_RUN) {
-			anim.ResetTrigger (JUMP_LANDED);
-		}
-
-		Debug.Log (animation);
-	}
-
-	public void TriggerTransitionDiff (string animation) {
+	public void TriggerTransition (string animation) {
 		anim.SetTrigger (animation);
 		if (animation == RUN_STOP || animation == RUN_STOP_MONKEY) {
 			runDirection = "";
@@ -43,12 +39,13 @@ public class PlayerAnimationsController : MonoBehaviour {
 			anim.ResetTrigger (RUN_RIGHT);
 			anim.ResetTrigger (RUN_BACKWARD);
 			anim.ResetTrigger (RUN_MONKEY);
-		}
-		if (animation == JUMP || animation == JUMP_RUN) {
+			anim.ResetTrigger (PUSH);
+		} else if (animation == JUMP || animation == JUMP_RUN) {
 			anim.ResetTrigger (JUMP_LANDED);
+		} else if (animation == HANG) {
+			anim.ResetTrigger (JUMP);
+			hangDirection = "";
 		}
-
-		Debug.Log (animation);
 	}
 
 	public void TriggerTransitionRun (Vector3 forward, Vector3 move, bool isHuman, bool afterJump) {
@@ -70,8 +67,15 @@ public class PlayerAnimationsController : MonoBehaviour {
 		}
 
 		if (direction != runDirection || afterJump) {
-			TriggerTransitionDiff (direction);
+			TriggerTransition (direction);
 			runDirection = direction;
+		}
+	}
+
+	public void TriggerTransitionHang (string animation) {
+		if (animation != hangDirection) {
+			TriggerTransition (animation);
+			hangDirection = animation;
 		}
 	}
 }

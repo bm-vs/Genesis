@@ -21,7 +21,7 @@ public class ChangeForm {
 			timer = currTime;
 			player.isHuman = !player.isHuman;
 			if (!player.running) {
-				player.animations.TriggerTransitionSame (player.animations.CHANGE_FORM);
+				player.animations.TriggerTransition (player.animations.CHANGE_FORM);
 			}
 		}
 	}

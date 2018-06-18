@@ -21,6 +21,7 @@ TagManager:
   - Water
   - Sniper
   - Enemy
+  - Box
   layers:
   - Default
   - TransparentFX

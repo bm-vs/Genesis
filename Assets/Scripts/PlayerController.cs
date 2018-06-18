@@ -31,6 +31,8 @@ public class PlayerController : MonoBehaviour {
 	public bool dead;
 	public bool running;
 	private bool stopped;
+	public bool hangStopped;
+	public Vector3 pushing;
 
 	// Attributes
 	public float y;
@@ -67,6 +69,8 @@ public class PlayerController : MonoBehaviour {
 		dead = false;
 		running = false;
 		stopped = true;
+		hangStopped = true;
+		pushing = Vector3.zero;
 
 		y = gameObject.GetComponent<BoxCollider> ().bounds.size.y;
 		z = gameObject.GetComponent<BoxCollider> ().bounds.size.z;
@@ -110,6 +114,9 @@ public class PlayerController : MonoBehaviour {
 
 			running = moveDirection.magnitude > 0.5f;
 			controlAnimation ();
+			if (pushing != Vector3.zero) {
+				transform.LookAt (pushing);
+			}
 		}
 	}
 
@@ -174,7 +181,10 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision collision) {
-		if (collision.gameObject.tag == "FallPlane") {
+		if (collision.gameObject.tag == "Box" && collision.contacts[0].point.y < collision.gameObject.transform.position.y + collision.gameObject.GetComponent<MeshCollider> ().bounds.size.y / 2) {
+			animations.TriggerTransition(animations.PUSH);
+			pushing = collision.gameObject.transform.position;
+		} else if (collision.gameObject.tag == "FallPlane") {
 			reset.Died ();
 		} else if (dashing && collision.gameObject.tag == "Enemy") {
 			sounds.PlaySound (PlayerSounds.DASH_IMPACT);
@@ -187,6 +197,23 @@ public class PlayerController : MonoBehaviour {
 					updateHealth (-35.0f);
 				}
 			}
+		}
+	}
+
+	void OnCollisionStay(Collision collision) {
+		if (collision.gameObject.tag == "Box" && collision.contacts[0].point.y < collision.gameObject.transform.position.y + collision.gameObject.GetComponent<MeshCollider> ().bounds.size.y / 2) {
+			pushing = collision.gameObject.transform.position;
+		}
+	}
+
+	void OnCollisionExit (Collision collision) {
+		if (collision.gameObject.tag == "Box") {
+			if (isHuman) {
+				animations.TriggerTransition (animations.RUN_STOP);
+			} else {
+				animations.TriggerTransition (animations.RUN_STOP_MONKEY);
+			}
+			pushing = Vector3.zero;
 		}
 	}
 
@@ -219,11 +246,23 @@ public class PlayerController : MonoBehaviour {
 				stopped = false;
 			} else if (!stopped) {
 				if (isHuman) {
-					animations.TriggerTransitionDiff (animations.RUN_STOP);
+					animations.TriggerTransition (animations.RUN_STOP);
 				} else {
-					animations.TriggerTransitionDiff (animations.RUN_STOP_MONKEY);
+					animations.TriggerTransition (animations.RUN_STOP_MONKEY);
 				}
 				stopped = true;
+			}
+		} else if (onLedge) {
+			float direction = Vector3.Dot (Vector3.Cross (moveDirection, transform.forward), transform.up);
+			if (direction < 0.0f) {
+				animations.TriggerTransitionHang (PlayerAnimationsController.HANG_RIGHT);
+				hangStopped = false;
+			} else if (direction > 0.0f) {
+				animations.TriggerTransitionHang (PlayerAnimationsController.HANG_LEFT);
+				hangStopped = false;
+			} else if (!hangStopped) {
+				animations.TriggerTransition (animations.HANG);
+				hangStopped = true;
 			}
 		}
 	}
