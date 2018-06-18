@@ -98,6 +98,7 @@ public class PlayerController : MonoBehaviour {
 		reset = new Reset (this);
 
 		sounds.PlaySound (PlayerSounds.BACKGROUND_SEA);
+		sounds.PlaySound (PlayerSounds.START);
     }
 
 	void Update () {
@@ -166,6 +167,7 @@ public class PlayerController : MonoBehaviour {
 		} else if (other.gameObject.tag == "Checkpoint") {
 			reset.setCheckpoint (other.gameObject.transform.position);
 			other.gameObject.SetActive (false);
+			sounds.PlaySound (PlayerSounds.CHECKPOINT);
 		} else if (other.gameObject.tag == "Water") {
 			sounds.PlaySound (PlayerSounds.SPLASH);
 		} else if (other.gameObject.tag == "LevelChange") {

@@ -274,7 +274,7 @@ public class RangedController : MonoBehaviour {
 			bullet.transform.position = gameObject.transform.position;
 			bullet.GetComponent<Rigidbody>().velocity = playerDirection.normalized * bulletSpeed;
 			shootingCooldown = 1.0f;
-			attackRangedEvent.start ();
+			attackEvent.start ();
 		}
 	}
 
@@ -285,7 +285,7 @@ public class RangedController : MonoBehaviour {
 		dashCooldown = 2.0f;
 		dashDuration = 0.1f;
 		rigidbody.useGravity = false;
-		attackEvent.start ();
+		attackRangedEvent.start ();
 	}
 
 	void AttackMovement () {

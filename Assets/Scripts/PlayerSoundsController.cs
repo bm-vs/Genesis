@@ -16,7 +16,9 @@ public enum PlayerSounds {
 	JUMP_START = 9,
 	CLIMB = 10,
 	BACKGROUND_SEA = 11,
-	BACKGROUND_ELECTRIC = 12
+	BACKGROUND_ELECTRIC = 12,
+	CHECKPOINT = 13,
+	START = 14
 }
 
 public class PlayerSoundsController : MonoBehaviour {

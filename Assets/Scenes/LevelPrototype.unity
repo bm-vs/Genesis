@@ -285,6 +285,8 @@ MonoBehaviour:
   - event:/trepar
   - event:/DRONE MAR
   - event:/DRONES
+  - event:/Check Point
+  - event:/Inicio do jogo
   volumes:
   - 1
   - 1
@@ -299,6 +301,8 @@ MonoBehaviour:
   - 0.2
   - 1
   - 1
+  - 0.2
+  - 0.5
   soundMaxDistance: 40
 --- !u!95 &744996
 Animator:
@@ -37048,8 +37052,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 827677530}
-  m_LocalRotation: {x: 0.018102733, y: 0.947706, z: 0.31391123, w: -0.054639354}
-  m_LocalPosition: {x: -105.08805, y: -129.449, z: 130.81146}
+  m_LocalRotation: {x: -0.0049746637, y: 0.9382911, z: 0.3455465, w: 0.013520234}
+  m_LocalPosition: {x: -101.103035, y: -190.27133, z: 147.81903}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
