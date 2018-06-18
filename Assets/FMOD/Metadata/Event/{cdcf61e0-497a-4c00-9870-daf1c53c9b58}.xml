@@ -93,14 +93,16 @@
     <object class="MixerBusPanner" id="{352c47d8-1e15-404e-949a-8579a4e93552}"/>
     <object class="MultiSound" id="{e3b9d372-a339-4361-8c81-25fb2e009acd}">
         <property name="length">
-            <value>0.90859410430839005</value>
+            <value>0.54000000000000004</value>
+        </property>
+        <property name="volume">
+            <value>2.5</value>
         </property>
         <relationship name="sounds">
-            <destination>{0e6b6e89-f7c2-48f1-b35d-20b97f9602a4}</destination>
-            <destination>{0c80f2de-692a-4395-b4c8-73bb4c023bd6}</destination>
-            <destination>{a86322d3-0098-473c-84a6-7d69ee06e31c}</destination>
-            <destination>{dd7e0a25-fef3-41cf-b9a2-826e03d396e3}</destination>
-            <destination>{8d70feb4-ca62-46bf-ba72-63ed8687fe6a}</destination>
+            <destination>{2226c2d7-8a0d-4689-89bf-7d956bd6d256}</destination>
+            <destination>{75addbf6-532c-4fe0-9edb-be5708460b96}</destination>
+            <destination>{5e311b1a-eed3-4ddb-814e-948c4b2d6fc6}</destination>
+            <destination>{cb473b1d-01c4-4549-93d2-705238dbb624}</destination>
         </relationship>
     </object>
     <object class="EventMixerGroup" id="{cb24bb23-971e-4447-8ff2-6aa3e45c7942}">
@@ -125,35 +127,30 @@
     </object>
     <object class="MixerBusPanner" id="{c9f8765a-d980-4171-bcef-79a6dcabecae}"/>
     <object class="MixerBusFader" id="{6c314264-6bd7-45ae-b255-126a7df7cf1d}"/>
-    <object class="SingleSound" id="{0e6b6e89-f7c2-48f1-b35d-20b97f9602a4}">
+    <object class="SingleSound" id="{2226c2d7-8a0d-4689-89bf-7d956bd6d256}">
         <relationship name="audioFile">
-            <destination>{00d03a9c-02f4-4bf6-b6e7-9c4e50ccffc5}</destination>
+            <destination>{3e675a2e-d149-4334-9626-cb7d672602e7}</destination>
         </relationship>
     </object>
-    <object class="SingleSound" id="{0c80f2de-692a-4395-b4c8-73bb4c023bd6}">
+    <object class="SingleSound" id="{75addbf6-532c-4fe0-9edb-be5708460b96}">
         <relationship name="audioFile">
-            <destination>{5bb2b6ae-413c-48c5-a554-c9c5003b0f1b}</destination>
+            <destination>{1dfdbace-8324-473b-8536-d3e1504205b6}</destination>
         </relationship>
     </object>
-    <object class="SingleSound" id="{a86322d3-0098-473c-84a6-7d69ee06e31c}">
+    <object class="SingleSound" id="{5e311b1a-eed3-4ddb-814e-948c4b2d6fc6}">
         <relationship name="audioFile">
-            <destination>{6d7376fe-5951-457e-9f62-42b5e8893b28}</destination>
+            <destination>{5ef3056e-0499-4807-ac7b-d5bdb33e3f6d}</destination>
         </relationship>
     </object>
-    <object class="SingleSound" id="{dd7e0a25-fef3-41cf-b9a2-826e03d396e3}">
+    <object class="SingleSound" id="{cb473b1d-01c4-4549-93d2-705238dbb624}">
         <relationship name="audioFile">
-            <destination>{01ab291c-6cf2-41e2-a324-40e00bcb9b0b}</destination>
-        </relationship>
-    </object>
-    <object class="SingleSound" id="{8d70feb4-ca62-46bf-ba72-63ed8687fe6a}">
-        <relationship name="audioFile">
-            <destination>{13064adf-000d-45c1-a135-8b5a0aa5548b}</destination>
+            <destination>{a499f88a-2e26-4f93-9c1e-8af81f6bed82}</destination>
         </relationship>
     </object>
     <object class="MixerBusEffectChain" id="{437ed735-5284-4d9c-996f-227dbb46b818}">
         <relationship name="effects">
             <destination>{26bd42f6-27a3-47db-8ecb-a621ed503f3e}</destination>
-            <destination>{d7a90a2a-9b05-4a9f-ba7c-913bd10c6d3c}</destination>
+            <destination>{51cccd21-1e77-493d-9857-06624f2986ee}</destination>
         </relationship>
     </object>
     <object class="MixerBusPanner" id="{bc1a3f48-74b5-4c7b-81cd-9b03b2447629}"/>
@@ -167,12 +164,9 @@
         </property>
     </object>
     <object class="MixerBusFader" id="{26bd42f6-27a3-47db-8ecb-a621ed503f3e}"/>
-    <object class="LowpassEffect" id="{d7a90a2a-9b05-4a9f-ba7c-913bd10c6d3c}">
+    <object class="HighpassEffect" id="{51cccd21-1e77-493d-9857-06624f2986ee}">
         <property name="cutoff">
-            <value>1100</value>
-        </property>
-        <property name="resonance">
-            <value>1.39999998</value>
+            <value>10</value>
         </property>
     </object>
 </objects>

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114571574035024762}
-  - {fileID: 114865054695039456}
+  - {fileID: 114981414705155342}
   EditorEvents:
   - {fileID: 114372149305355884}
   - {fileID: 114396980825426258}
@@ -34,7 +34,6 @@ MonoBehaviour:
   - {fileID: 114128045434308556}
   - {fileID: 114008905513283354}
   - {fileID: 114996901210297686}
-  - {fileID: 114388325560695508}
   - {fileID: 114855356775182626}
   - {fileID: 114386859847160268}
   - {fileID: 114531685142024940}
@@ -42,9 +41,12 @@ MonoBehaviour:
   - {fileID: 114447801548589166}
   - {fileID: 114710203903029586}
   - {fileID: 114739380237020596}
-  MasterBankRef: {fileID: 114865054695039456}
+  - {fileID: 114763310164311578}
+  - {fileID: 114382460440937614}
+  - {fileID: 114059731980794018}
+  MasterBankRef: {fileID: 114981414705155342}
   StringsBankRef: {fileID: 114571574035024762}
-  stringsBankWriteTime: 636648415129313791
+  stringsBankWriteTime: 636649033446649520
   cacheVersion: 2
 --- !u!114 &114000346206545222
 MonoBehaviour:
@@ -79,14 +81,14 @@ MonoBehaviour:
   Path: event:/ATtack serpent 2
   guid: c05f4126297b9b45af8b70c05c1133ce
   Banks:
-  - {fileID: 114865054695039456}
+  - {fileID: 114981414705155342}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 2100
+  Length: 2150
 --- !u!114 &114021509180321514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,6 +132,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 469
+--- !u!114 &114059731980794018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Inicio do jogo
+  guid: 56277534e46e164e9331c74f14915967
+  Banks:
+  - {fileID: 114981414705155342}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 33882
 --- !u!114 &114066082166463912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,7 +168,7 @@ MonoBehaviour:
   Path: event:/Impacto salto
   guid: 8c901fb5c0818a4182f8450b459d8419
   Banks:
-  - {fileID: 114865054695039456}
+  - {fileID: 114981414705155342}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -252,7 +276,7 @@ MonoBehaviour:
   Path: event:/Passos Metal
   guid: 99ef649394262a42afae5a34698d7e39
   Banks:
-  - {fileID: 114865054695039456}
+  - {fileID: 114981414705155342}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -318,7 +342,7 @@ MonoBehaviour:
   Path: event:/DOOR OPEN
   guid: c031e7663c927f4fbcef71cca380024a
   Banks:
-  - {fileID: 114865054695039456}
+  - {fileID: 114981414705155342}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -384,7 +408,7 @@ MonoBehaviour:
   Path: event:/trepar
   guid: 6880b30c7a385c488fae70b497d6931f
   Banks:
-  - {fileID: 114865054695039456}
+  - {fileID: 114981414705155342}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -623,7 +647,7 @@ MonoBehaviour:
   Path: "event:/Pr\xE9 Salto"
   guid: b9ebff7790b90a42b9ccbcd0d7c707de
   Banks:
-  - {fileID: 114865054695039456}
+  - {fileID: 114981414705155342}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -689,7 +713,7 @@ MonoBehaviour:
   Path: event:/CAIr na Agua Pessoal
   guid: 7156dc9e7e72d241873e96316f6c5299
   Banks:
-  - {fileID: 114865054695039456}
+  - {fileID: 114981414705155342}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -883,7 +907,7 @@ MonoBehaviour:
   Path: event:/Vapor
   guid: 01f691895dc3b34392906a3f41f338ae
   Banks:
-  - {fileID: 114865054695039456}
+  - {fileID: 114981414705155342}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -891,6 +915,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 6144
+--- !u!114 &114382460440937614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Check Point
+  guid: 83023949347c9c43a70e36f408c101a6
+  Banks:
+  - {fileID: 114981414705155342}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1461
 --- !u!114 &114383175641811648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -927,7 +973,7 @@ MonoBehaviour:
   Path: event:/tubos Cidade UP
   guid: d8bd03eb9d68af40ae500e51cdd7d958
   Banks:
-  - {fileID: 114865054695039456}
+  - {fileID: 114981414705155342}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -993,7 +1039,7 @@ MonoBehaviour:
   Path: event:/Explosions
   guid: 0451c0fab26b75428d304505af84f539
   Banks:
-  - {fileID: 114865054695039456}
+  - {fileID: 114981414705155342}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1059,7 +1105,7 @@ MonoBehaviour:
   Path: event:/CAIXAS ATIVAR
   guid: 171b3164fc765743840ac2809ff9cad0
   Banks:
-  - {fileID: 114865054695039456}
+  - {fileID: 114981414705155342}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1124,7 +1170,7 @@ MonoBehaviour:
   Path: "event:/Colis\xF5es"
   guid: 06b8131b4ebcf74dbb288d4503529f13
   Banks:
-  - {fileID: 114865054695039456}
+  - {fileID: 114981414705155342}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1168,7 +1214,7 @@ MonoBehaviour:
   Path: event:/DRONE MAR
   guid: ee3358a1d0858c448b98d3d8ad4126d3
   Banks:
-  - {fileID: 114865054695039456}
+  - {fileID: 114981414705155342}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -1233,7 +1279,7 @@ MonoBehaviour:
   Path: "event:/Pr\xE9 attack Monkey"
   guid: adaaeb5ca14fdf4682a77a754f07e608
   Banks:
-  - {fileID: 114865054695039456}
+  - {fileID: 114981414705155342}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1298,14 +1344,14 @@ MonoBehaviour:
   Path: event:/Final fall
   guid: 96a0a257c2ae454aafe1082f0df62285
   Banks:
-  - {fileID: 114865054695039456}
+  - {fileID: 114981414705155342}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 6085
+  Length: 7400
 --- !u!114 &114504187408178134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1490,14 +1536,14 @@ MonoBehaviour:
   Path: event:/Passos
   guid: e061cfcd7a49004c9870daf1c53c9b58
   Banks:
-  - {fileID: 114865054695039456}
+  - {fileID: 114981414705155342}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 3.1999998
   MaxDistance: 50
-  Length: 908
+  Length: 540
 --- !u!114 &114544033506093774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1556,7 +1602,7 @@ MonoBehaviour:
   Path: event:/ATIVATION COMPLETE
   guid: 17bbcaba8d064c4ca95a6f4848e37092
   Banks:
-  - {fileID: 114865054695039456}
+  - {fileID: 114981414705155342}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1576,11 +1622,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets/FMOD\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636648415129313791
+  lastModified: 636649033446649520
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1990
+    Value: 2080
   Exists: 1
 --- !u!114 &114573888065620882
 MonoBehaviour:
@@ -1899,14 +1945,14 @@ MonoBehaviour:
   Path: event:/Inimigos snake attack
   guid: f57e0fff04ec1e46b4dc66f1c0b74f6c
   Banks:
-  - {fileID: 114865054695039456}
+  - {fileID: 114981414705155342}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 3400
+  Length: 2100
 --- !u!114 &114710445675422124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1987,7 +2033,7 @@ MonoBehaviour:
   Path: event:/tubos down
   guid: fd411ecb6aa80b4491290b5f7ecfab01
   Banks:
-  - {fileID: 114865054695039456}
+  - {fileID: 114981414705155342}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -2057,6 +2103,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2730
+--- !u!114 &114763310164311578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Demage
+  guid: 2ecf3389c8962b448b2a8adf87e4e72d
+  Banks:
+  - {fileID: 114981414705155342}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1000
 --- !u!114 &114772740880431178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2243,7 +2311,7 @@ MonoBehaviour:
   Path: event:/Monkey Impact Attack
   guid: 90f9d8bacbc79a4383c24de51e754a76
   Banks:
-  - {fileID: 114865054695039456}
+  - {fileID: 114981414705155342}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -2316,6 +2384,25 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2100
+--- !u!114 &114819439884825060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: /Users/nadianobre/Documents/Genesis/Genesis/Assets/FMOD/Build/Desktop/Master
+    Bank.bank
+  lastModified: 636648658620000000
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 4220992
+  Exists: 1
 --- !u!114 &114833721463264876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2330,7 +2417,7 @@ MonoBehaviour:
   Path: event:/Impact salto metal
   guid: e6a5d2f69c2c544ea576db331b5df1ac
   Banks:
-  - {fileID: 114865054695039456}
+  - {fileID: 114981414705155342}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -2412,7 +2499,7 @@ MonoBehaviour:
   Path: event:/Gun Bulltet
   guid: d7142141bea8a94abfb857ed44bfaeb2
   Banks:
-  - {fileID: 114865054695039456}
+  - {fileID: 114981414705155342}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -2559,7 +2646,7 @@ MonoBehaviour:
   Path: event:/DRONES
   guid: 30385f6053831e48b1c492c617d6a2ea
   Banks:
-  - {fileID: 114865054695039456}
+  - {fileID: 114981414705155342}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -2772,7 +2859,7 @@ MonoBehaviour:
   Path: event:/ARRASTAR
   guid: 8a4b39e3d667de4083d868cee9be2d4b
   Banks:
-  - {fileID: 114865054695039456}
+  - {fileID: 114981414705155342}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -2867,6 +2954,24 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 10000
   Length: 4600
+--- !u!114 &114981414705155342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: D:\School\College\4thYear\DJCO\G\Assets\FMOD\Build\Desktop\Master Bank.bank
+  lastModified: 636649035064942081
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 4220992
+  Exists: 1
 --- !u!114 &114996901210297686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2881,7 +2986,7 @@ MonoBehaviour:
   Path: event:/ATIVATION
   guid: c11db2db531b91459b63f66064f000e3
   Banks:
-  - {fileID: 114865054695039456}
+  - {fileID: 114981414705155342}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -2903,7 +3008,7 @@ MonoBehaviour:
   Path: event:/Energy Ball (gerador)
   guid: 8cad7010de916d43b21e69490813f775
   Banks:
-  - {fileID: 114865054695039456}
+  - {fileID: 114981414705155342}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
