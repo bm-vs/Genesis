@@ -6,11 +6,14 @@ public class GeneratorController : MonoBehaviour {
 	public bool activated;
 	public float health;
 
+	public GameObject status;
 	public GameObject ok1;
 	public GameObject ok2;
 	public GameObject danger1;
 	public GameObject danger2;
 	public GameObject critical1;
+
+	public GameObject explosion;
 
 	private Material okMat;
 	private Material dangerMat;
@@ -56,7 +59,11 @@ public class GeneratorController : MonoBehaviour {
 		if (health <= 0.0f && !activated) {
 			activated = true;
 			explosionEvent.start ();
+			explosion.SetActive (true);
 			electricEvent.stop (FMOD.Studio.STOP_MODE.IMMEDIATE);
+			gameObject.GetComponent<Renderer> ().enabled = false;
+			gameObject.GetComponent<Collider> ().enabled = false;
+			status.SetActive (false);
 		}
 	}
 

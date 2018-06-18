@@ -213,6 +213,7 @@ public class PlayerController : MonoBehaviour {
 			sounds.PlaySound (PlayerSounds.CHECKPOINT);
 		} else if (other.gameObject.tag == "Water") {
 			sounds.PlaySound (PlayerSounds.SPLASH);
+			reset.Died ();
 		} else if (other.gameObject.tag == "LevelChange") {
 			if (!sounds.CheckIfPlaying (PlayerSounds.BACKGROUND_ELECTRIC)) {
 				sounds.PlaySound (PlayerSounds.BACKGROUND_ELECTRIC);
@@ -240,8 +241,6 @@ public class PlayerController : MonoBehaviour {
 			} else {
 				onMetal = true;
 			}
-		} else if (collision.gameObject.tag == "FallPlane") {
-			reset.Died ();
 		} else if (dashing && collision.gameObject.tag == "Enemy") {
 			sounds.PlaySound (PlayerSounds.DASH_IMPACT);
 		} else if (collision.gameObject.tag == "Metal") {
@@ -294,7 +293,6 @@ public class PlayerController : MonoBehaviour {
 		}
 		if (health <= 0.0f) {
 			health = 100.0f;
-			animations.TriggerTransition (animations.DEAD);
 			reset.Died ();
 		}
 	}

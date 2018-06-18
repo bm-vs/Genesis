@@ -17,7 +17,7 @@ public class Move {
 		Transform cameraTransform = Camera.main.transform;
 		Vector3 cameraRight = (new Vector3 (cameraTransform.right.x, 0f, cameraTransform.right.z)).normalized;
 		Vector3 cameraForward = (new Vector3 (cameraTransform.forward.x, 0f, cameraTransform.forward.z)).normalized;
-		player.moveDirection = (cameraRight * direction.x + cameraForward * direction.z) * Time.deltaTime * (player.onLedge ? player.ledgeSpeed : player.moveSpeed);
+		player.moveDirection = (cameraRight * direction.x + cameraForward * direction.z).normalized * Time.deltaTime * (player.onLedge ? player.ledgeSpeed : player.moveSpeed);
 	}
 
 	public void Action() {
