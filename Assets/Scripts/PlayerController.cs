@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour {
 	private bool stopped;
 	public bool hangStopped;
 	public Vector3 pushing;
+	public bool onMetal;
 
 	// Attributes
 	public float y;
@@ -95,6 +96,8 @@ public class PlayerController : MonoBehaviour {
 		shoot = new Shoot (this);
 		dash = new Dash (this);
 		reset = new Reset (this);
+
+		sounds.PlaySound (PlayerSounds.BACKGROUND_SEA);
     }
 
 	void Update () {
@@ -165,6 +168,10 @@ public class PlayerController : MonoBehaviour {
 			other.gameObject.SetActive (false);
 		} else if (other.gameObject.tag == "Water") {
 			sounds.PlaySound (PlayerSounds.SPLASH);
+		} else if (other.gameObject.tag == "LevelChange") {
+			if (!sounds.CheckIfPlaying (PlayerSounds.BACKGROUND_ELECTRIC)) {
+				sounds.PlaySound (PlayerSounds.BACKGROUND_ELECTRIC);
+			}
 		}
     }
 
@@ -181,13 +188,19 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision collision) {
-		if (collision.gameObject.tag == "Box" && collision.contacts[0].point.y < collision.gameObject.transform.position.y + collision.gameObject.GetComponent<MeshCollider> ().bounds.size.y / 2) {
-			animations.TriggerTransition(animations.PUSH);
-			pushing = collision.gameObject.transform.position;
+		if (collision.gameObject.tag == "Box") {
+			if (collision.contacts [0].point.y < collision.gameObject.transform.position.y + collision.gameObject.GetComponent<MeshCollider> ().bounds.size.y / 2) {
+				animations.TriggerTransition (animations.PUSH);
+				pushing = collision.gameObject.transform.position;
+			} else {
+				onMetal = true;
+			}
 		} else if (collision.gameObject.tag == "FallPlane") {
 			reset.Died ();
 		} else if (dashing && collision.gameObject.tag == "Enemy") {
 			sounds.PlaySound (PlayerSounds.DASH_IMPACT);
+		} else if (collision.gameObject.tag == "Metal") {
+			onMetal = true;
 		} else {
 			RangedController enemy = collision.collider.gameObject.GetComponent<RangedController> ();
 			if (enemy != null && enemy.dashing) {
@@ -201,8 +214,15 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void OnCollisionStay(Collision collision) {
-		if (collision.gameObject.tag == "Box" && collision.contacts[0].point.y < collision.gameObject.transform.position.y + collision.gameObject.GetComponent<MeshCollider> ().bounds.size.y / 2) {
-			pushing = collision.gameObject.transform.position;
+		onMetal = false;
+		if (collision.gameObject.tag == "Box") {
+			if (collision.contacts [0].point.y < collision.gameObject.transform.position.y + collision.gameObject.GetComponent<MeshCollider> ().bounds.size.y / 2) {
+				pushing = collision.gameObject.transform.position;
+			} else {
+				onMetal = true;
+			}
+		} else if (collision.gameObject.tag == "Metal") {
+			onMetal = true;
 		}
 	}
 

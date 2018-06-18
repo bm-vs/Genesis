@@ -239,7 +239,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 744992}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -300, y: 21, z: 0}
+  m_LocalPosition: {x: -71.69, y: 106.75, z: 77.67}
   m_LocalScale: {x: 2, y: 3.75, z: 2}
   m_Children:
   - {fileID: 197636867}
@@ -283,6 +283,8 @@ MonoBehaviour:
   - "event:/Pr\xE9 attack Monkey"
   - "event:/Pr\xE9 Salto"
   - event:/trepar
+  - event:/DRONE MAR
+  - event:/DRONES
   volumes:
   - 1
   - 1
@@ -295,6 +297,8 @@ MonoBehaviour:
   - 0.25
   - 0.2
   - 0.2
+  - 1
+  - 1
   soundMaxDistance: 40
 --- !u!95 &744996
 Animator:
@@ -348,6 +352,7 @@ MonoBehaviour:
   running: 0
   hangStopped: 0
   pushing: {x: 0, y: 0, z: 0}
+  onMetal: 0
   y: 0
   z: 0
   moveSpeed: 0
@@ -924,7 +929,7 @@ GameObject:
   - component: {fileID: 21655460}
   m_Layer: 0
   m_Name: +Z
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3894,7 +3899,7 @@ GameObject:
   - component: {fileID: 85680553}
   m_Layer: 0
   m_Name: -X
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4127,7 +4132,7 @@ GameObject:
   - component: {fileID: 86338868}
   m_Layer: 0
   m_Name: -Z
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4643,7 +4648,7 @@ GameObject:
   - component: {fileID: 93204209}
   m_Layer: 0
   m_Name: +Z
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5748,7 +5753,7 @@ GameObject:
   - component: {fileID: 112947398}
   m_Layer: 0
   m_Name: -Z
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7155,7 +7160,7 @@ GameObject:
   - component: {fileID: 136488534}
   m_Layer: 0
   m_Name: +Z
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7742,7 +7747,7 @@ GameObject:
   - component: {fileID: 145796774}
   m_Layer: 0
   m_Name: +X
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7833,7 +7838,7 @@ GameObject:
   - component: {fileID: 148060720}
   m_Layer: 0
   m_Name: +X
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8388,7 +8393,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4134994633124380, guid: 36d21d2d6991daf47aadb189933ebdba, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4134994633124380, guid: 36d21d2d6991daf47aadb189933ebdba, type: 2}
       propertyPath: m_LocalScale.x
@@ -8950,7 +8955,7 @@ GameObject:
   - component: {fileID: 167245424}
   m_Layer: 0
   m_Name: +X
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11255,7 +11260,7 @@ GameObject:
   - component: {fileID: 201930448}
   m_Layer: 0
   m_Name: -X
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11346,7 +11351,7 @@ GameObject:
   - component: {fileID: 202969965}
   m_Layer: 0
   m_Name: -X
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12163,7 +12168,7 @@ GameObject:
   - component: {fileID: 219778132}
   m_Layer: 0
   m_Name: -X
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12787,7 +12792,7 @@ GameObject:
   - component: {fileID: 246626251}
   m_Layer: 0
   m_Name: +X
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15204,7 +15209,7 @@ GameObject:
   - component: {fileID: 281725897}
   m_Layer: 0
   m_Name: +Z
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15948,7 +15953,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4134994633124380, guid: 36d21d2d6991daf47aadb189933ebdba, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4134994633124380, guid: 36d21d2d6991daf47aadb189933ebdba, type: 2}
       propertyPath: m_LocalScale.x
@@ -16468,7 +16473,7 @@ GameObject:
   - component: {fileID: 313352751}
   m_Layer: 0
   m_Name: -X
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16587,7 +16592,7 @@ GameObject:
   - component: {fileID: 315079568}
   m_Layer: 0
   m_Name: -Z
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17076,7 +17081,7 @@ GameObject:
   - component: {fileID: 324167543}
   m_Layer: 0
   m_Name: +X
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17658,7 +17663,7 @@ GameObject:
   - component: {fileID: 336874116}
   m_Layer: 0
   m_Name: +X
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17895,7 +17900,7 @@ GameObject:
   - component: {fileID: 345066275}
   m_Layer: 0
   m_Name: +X
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17986,7 +17991,7 @@ GameObject:
   - component: {fileID: 347838639}
   m_Layer: 0
   m_Name: +Z
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18428,7 +18433,7 @@ GameObject:
   - component: {fileID: 355150580}
   m_Layer: 0
   m_Name: -X
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18769,7 +18774,7 @@ GameObject:
   - component: {fileID: 356896113}
   m_Layer: 0
   m_Name: +Z
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19567,7 +19572,7 @@ GameObject:
   - component: {fileID: 371285999}
   m_Layer: 0
   m_Name: +Z
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20445,7 +20450,7 @@ GameObject:
   - component: {fileID: 412075765}
   m_Layer: 0
   m_Name: -X
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21356,7 +21361,7 @@ GameObject:
   - component: {fileID: 431502833}
   m_Layer: 0
   m_Name: +X
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21939,7 +21944,7 @@ GameObject:
   - component: {fileID: 442759159}
   m_Layer: 0
   m_Name: -Z
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22618,7 +22623,7 @@ GameObject:
   - component: {fileID: 457259529}
   m_Layer: 0
   m_Name: +Z
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22709,7 +22714,7 @@ GameObject:
   - component: {fileID: 460352698}
   m_Layer: 0
   m_Name: +Z
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22885,7 +22890,7 @@ GameObject:
   - component: {fileID: 461977630}
   m_Layer: 0
   m_Name: +X
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23862,7 +23867,7 @@ GameObject:
   - component: {fileID: 510463024}
   m_Layer: 0
   m_Name: -X
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24855,7 +24860,7 @@ GameObject:
   - component: {fileID: 543673378}
   m_Layer: 0
   m_Name: +X
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25927,7 +25932,7 @@ GameObject:
   - component: {fileID: 554501928}
   m_Layer: 0
   m_Name: +X
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26880,7 +26885,7 @@ GameObject:
   - component: {fileID: 571225865}
   m_Layer: 0
   m_Name: -X
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27320,7 +27325,7 @@ GameObject:
   - component: {fileID: 585534520}
   m_Layer: 0
   m_Name: -X
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27955,7 +27960,7 @@ GameObject:
   - component: {fileID: 592606087}
   m_Layer: 0
   m_Name: -Z
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28404,7 +28409,7 @@ GameObject:
   - component: {fileID: 610159280}
   m_Layer: 0
   m_Name: -Z
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30922,7 +30927,7 @@ GameObject:
   - component: {fileID: 679798761}
   m_Layer: 0
   m_Name: Generator0
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31144,7 +31149,7 @@ GameObject:
   - component: {fileID: 690928028}
   m_Layer: 0
   m_Name: +X
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34187,7 +34192,7 @@ GameObject:
   - component: {fileID: 783193690}
   m_Layer: 0
   m_Name: +Y
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34679,7 +34684,7 @@ GameObject:
   - component: {fileID: 789257767}
   m_Layer: 0
   m_Name: +Y
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34821,7 +34826,7 @@ GameObject:
   - component: {fileID: 792390600}
   m_Layer: 0
   m_Name: -X
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35054,7 +35059,7 @@ GameObject:
   - component: {fileID: 799198363}
   m_Layer: 0
   m_Name: -X
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35313,7 +35318,7 @@ GameObject:
   - component: {fileID: 804105049}
   m_Layer: 0
   m_Name: -Z
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35671,7 +35676,7 @@ GameObject:
   - component: {fileID: 815610954}
   m_Layer: 0
   m_Name: +Z
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36123,7 +36128,7 @@ GameObject:
   - component: {fileID: 823165618}
   m_Layer: 0
   m_Name: +X
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36214,7 +36219,7 @@ GameObject:
   - component: {fileID: 823481327}
   m_Layer: 0
   m_Name: -X
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36504,7 +36509,7 @@ GameObject:
   - component: {fileID: 825179998}
   m_Layer: 0
   m_Name: +X
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36595,7 +36600,7 @@ GameObject:
   - component: {fileID: 826073939}
   m_Layer: 0
   m_Name: -Z
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37043,8 +37048,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 827677530}
-  m_LocalRotation: {x: -0.2813712, y: 0.58741194, z: 0.22841866, w: 0.7236037}
-  m_LocalPosition: {x: -169.74042, y: -188.27243, z: 7.577339}
+  m_LocalRotation: {x: 0.018102733, y: 0.947706, z: 0.31391123, w: -0.054639354}
+  m_LocalPosition: {x: -105.08805, y: -129.449, z: 130.81146}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -37321,7 +37326,7 @@ GameObject:
   - component: {fileID: 831064819}
   m_Layer: 0
   m_Name: -Z
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38516,7 +38521,7 @@ GameObject:
   - component: {fileID: 852221559}
   m_Layer: 0
   m_Name: +Z
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38659,7 +38664,7 @@ GameObject:
   - component: {fileID: 865971691}
   m_Layer: 0
   m_Name: -X
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39071,7 +39076,7 @@ GameObject:
   - component: {fileID: 871396547}
   m_Layer: 0
   m_Name: -Z
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39253,7 +39258,7 @@ GameObject:
   - component: {fileID: 874348044}
   m_Layer: 0
   m_Name: +Z
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39479,7 +39484,7 @@ GameObject:
   - component: {fileID: 886576314}
   m_Layer: 0
   m_Name: +Z
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41125,6 +41130,22 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2c12405f3ef31f8428d02810e19064b8, type: 2}
+    - target: {fileID: 1891129552283400, guid: 93632e0167fee234eb1e481b74ada615, type: 2}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
+    - target: {fileID: 1843753702605154, guid: 93632e0167fee234eb1e481b74ada615, type: 2}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
+    - target: {fileID: 1048928712308788, guid: 93632e0167fee234eb1e481b74ada615, type: 2}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
+    - target: {fileID: 1012183876499382, guid: 93632e0167fee234eb1e481b74ada615, type: 2}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 93632e0167fee234eb1e481b74ada615, type: 2}
   m_IsPrefabParent: 0
@@ -41663,7 +41684,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4134994633124380, guid: 36d21d2d6991daf47aadb189933ebdba, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4134994633124380, guid: 36d21d2d6991daf47aadb189933ebdba, type: 2}
       propertyPath: m_LocalScale.x
@@ -41846,7 +41867,7 @@ GameObject:
   - component: {fileID: 975540510}
   m_Layer: 0
   m_Name: +Z
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42146,7 +42167,7 @@ GameObject:
   - component: {fileID: 977445489}
   m_Layer: 0
   m_Name: -Z
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42237,7 +42258,7 @@ GameObject:
   - component: {fileID: 978156299}
   m_Layer: 0
   m_Name: -Z
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43256,7 +43277,7 @@ GameObject:
   - component: {fileID: 1000773897}
   m_Layer: 0
   m_Name: +Y
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43370,7 +43391,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4134994633124380, guid: 36d21d2d6991daf47aadb189933ebdba, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 36d21d2d6991daf47aadb189933ebdba, type: 2}
@@ -43769,7 +43790,7 @@ GameObject:
   - component: {fileID: 1012574246}
   m_Layer: 0
   m_Name: +X
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44366,7 +44387,7 @@ GameObject:
   - component: {fileID: 1016617166}
   m_Layer: 0
   m_Name: Generator1
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45306,7 +45327,7 @@ GameObject:
   - component: {fileID: 1039207073}
   m_Layer: 0
   m_Name: -Z
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49725,7 +49746,7 @@ GameObject:
   - component: {fileID: 1153823821}
   m_Layer: 0
   m_Name: -X
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51165,7 +51186,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4134994633124380, guid: 36d21d2d6991daf47aadb189933ebdba, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4134994633124380, guid: 36d21d2d6991daf47aadb189933ebdba, type: 2}
       propertyPath: m_LocalScale.x
@@ -53374,7 +53395,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4134994633124380, guid: 36d21d2d6991daf47aadb189933ebdba, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4134994633124380, guid: 36d21d2d6991daf47aadb189933ebdba, type: 2}
       propertyPath: m_LocalScale.x
@@ -53456,7 +53477,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4134994633124380, guid: 36d21d2d6991daf47aadb189933ebdba, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4134994633124380, guid: 36d21d2d6991daf47aadb189933ebdba, type: 2}
       propertyPath: m_LocalScale.x
@@ -54648,7 +54669,7 @@ GameObject:
   - component: {fileID: 1278655663}
   m_Layer: 0
   m_Name: -X
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56566,7 +56587,7 @@ GameObject:
   - component: {fileID: 1318992662}
   m_Layer: 0
   m_Name: -X
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56784,7 +56805,7 @@ GameObject:
   - component: {fileID: 1326344991}
   m_Layer: 0
   m_Name: -Z
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56912,7 +56933,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4134994633124380, guid: 36d21d2d6991daf47aadb189933ebdba, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4134994633124380, guid: 36d21d2d6991daf47aadb189933ebdba, type: 2}
       propertyPath: m_LocalScale.x
@@ -57123,7 +57144,7 @@ GameObject:
   - component: {fileID: 1333906068}
   m_Layer: 0
   m_Name: -X
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58909,7 +58930,7 @@ GameObject:
   - component: {fileID: 1375246787}
   m_Layer: 0
   m_Name: -Z
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59714,7 +59735,7 @@ GameObject:
   - component: {fileID: 1395542238}
   m_Layer: 0
   m_Name: +X
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59805,7 +59826,7 @@ GameObject:
   - component: {fileID: 1395762696}
   m_Layer: 0
   m_Name: -Z
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60956,7 +60977,7 @@ GameObject:
   - component: {fileID: 1414331658}
   m_Layer: 0
   m_Name: +Z
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62949,7 +62970,7 @@ GameObject:
   - component: {fileID: 1462296325}
   m_Layer: 0
   m_Name: +X
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63040,7 +63061,7 @@ GameObject:
   - component: {fileID: 1462514300}
   m_Layer: 0
   m_Name: -X
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -67254,7 +67275,7 @@ GameObject:
   - component: {fileID: 1562357327}
   m_Layer: 0
   m_Name: +Z
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68447,7 +68468,7 @@ GameObject:
   - component: {fileID: 1590076260}
   m_Layer: 0
   m_Name: +X
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68624,13 +68645,26 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 429717742}
+  - component: {fileID: 1592014510}
   m_Layer: 0
   m_Name: Top
-  m_TagString: Terrain
+  m_TagString: LevelChange
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &1592014510
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1592014509}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: -1, z: 0}
 --- !u!1 &1593111785
 GameObject:
   m_ObjectHideFlags: 0
@@ -69280,7 +69314,7 @@ GameObject:
   - component: {fileID: 1612862166}
   m_Layer: 0
   m_Name: -X
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70221,7 +70255,7 @@ GameObject:
   - component: {fileID: 1645920943}
   m_Layer: 0
   m_Name: -Z
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70760,7 +70794,7 @@ GameObject:
   - component: {fileID: 1659377816}
   m_Layer: 0
   m_Name: +X
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71641,7 +71675,7 @@ GameObject:
   - component: {fileID: 1675616469}
   m_Layer: 0
   m_Name: -Z
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72067,7 +72101,7 @@ GameObject:
   - component: {fileID: 1685621863}
   m_Layer: 0
   m_Name: +X
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72982,7 +73016,7 @@ GameObject:
   - component: {fileID: 1721648063}
   m_Layer: 0
   m_Name: -X
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73103,7 +73137,7 @@ GameObject:
   - component: {fileID: 1725772876}
   m_Layer: 0
   m_Name: +Z
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73839,7 +73873,7 @@ GameObject:
   - component: {fileID: 1747559069}
   m_Layer: 0
   m_Name: +Y
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74196,7 +74230,7 @@ GameObject:
   - component: {fileID: 1757742182}
   m_Layer: 0
   m_Name: +Y
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75433,7 +75467,7 @@ GameObject:
   - component: {fileID: 1785017679}
   m_Layer: 0
   m_Name: +Z
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75796,7 +75830,7 @@ GameObject:
   - component: {fileID: 1800451594}
   m_Layer: 0
   m_Name: +Z
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76445,7 +76479,7 @@ GameObject:
   - component: {fileID: 1817677624}
   m_Layer: 0
   m_Name: -Z
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77483,7 +77517,7 @@ GameObject:
   - component: {fileID: 1836777802}
   m_Layer: 0
   m_Name: +X
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80446,7 +80480,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4134994633124380, guid: 36d21d2d6991daf47aadb189933ebdba, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4134994633124380, guid: 36d21d2d6991daf47aadb189933ebdba, type: 2}
       propertyPath: m_LocalScale.x
@@ -81663,7 +81697,7 @@ GameObject:
   - component: {fileID: 1942552936}
   m_Layer: 0
   m_Name: -X
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82430,7 +82464,7 @@ GameObject:
   - component: {fileID: 1960165619}
   m_Layer: 0
   m_Name: -Z
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82835,7 +82869,7 @@ GameObject:
   - component: {fileID: 1969493393}
   m_Layer: 0
   m_Name: +Z
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83773,7 +83807,7 @@ GameObject:
   - component: {fileID: 1995478315}
   m_Layer: 0
   m_Name: +Z
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84488,7 +84522,7 @@ GameObject:
   - component: {fileID: 2003140902}
   m_Layer: 0
   m_Name: +X
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -85167,7 +85201,7 @@ GameObject:
   - component: {fileID: 2021024986}
   m_Layer: 0
   m_Name: +X
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -85617,7 +85651,7 @@ GameObject:
   - component: {fileID: 2050278504}
   m_Layer: 0
   m_Name: -X
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86567,7 +86601,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4134994633124380, guid: 36d21d2d6991daf47aadb189933ebdba, type: 2}
       propertyPath: m_RootOrder
-      value: 11
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4134994633124380, guid: 36d21d2d6991daf47aadb189933ebdba, type: 2}
       propertyPath: m_LocalScale.x
@@ -87353,7 +87387,7 @@ GameObject:
   - component: {fileID: 2088718357}
   m_Layer: 0
   m_Name: +Z
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87583,7 +87617,7 @@ GameObject:
   - component: {fileID: 2093140741}
   m_Layer: 0
   m_Name: +Z
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -88313,7 +88347,7 @@ GameObject:
   - component: {fileID: 2117738930}
   m_Layer: 0
   m_Name: -Z
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -89217,7 +89251,7 @@ GameObject:
   - component: {fileID: 2134736210}
   m_Layer: 0
   m_Name: -Z
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -89572,7 +89606,7 @@ GameObject:
   - component: {fileID: 2140681138}
   m_Layer: 0
   m_Name: -Z
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -89663,7 +89697,7 @@ GameObject:
   - component: {fileID: 2143694877}
   m_Layer: 0
   m_Name: +Y
-  m_TagString: Terrain
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

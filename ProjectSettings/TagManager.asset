@@ -23,6 +23,7 @@ TagManager:
   - Enemy
   - Box
   - Metal
+  - LevelChange
   layers:
   - Default
   - TransparentFX

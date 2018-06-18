@@ -33,7 +33,11 @@ public class Jump {
 
 		if (!player.airborne || player.onLedge) {
 			if (player.jumping && !player.onLedge) {
-				player.sounds.PlaySound (PlayerSounds.JUMP_IMPACT);
+				if (player.onMetal) {
+					player.sounds.PlaySound (PlayerSounds.JUMP_IMPACT_METAL);
+				} else {
+					player.sounds.PlaySound (PlayerSounds.JUMP_IMPACT);
+				}
 				if (player.running) {
 					player.animations.TriggerTransitionRun (player.moveDirection, player.transform.forward, player.isHuman, true);
 				} else {

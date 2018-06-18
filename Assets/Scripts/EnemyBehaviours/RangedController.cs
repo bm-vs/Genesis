@@ -178,7 +178,7 @@ public class RangedController : MonoBehaviour {
 	}
 
 	void OnTriggerEnter (Collider other) {
-		if (health > 0.0f) {
+		if (health > 0.0f && other.gameObject != null) {
 			if (other.gameObject.tag == "Shot" && other.gameObject.GetComponent<BulletController> ().owner.tag == "Player") {
 				updateHealth (-20.0f);
 				hit = true;

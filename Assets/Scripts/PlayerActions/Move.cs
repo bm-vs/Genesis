@@ -30,10 +30,14 @@ public class Move {
 		} else {
 			rigidbody.velocity = new Vector3 (player.moveDirection.x, rigidbody.velocity.y, player.moveDirection.z);
 			player.gameObject.transform.LookAt (player.gameObject.transform.position + new Vector3(player.moveDirection.x, 0.0f, player.moveDirection.z));
-			if (!player.sounds.CheckIfPlaying(PlayerSounds.STEPS) && player.running && !player.airborne) {
+
+			if (player.onMetal) {
+				if (!player.sounds.CheckIfPlaying(PlayerSounds.STEPS_METAL) && player.running && !player.airborne) {
+					player.sounds.PlaySound (PlayerSounds.STEPS_METAL);
+				}
+			} else if (!player.sounds.CheckIfPlaying(PlayerSounds.STEPS) && player.running && !player.airborne) {
 				player.sounds.PlaySound (PlayerSounds.STEPS);
 			}
-
 		}
 	}
 
