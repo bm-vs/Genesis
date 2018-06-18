@@ -6,6 +6,10 @@ using UnityEngine;
 public enum EnemyType {melee, ranged, hybrid}
 
 public class RangedController : MonoBehaviour {
+	private EnemyAnimationController animations;
+	public GameObject particles;
+	public GameObject mesh;
+
 	// Vital
 	private GameObject player;
 	public EnemyType type;
@@ -62,6 +66,7 @@ public class RangedController : MonoBehaviour {
 	public float soundMaxDistance;
 
 	void Start () {
+		animations = gameObject.GetComponent<EnemyAnimationController> ();
 		player = GameObject.FindGameObjectWithTag ("Player");
 		bulletPrefab = Resources.Load ("Prefabs/BulletEnemy");
 		bulletSpeed = 40.0f;
@@ -77,7 +82,7 @@ public class RangedController : MonoBehaviour {
 		transitionTimer = 0.0f;
 		loseSightTimeout = 0.0f;
 		velocityY = 0.0f;
-		deathTimer = 1.0f;
+		deathTimer = 2.0f;
 
 		if (type == EnemyType.hybrid) {
 			health = 80.0f;
@@ -157,6 +162,7 @@ public class RangedController : MonoBehaviour {
 			dashing = false;
 		} else {
 			deathTimer -= Time.fixedDeltaTime;
+			mesh.transform.position = mesh.transform.position - new Vector3 (0.0f, 0.02f, 0.0f);
 			if (deathTimer <= 0.0f) {
 				Destroy (gameObject);
 			}
@@ -192,6 +198,11 @@ public class RangedController : MonoBehaviour {
 
 	public void updateHealth (float value) {
 		health += value;
+		if (health <= 0.0f) {
+			animations.TriggerTransition (animations.DEAD);
+			particles.SetActive (true);
+
+		}
 	}
 
 	bool IsGoingToFall (Vector3 movementDirection) {
@@ -233,11 +244,12 @@ public class RangedController : MonoBehaviour {
 			foreach (GameObject buddy in buddies) {
 				if (buddy != null) {
 					Vector3 buddyDirection = buddy.transform.position - transform.position;
+					float buddyAngle = Vector3.Angle (buddyDirection, transform.forward);
 					int layerMask = 1 << 11;
 					layerMask = ~layerMask;
 					RaycastHit hit;
 					if (Physics.Raycast (transform.position, buddyDirection, out hit, visionRange, layerMask)) {
-						if (buddy != null && hit.collider.gameObject.GetComponent<RangedController> () != null && (buddy.GetComponent<RangedController> ().health <= 0.0f || buddy.GetComponent<RangedController> ().onSight)) {
+						if (buddy != null && hit.collider.gameObject.GetComponent<RangedController> () != null && (buddy.GetComponent<RangedController> ().health <= 0.0f || buddy.GetComponent<RangedController> ().onSight) && buddyAngle < visionAngle) {
 							lastSeen = player.transform.position;
 							onSight = true;
 							buddyOnSight = true;
@@ -275,6 +287,7 @@ public class RangedController : MonoBehaviour {
 			bullet.GetComponent<Rigidbody>().velocity = playerDirection.normalized * bulletSpeed;
 			shootingCooldown = 1.0f;
 			attackEvent.start ();
+			animations.TriggerTransition (animations.SHOOT);
 		}
 	}
 
@@ -286,6 +299,7 @@ public class RangedController : MonoBehaviour {
 		dashDuration = 0.1f;
 		rigidbody.useGravity = false;
 		attackRangedEvent.start ();
+		animations.TriggerTransition (animations.DASH);
 	}
 
 	void AttackMovement () {
@@ -299,6 +313,7 @@ public class RangedController : MonoBehaviour {
 			}
 			else {
 				rigidbody.velocity = movementDirection * engageSpeed;
+				animations.TriggerTransition (animations.RUN);
 			}
 		}
 	}
@@ -324,11 +339,13 @@ public class RangedController : MonoBehaviour {
 				Vector3 target = new Vector3 (pos.x, transform.position.y, pos.z);
 				transform.LookAt (target);
 				rigidbody.velocity = movementDirection * speed;
+				animations.TriggerTransition (animations.WALK);
 			} else {
 				positionIndex = (positionIndex + 1) % anchorPoints.Length;
 			}
 		} else {
 			transitionTimer -= Time.fixedDeltaTime;
+			animations.TriggerTransition (animations.IDLE);
 		}
 	}
 
