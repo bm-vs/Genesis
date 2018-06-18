@@ -22,6 +22,7 @@ public class PlayerAnimationsController : MonoBehaviour {
 	public static string HANG_RIGHT = "HangRight";
 	public static string HANG_LEFT = "HangLeft";
 	public string PUSH = "Push";
+	public string DEAD = "Dead";
 
 	private string runDirection;
 	private string hangDirection;

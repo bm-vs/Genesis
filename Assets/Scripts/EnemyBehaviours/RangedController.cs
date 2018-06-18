@@ -226,7 +226,7 @@ public class RangedController : MonoBehaviour {
 					layerMask = ~layerMask;
 					RaycastHit hit;
 					if (Physics.Raycast (transform.position, buddyDirection, out hit, visionRange, layerMask)) {
-						if (buddy != null && hit.collider.gameObject.GetComponent<RangedController> () != null && buddy.GetComponent<RangedController> ().health <= 0.0f) {
+						if (buddy != null && hit.collider.gameObject.GetComponent<RangedController> () != null && (buddy.GetComponent<RangedController> ().health <= 0.0f || buddy.GetComponent<RangedController> ().onSight)) {
 							lastSeen = player.transform.position;
 							onSight = true;
 							buddyOnSight = true;

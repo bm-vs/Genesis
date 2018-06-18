@@ -43,6 +43,11 @@ public class Reset {
 			if (dyingTimeout > 0.0f) {
 				dyingTimeout -= Time.fixedDeltaTime;
 			} else {
+				if (player.isHuman) {
+					player.animations.TriggerTransition (player.animations.RUN_STOP);
+				} else {
+					player.animations.TriggerTransition (player.animations.RUN_STOP_MONKEY);
+				}
 				dyingTimeout = 4.0f;
 				player.dead = false;
 				player.transform.position = checkpoint;

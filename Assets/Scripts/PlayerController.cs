@@ -225,6 +225,7 @@ public class PlayerController : MonoBehaviour {
 		}
 		if (health <= 0.0f) {
 			health = 100.0f;
+			animations.TriggerTransition (animations.DEAD);
 			reset.Died ();
 		}
 	}
