@@ -18,7 +18,8 @@ public enum PlayerSounds {
 	BACKGROUND_SEA = 11,
 	BACKGROUND_ELECTRIC = 12,
 	CHECKPOINT = 13,
-	START = 14
+	START = 14,
+	DAMAGE = 15
 }
 
 public class PlayerSoundsController : MonoBehaviour {

@@ -7,7 +7,12 @@ public class PlayerController : MonoBehaviour {
 	// Sounds and animations
 	public PlayerSoundsController sounds;
 	public PlayerAnimationsController animations;
-	public GameObject gun;
+
+	public GameObject humanBody;
+	public GameObject monkeyBody;
+	public GameObject surface;
+	public GameObject joints;
+
 
 	// Health
 	private float health;
@@ -242,6 +247,10 @@ public class PlayerController : MonoBehaviour {
 
 	public void updateHealth (float value) {
 		health += value;
+		if (!sounds.CheckIfPlaying (PlayerSounds.DAMAGE)) {
+			sounds.PlaySound (PlayerSounds.DAMAGE);
+		}
+
 		//Debug.Log (health);
 		if (value < 0.0f) {
 			timeLastHit = 3.0f;
