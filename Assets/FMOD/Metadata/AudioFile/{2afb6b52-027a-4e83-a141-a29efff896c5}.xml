@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{2afb6b52-027a-4e83-a141-a29efff896c5}">
+        <property name="assetPath">
+            <value>city.drone.1.wav</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>16.943401360544218</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{a42b4905-144e-4668-82a8-7c2ccc352e90}</destination>
+        </relationship>
+    </object>
+</objects>

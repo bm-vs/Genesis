@@ -95,10 +95,16 @@
             <value>0.049999999999999989</value>
         </property>
         <property name="length">
-            <value>1.4117687074829932</value>
+            <value>1.6500000000000001</value>
+        </property>
+        <property name="volume">
+            <value>-11.5</value>
         </property>
         <relationship name="fadeInCurve">
             <destination>{de60b8e1-4f29-49cb-b164-d465d064f6b9}</destination>
+        </relationship>
+        <relationship name="fadeOutCurve">
+            <destination>{703f41af-9704-44a5-bc3f-ec106ea9fa48}</destination>
         </relationship>
         <relationship name="audioFile">
             <destination>{36312825-1147-4a60-a267-2ee868094dd8}</destination>
@@ -154,6 +160,14 @@
             <destination>{2105fc07-d687-4d3d-8c8e-054210098330}</destination>
         </relationship>
     </object>
+    <object class="FadeCurve" id="{703f41af-9704-44a5-bc3f-ec106ea9fa48}">
+        <relationship name="startPoint">
+            <destination>{f847082b-376c-455b-83c0-f42fa1e8b76a}</destination>
+        </relationship>
+        <relationship name="endPoint">
+            <destination>{99986888-7109-4ba3-88b4-8f5abba61f8a}</destination>
+        </relationship>
+    </object>
     <object class="FadeCurve" id="{49241d3d-f966-455c-a582-05bffb0616b6}">
         <relationship name="startPoint">
             <destination>{de465f0f-10bb-4ccd-ac0e-a78c8635935d}</destination>
@@ -190,6 +204,25 @@
         </property>
         <property name="value">
             <value>1</value>
+        </property>
+    </object>
+    <object class="AutomationPoint" id="{f847082b-376c-455b-83c0-f42fa1e8b76a}">
+        <property name="position">
+            <value>0.95000000000000007</value>
+        </property>
+        <property name="value">
+            <value>1</value>
+        </property>
+        <property name="curveShape">
+            <value>0.00437167706</value>
+        </property>
+    </object>
+    <object class="AutomationPoint" id="{99986888-7109-4ba3-88b4-8f5abba61f8a}">
+        <property name="position">
+            <value>1.7000000000000002</value>
+        </property>
+        <property name="value">
+            <value>0</value>
         </property>
     </object>
     <object class="AutomationPoint" id="{de465f0f-10bb-4ccd-ac0e-a78c8635935d}">

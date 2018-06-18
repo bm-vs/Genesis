@@ -8,11 +8,20 @@ public class PlayerController : MonoBehaviour {
 	public PlayerSoundsController sounds;
 	public PlayerAnimationsController animations;
 
-	public GameObject humanBody;
-	public GameObject monkeyBody;
-	public GameObject surface;
-	public GameObject joints;
+	public GameObject hips;
+	public GameObject leftLeg;
+	public GameObject rightLeg;
+	public GameObject leftFoot;
+	public GameObject rightFoot;
+	public GameObject spine;
+	public GameObject leftArm;
+	public GameObject rightArm;
+	public GameObject leftHand;
+	public GameObject rightHand;
+	public GameObject gun;
 
+	public GameObject joints;
+	public GameObject surface;
 
 	// Health
 	private float health;
@@ -165,6 +174,34 @@ public class PlayerController : MonoBehaviour {
 		reset.Action ();
 	}
 
+	void LateUpdate () {
+		if (!isHuman) {
+			hips.transform.localScale = new Vector3 (1.33f, 1.0f, 1.33f);
+			leftLeg.transform.localScale = new Vector3 (1.1f, 0.5f, 1.0f);
+			rightLeg.transform.localScale = new Vector3 (1.1f, 0.5f, 1.0f);
+			leftFoot.transform.localScale = new Vector3 (1.0f, 1.0f, 0.6f);
+			rightFoot.transform.localScale = new Vector3 (1.0f, 1.0f, 0.6f);
+			spine.transform.localScale = new Vector3 (1.3f, 1.0f, 1.3f);
+			leftArm.transform.localScale = new Vector3 (0.8f, 1.6f, 1.6f);
+			rightArm.transform.localScale = new Vector3 (0.8f, 1.6f, 1.6f);
+			leftHand.transform.localScale = new Vector3 (0.8f, 0.8f, 0.8f);
+			rightHand.transform.localScale = new Vector3 (0.8f, 0.8f, 0.8f);
+			gun.SetActive (false);
+		} else {
+			hips.transform.localScale = new Vector3 (1.0f, 1.0f, 1.0f);
+			leftLeg.transform.localScale = new Vector3 (1.0f, 1.0f, 1.0f);
+			rightLeg.transform.localScale = new Vector3 (1.0f, 1.0f, 1.0f);
+			leftFoot.transform.localScale = new Vector3 (1.0f, 1.0f, 1.0f);
+			rightFoot.transform.localScale = new Vector3 (1.0f, 1.0f, 1.0f);
+			spine.transform.localScale = new Vector3 (1.0f, 1.0f, 1.0f);
+			leftArm.transform.localScale = new Vector3 (1.0f, 1.0f, 1.0f);
+			rightArm.transform.localScale = new Vector3 (1.0f, 1.0f, 1.0f);
+			leftHand.transform.localScale = new Vector3 (1.0f, 1.0f, 1.0f);
+			rightHand.transform.localScale = new Vector3 (1.0f, 1.0f, 1.0f);
+			gun.SetActive (true);
+		}
+	}
+
 	void OnTriggerEnter(Collider other) {
 		if (other.gameObject.tag == "Shot" && other.gameObject.GetComponent<BulletController> ().owner.tag != "Player") {
 			updateHealth (-20.0f);
@@ -247,7 +284,7 @@ public class PlayerController : MonoBehaviour {
 
 	public void updateHealth (float value) {
 		health += value;
-		if (!sounds.CheckIfPlaying (PlayerSounds.DAMAGE)) {
+		if (value < 0.0f && !sounds.CheckIfPlaying (PlayerSounds.DAMAGE)) {
 			sounds.PlaySound (PlayerSounds.DAMAGE);
 		}
 

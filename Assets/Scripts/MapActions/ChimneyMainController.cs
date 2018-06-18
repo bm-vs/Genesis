@@ -5,6 +5,7 @@ using UnityEngine;
 public class ChimneyMainController : MonoBehaviour {
 	public float cooldownTimer;
 	public GameObject flame;
+	public GameObject particles;
 	private float flameTimer;
 	private bool flameOn;
 	private Vector3 flameOrigin;
@@ -44,6 +45,7 @@ public class ChimneyMainController : MonoBehaviour {
 				flameOn = true;
 				flameTimer = 1f;
 				exhaustEvent.start ();
+				particles.SetActive (true);
 			}
 		}
 
@@ -55,6 +57,7 @@ public class ChimneyMainController : MonoBehaviour {
 		if (flameTimer <= 0 || !operational) {
 			flame.transform.position = flameOrigin;
 			exhaustEvent.stop (FMOD.Studio.STOP_MODE.IMMEDIATE);
+			particles.SetActive (false);
 		} else {
 			flameTimer -= Time.deltaTime;
 		}

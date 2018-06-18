@@ -7,6 +7,7 @@ public class ChimneyController : MonoBehaviour {
 	public bool operational;
 	public float cooldownTimer;
 	public GameObject flame;
+	public GameObject particles;
 	private float flameTimer;
 	private bool flameOn;
 	private Vector3 flameOrigin;
@@ -74,6 +75,7 @@ public class ChimneyController : MonoBehaviour {
 				flameOn = true;
 				flameTimer = 1f;
 				exhaustEvent.start ();
+				particles.SetActive (true);
 			}
 		}
 
@@ -85,6 +87,7 @@ public class ChimneyController : MonoBehaviour {
 		if (flameTimer <= 0 || !operational) {
 			flame.transform.position = flameOrigin;
 			exhaustEvent.stop (FMOD.Studio.STOP_MODE.IMMEDIATE);
+			particles.SetActive (false);
 		} else {
 			flameTimer -= Time.deltaTime;
 		}

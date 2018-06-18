@@ -6,13 +6,17 @@ public class ChangeForm {
 	private PlayerController player;
 	private float timer;
 	private Material humanMaterial;
+	private Material humanJointsMaterial;
 	private Material monkeyMaterial;
+	private Material monkeyJointsMaterial;
 
 	public ChangeForm(PlayerController player) {
 		this.player = player;
 		this.timer = 0;
 		this.humanMaterial = Resources.Load ("Materials/HumanMaterial", typeof(Material)) as Material;
+		this.humanJointsMaterial = Resources.Load ("Materials/HumanJointsMaterial", typeof(Material)) as Material;
 		this.monkeyMaterial = Resources.Load ("Materials/MonkeyMaterial", typeof(Material)) as Material;
+		this.monkeyJointsMaterial = Resources.Load ("Materials/MonkeyJointsMaterial", typeof(Material)) as Material;
 	}
 
 	public void Input() {
@@ -20,16 +24,13 @@ public class ChangeForm {
 		if (UnityEngine.Input.GetAxisRaw ("ChangeForm") != 0 && currTime - timer >= player.changeFormCooldown) {
 			timer = currTime;
 			player.isHuman = !player.isHuman;
-			/*
 			if (player.isHuman) {
-				player.joints.GetComponent<SkinnedMeshRenderer> ().rootBone = player.humanBody.transform;
-				player.surface.GetComponent<SkinnedMeshRenderer> ().rootBone = player.humanBody.transform;
+				player.joints.GetComponent<Renderer> ().material = humanJointsMaterial;
+				player.surface.GetComponent<Renderer> ().material = humanMaterial;
+			} else {
+				player.joints.GetComponent<Renderer> ().material = monkeyJointsMaterial;
+				player.surface.GetComponent<Renderer> ().material = monkeyMaterial;
 			}
-			else {
-				player.joints.GetComponent<SkinnedMeshRenderer> ().rootBone = player.monkeyBody.transform;
-				player.surface.GetComponent<SkinnedMeshRenderer> ().rootBone = player.monkeyBody.transform;
-			}
-			*/
 
 			if (!player.running) {
 				player.animations.TriggerTransition (player.animations.CHANGE_FORM);
