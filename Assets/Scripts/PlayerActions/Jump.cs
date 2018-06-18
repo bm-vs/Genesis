@@ -52,7 +52,12 @@ public class Jump {
 			}
 
 			rigidbody.constraints &= ~RigidbodyConstraints.FreezePositionY;
-			rigidbody.AddForce (new Vector3 (0, player.jumpForce, 0), ForceMode.Impulse);
+			if (player.onLedge) {
+				rigidbody.AddForce (new Vector3 (0, player.jumpForce * 1.1f, 0), ForceMode.Impulse);
+			} else {
+				rigidbody.AddForce (new Vector3 (0, player.jumpForce, 0), ForceMode.Impulse);
+			}
+
 			startJump = false;
 			player.jumping = true;
 		}

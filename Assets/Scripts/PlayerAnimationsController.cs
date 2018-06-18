@@ -24,11 +24,22 @@ public class PlayerAnimationsController : MonoBehaviour {
 	public string PUSH = "Push";
 	public string DEAD = "Dead";
 
+	public GameObject hips;
+
 	private string runDirection;
 	private string hangDirection;
 
 	void Start () {
 		anim = gameObject.GetComponent<Animator> ();
+	}
+
+	public void Update () {
+		AnimatorStateInfo state = anim.GetCurrentAnimatorStateInfo (0);
+		if (state.IsName ("Hanging") || state.IsName ("Hang Right") || state.IsName ("Hang Left")) {
+			hips.transform.localPosition = new Vector3 (0.0f, -0.5f, 0.2f);
+		} else {
+			hips.transform.localPosition = new Vector3 (0.0f, -0.5f, 0f);
+		}
 	}
 
 	public void TriggerTransition (string animation) {
