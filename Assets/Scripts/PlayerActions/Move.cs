@@ -68,7 +68,7 @@ public class Move {
 		if (ledgeNormal.x != 0) {
 			player.gameObject.transform.position = new Vector3 (ledgePosition.x + ledgeNormal.x * player.z * player.ledgeHelper, ledgePosition.y - 1.0f, player.gameObject.transform.position.z);
 		} else if (ledgeNormal.z != 0) {
-			player.gameObject.transform.position = new Vector3 (player.gameObject.transform.position.x, ledgePosition.y - 1.0f, ledgePosition.z + ledgeNormal.z * player.z);
+			player.gameObject.transform.position = new Vector3 (player.gameObject.transform.position.x, ledgePosition.y - 1.0f, ledgePosition.z + ledgeNormal.z * player.z * player.ledgeHelper);
 		}
 	}
 
