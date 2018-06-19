@@ -63,5 +63,6 @@ public class Reset {
 	public void Died() {
 		player.dead = true;
 		player.animations.TriggerTransition (player.animations.DEAD);
+		player.sounds.PlaySound (PlayerSounds.DEAD);
 	}
 }

@@ -62,6 +62,11 @@ public class RangedController : MonoBehaviour {
 	public float attackRangedVolume;
 	private FMOD.Studio.EventInstance attackRangedEvent;
 
+	[FMODUnity.EventRef]
+	public string walkSound;
+	public float walkVolume;
+	private FMOD.Studio.EventInstance walkEvent;
+
 
 	public float soundMaxDistance;
 
@@ -94,6 +99,7 @@ public class RangedController : MonoBehaviour {
 
 		attackEvent = FMODUnity.RuntimeManager.CreateInstance (attackSound);
 		attackRangedEvent = FMODUnity.RuntimeManager.CreateInstance (attackRangedSound);
+		walkEvent = FMODUnity.RuntimeManager.CreateInstance (walkSound);
 	}
 
 	void Update () {
@@ -104,6 +110,10 @@ public class RangedController : MonoBehaviour {
 		FMODUnity.RuntimeManager.AttachInstanceToGameObject (attackRangedEvent, GetComponent<Transform> (), GetComponent<Rigidbody> ());
 		attackRangedEvent.setVolume (attackRangedVolume);
 		attackRangedEvent.setProperty (FMOD.Studio.EVENT_PROPERTY.MAXIMUM_DISTANCE, soundMaxDistance);
+
+		FMODUnity.RuntimeManager.AttachInstanceToGameObject (walkEvent, GetComponent<Transform> (), GetComponent<Rigidbody> ());
+		walkEvent.setVolume (walkVolume);
+		walkEvent.setProperty (FMOD.Studio.EVENT_PROPERTY.MAXIMUM_DISTANCE, soundMaxDistance);
 
 		if (health > 0.0f) {
 			CheckPlayerOnSight ();
@@ -307,13 +317,26 @@ public class RangedController : MonoBehaviour {
 		Vector3 movementDirection = new Vector3 (playerDirection.x, 0.0f, playerDirection.z).normalized;
 		if (type == EnemyType.ranged && playerDirection.magnitude <= moveBackRange && !IsGoingToFall(-movementDirection)) {
 			rigidbody.velocity = -movementDirection * kiteSpeed;
+
+			FMOD.Studio.PLAYBACK_STATE walkState;
+			walkEvent.getPlaybackState (out walkState);
+			if (walkState != FMOD.Studio.PLAYBACK_STATE.PLAYING) {
+				walkEvent.start ();
+			}
 		} else if (type != EnemyType.ranged && !IsGoingToFall(movementDirection)) {
 			if (playerDirection.magnitude <= dashRange && dashCooldown < 0f) {
 				Dash (playerDirection.normalized);
 			}
 			else {
 				rigidbody.velocity = movementDirection * engageSpeed;
+				walkEvent.start ();
 				animations.TriggerTransition (animations.RUN);
+
+				FMOD.Studio.PLAYBACK_STATE walkState;
+				walkEvent.getPlaybackState (out walkState);
+				if (walkState != FMOD.Studio.PLAYBACK_STATE.PLAYING) {
+					walkEvent.start ();
+				}
 			}
 		}
 	}
@@ -340,6 +363,12 @@ public class RangedController : MonoBehaviour {
 				transform.LookAt (target);
 				rigidbody.velocity = movementDirection * speed;
 				animations.TriggerTransition (animations.WALK);
+
+				FMOD.Studio.PLAYBACK_STATE walkState;
+				walkEvent.getPlaybackState (out walkState);
+				if (walkState != FMOD.Studio.PLAYBACK_STATE.PLAYING) {
+					walkEvent.start ();
+				}
 			} else {
 				positionIndex = (positionIndex + 1) % anchorPoints.Length;
 			}

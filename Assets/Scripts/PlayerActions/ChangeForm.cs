@@ -24,6 +24,7 @@ public class ChangeForm {
 		if (UnityEngine.Input.GetAxisRaw ("ChangeForm") != 0 && currTime - timer >= player.changeFormCooldown) {
 			timer = currTime;
 			player.isHuman = !player.isHuman;
+			player.sounds.PlaySound (PlayerSounds.TRANSFORM);
 			if (player.isHuman) {
 				player.joints.GetComponent<Renderer> ().material = humanJointsMaterial;
 				player.surface.GetComponent<Renderer> ().material = humanMaterial;

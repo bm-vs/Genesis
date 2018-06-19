@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
+	public float ledgeHelper;
+
 	// Sounds and animations
 	public PlayerSoundsController sounds;
 	public PlayerAnimationsController animations;
@@ -219,6 +221,10 @@ public class PlayerController : MonoBehaviour {
 			if (!sounds.CheckIfPlaying (PlayerSounds.BACKGROUND_ELECTRIC)) {
 				sounds.PlaySound (PlayerSounds.BACKGROUND_ELECTRIC);
 			}
+
+			if (!sounds.CheckIfPlaying (PlayerSounds.CITY_INTRO)) {
+				sounds.PlaySound (PlayerSounds.CITY_INTRO);
+			}
 		}
     }
 
@@ -284,8 +290,18 @@ public class PlayerController : MonoBehaviour {
 
 	public void updateHealth (float value) {
 		health += value;
-		if (value < 0.0f && !sounds.CheckIfPlaying (PlayerSounds.DAMAGE)) {
-			sounds.PlaySound (PlayerSounds.DAMAGE);
+		if (value < 0.0f) {
+			if (isHuman && !sounds.CheckIfPlaying (PlayerSounds.DAMAGE)) {
+				sounds.PlaySound (PlayerSounds.DAMAGE);
+			} else if (!isHuman && !sounds.CheckIfPlaying (PlayerSounds.DAMAGE_MONKEY)) {
+				sounds.PlaySound (PlayerSounds.DAMAGE_MONKEY);
+			}
+		}
+
+		if (health <= 20.0f) {
+			if (!sounds.CheckIfPlaying (PlayerSounds.HEART_BEAT)) {
+				sounds.PlaySound (PlayerSounds.HEART_BEAT);
+			}
 		}
 
 		//Debug.Log (health);

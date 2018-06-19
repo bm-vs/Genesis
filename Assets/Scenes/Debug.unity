@@ -283,11 +283,16 @@ MonoBehaviour:
   - "event:/Pr\xE9 attack Monkey"
   - "event:/Pr\xE9 Salto"
   - event:/trepar
-  - event:/DRONE MAR
-  - event:/DRONES
+  - event:/Fora da cidade
+  - event:/Cidade
   - event:/Check Point
   - event:/Inicio do jogo
   - event:/Demage
+  - event:/Demage Monkey
+  - event:/transform1
+  - event:/Death
+  - event:/Heart Beat
+  - event:/Intro Cidade
   volumes:
   - 1
   - 1
@@ -303,6 +308,11 @@ MonoBehaviour:
   - 1
   - 1
   - 0.2
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
   - 0.5
   - 0.5
   soundMaxDistance: 40
@@ -333,7 +343,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.6, y: 1, z: 1}
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &744998
 MonoBehaviour:
@@ -3643,6 +3653,8 @@ MonoBehaviour:
   attackVolume: 0.15
   attackRangedSound: event:/ATtack serpent 2
   attackRangedVolume: 0.2
+  walkSound: event:/Passos Inimigos
+  walkVolume: 0.3
   soundMaxDistance: 40
 --- !u!114 &89424562
 MonoBehaviour:
@@ -9869,7 +9881,7 @@ MonoBehaviour:
   upVolume: 0.75
   downSound: event:/tubos down
   downVolume: 0.75
-  exhaustSound: event:/Vapor
+  exhaustSound: event:/Flame
   exhaustVolume: 0.75
   soundMaxDistance: 40
 --- !u!1001 &166725043
@@ -10473,6 +10485,8 @@ MonoBehaviour:
   attackVolume: 0.15
   attackRangedSound: event:/ATtack serpent 2
   attackRangedVolume: 0.2
+  walkSound: event:/Passos Inimigos
+  walkVolume: 0.3
   soundMaxDistance: 40
 --- !u!114 &174837258
 MonoBehaviour:
@@ -11033,6 +11047,8 @@ MonoBehaviour:
   attackVolume: 0.15
   attackRangedSound: event:/ATtack serpent 2
   attackRangedVolume: 0.2
+  walkSound: event:/Passos Inimigos
+  walkVolume: 0.3
   soundMaxDistance: 40
 --- !u!114 &186825191
 MonoBehaviour:
@@ -11193,6 +11209,8 @@ MonoBehaviour:
   attackVolume: 0.15
   attackRangedSound: event:/ATtack serpent 2
   attackRangedVolume: 0.2
+  walkSound: event:/Passos Inimigos
+  walkVolume: 0.2
   soundMaxDistance: 40
 --- !u!114 &188474891
 MonoBehaviour:
@@ -12262,6 +12280,8 @@ MonoBehaviour:
   attackVolume: 0.15
   attackRangedSound: event:/ATtack serpent 2
   attackRangedVolume: 0.2
+  walkSound: event:/Passos Inimigos
+  walkVolume: 0.3
   soundMaxDistance: 40
 --- !u!114 &209584861
 MonoBehaviour:
@@ -24218,6 +24238,8 @@ MonoBehaviour:
   attackVolume: 0.15
   attackRangedSound: event:/ATtack serpent 2
   attackRangedVolume: 0.2
+  walkSound: event:/Passos Inimigos
+  walkVolume: 0.3
   soundMaxDistance: 40
 --- !u!114 &356845241
 MonoBehaviour:
@@ -24625,7 +24647,7 @@ MonoBehaviour:
   upVolume: 0.75
   downSound: event:/tubos down
   downVolume: 0.75
-  exhaustSound: event:/Vapor
+  exhaustSound: event:/Flame
   exhaustVolume: 0.75
   soundMaxDistance: 40
 --- !u!1 &372319305
@@ -34254,7 +34276,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &480260064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34878,6 +34900,8 @@ MonoBehaviour:
   attackVolume: 0.15
   attackRangedSound: event:/ATtack serpent 2
   attackRangedVolume: 0.2
+  walkSound: event:/Passos Inimigos
+  walkVolume: 0.3
   soundMaxDistance: 40
 --- !u!114 &495969509
 MonoBehaviour:
@@ -35540,7 +35564,7 @@ MonoBehaviour:
   upVolume: 0.75
   downSound: event:/tubos down
   downVolume: 0.75
-  exhaustSound: event:/Vapor
+  exhaustSound: event:/Flame
   exhaustVolume: 0.75
   soundMaxDistance: 40
 --- !u!1 &533942392
@@ -35870,6 +35894,8 @@ MonoBehaviour:
   attackVolume: 0.15
   attackRangedSound: event:/ATtack serpent 2
   attackRangedVolume: 0.2
+  walkSound: event:/Passos Inimigos
+  walkVolume: 0.3
   soundMaxDistance: 40
 --- !u!114 &549585234
 MonoBehaviour:
@@ -38925,6 +38951,8 @@ MonoBehaviour:
   attackVolume: 0.15
   attackRangedSound: event:/ATtack serpent 2
   attackRangedVolume: 0.2
+  walkSound: event:/Passos Inimigos
+  walkVolume: 0.3
   soundMaxDistance: 40
 --- !u!114 &643415803
 MonoBehaviour:
@@ -51894,6 +51922,8 @@ MonoBehaviour:
   attackVolume: 0.15
   attackRangedSound: event:/ATtack serpent 2
   attackRangedVolume: 0.2
+  walkSound: event:/Passos Inimigos
+  walkVolume: 0.2
   soundMaxDistance: 40
 --- !u!114 &776028122
 MonoBehaviour:
@@ -52407,6 +52437,8 @@ MonoBehaviour:
   attackVolume: 0.15
   attackRangedSound: event:/ATtack serpent 2
   attackRangedVolume: 0.2
+  walkSound: event:/Passos Inimigos
+  walkVolume: 0.3
   soundMaxDistance: 40
 --- !u!114 &784022249
 MonoBehaviour:
@@ -53949,8 +53981,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 827677530}
-  m_LocalRotation: {x: 0.19829147, y: 0.6644985, z: 0.18954478, w: -0.6951223}
-  m_LocalPosition: {x: -75.92357, y: -51.410225, z: -17.707611}
+  m_LocalRotation: {x: -0.28422213, y: 0.31896707, z: 0.10090763, w: 0.8984962}
+  m_LocalPosition: {x: -55.682774, y: -116.301346, z: -38.857468}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -54652,6 +54684,8 @@ MonoBehaviour:
   attackVolume: 0.15
   attackRangedSound: event:/ATtack serpent 2
   attackRangedVolume: 0.2
+  walkSound: event:/Passos Inimigos
+  walkVolume: 0.2
   soundMaxDistance: 40
 --- !u!114 &840553775
 MonoBehaviour:
@@ -55931,6 +55965,8 @@ MonoBehaviour:
   attackVolume: 0.15
   attackRangedSound: event:/ATtack serpent 2
   attackRangedVolume: 0.2
+  walkSound: event:/Passos Inimigos
+  walkVolume: 0.3
   soundMaxDistance: 40
 --- !u!114 &889814740
 MonoBehaviour:
@@ -56098,6 +56134,8 @@ MonoBehaviour:
   attackVolume: 0.15
   attackRangedSound: event:/ATtack serpent 2
   attackRangedVolume: 0.2
+  walkSound: event:/Passos Inimigos
+  walkVolume: 0.3
   soundMaxDistance: 40
 --- !u!114 &892505697
 MonoBehaviour:
@@ -60766,6 +60804,8 @@ MonoBehaviour:
   attackVolume: 0.15
   attackRangedSound: event:/ATtack serpent 2
   attackRangedVolume: 0.2
+  walkSound: event:/Passos Inimigos
+  walkVolume: 0.3
   soundMaxDistance: 40
 --- !u!114 &940206848
 MonoBehaviour:
@@ -65258,6 +65298,8 @@ MonoBehaviour:
   attackVolume: 0.15
   attackRangedSound: event:/ATtack serpent 2
   attackRangedVolume: 0.2
+  walkSound: event:/Passos Inimigos
+  walkVolume: 0.3
   soundMaxDistance: 40
 --- !u!114 &975934217
 MonoBehaviour:
@@ -66220,6 +66262,8 @@ MonoBehaviour:
   attackVolume: 0.15
   attackRangedSound: event:/ATtack serpent 2
   attackRangedVolume: 0.2
+  walkSound: event:/Passos Inimigos
+  walkVolume: 0.2
   soundMaxDistance: 40
 --- !u!114 &1009221724
 MonoBehaviour:
@@ -66478,6 +66522,8 @@ MonoBehaviour:
   attackVolume: 0.15
   attackRangedSound: event:/ATtack serpent 2
   attackRangedVolume: 0.2
+  walkSound: event:/Passos Inimigos
+  walkVolume: 0.2
   soundMaxDistance: 40
 --- !u!114 &1013390792
 MonoBehaviour:
@@ -70900,6 +70946,8 @@ MonoBehaviour:
   attackVolume: 0.15
   attackRangedSound: event:/ATtack serpent 2
   attackRangedVolume: 0.2
+  walkSound: event:/Passos Inimigos
+  walkVolume: 0.3
   soundMaxDistance: 40
 --- !u!114 &1049127259
 MonoBehaviour:
@@ -87128,7 +87176,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1139929502
 Transform:
   m_ObjectHideFlags: 0
@@ -87960,6 +88008,8 @@ MonoBehaviour:
   attackVolume: 0.15
   attackRangedSound: event:/ATtack serpent 2
   attackRangedVolume: 0.2
+  walkSound: event:/Passos Inimigos
+  walkVolume: 0.2
   soundMaxDistance: 40
 --- !u!114 &1181381746
 MonoBehaviour:
@@ -95681,6 +95731,8 @@ MonoBehaviour:
   attackVolume: 0.15
   attackRangedSound: event:/ATtack serpent 2
   attackRangedVolume: 0.2
+  walkSound: event:/Passos Inimigos
+  walkVolume: 0.3
   soundMaxDistance: 40
 --- !u!114 &1333257134
 MonoBehaviour:
@@ -101672,6 +101724,8 @@ MonoBehaviour:
   attackVolume: 0.15
   attackRangedSound: event:/ATtack serpent 2
   attackRangedVolume: 0.2
+  walkSound: event:/Passos Inimigos
+  walkVolume: 0.3
   soundMaxDistance: 40
 --- !u!114 &1418235010
 MonoBehaviour:
@@ -118835,6 +118889,8 @@ MonoBehaviour:
   attackVolume: 0.15
   attackRangedSound: event:/ATtack serpent 2
   attackRangedVolume: 0.2
+  walkSound: event:/Passos Inimigos
+  walkVolume: 0.3
   soundMaxDistance: 40
 --- !u!114 &1566348448
 MonoBehaviour:
@@ -120314,6 +120370,8 @@ MonoBehaviour:
   attackVolume: 0.15
   attackRangedSound: event:/ATtack serpent 2
   attackRangedVolume: 0.2
+  walkSound: event:/Passos Inimigos
+  walkVolume: 0.3
   soundMaxDistance: 40
 --- !u!114 &1608669646
 MonoBehaviour:
@@ -122001,6 +122059,8 @@ MonoBehaviour:
   attackVolume: 0.15
   attackRangedSound: event:/ATtack serpent 2
   attackRangedVolume: 0.2
+  walkSound: event:/Passos Inimigos
+  walkVolume: 0.3
   soundMaxDistance: 40
 --- !u!114 &1670254971
 MonoBehaviour:
@@ -138731,7 +138791,7 @@ MonoBehaviour:
   upVolume: 0.75
   downSound: event:/tubos down
   downVolume: 0.75
-  exhaustSound: event:/Vapor
+  exhaustSound: event:/Flame
   exhaustVolume: 0.75
   soundMaxDistance: 40
 --- !u!1 &1782378996
@@ -142662,6 +142722,8 @@ MonoBehaviour:
   attackVolume: 0.15
   attackRangedSound: event:/ATtack serpent 2
   attackRangedVolume: 0.2
+  walkSound: event:/Passos Inimigos
+  walkVolume: 0.2
   soundMaxDistance: 40
 --- !u!65 &1936873344
 BoxCollider:
@@ -142993,6 +143055,8 @@ MonoBehaviour:
   attackVolume: 0.15
   attackRangedSound: event:/ATtack serpent 2
   attackRangedVolume: 0.2
+  walkSound: event:/Passos Inimigos
+  walkVolume: 0.3
   soundMaxDistance: 40
 --- !u!114 &1937092668
 MonoBehaviour:
@@ -148601,6 +148665,8 @@ MonoBehaviour:
   attackVolume: 0.15
   attackRangedSound: event:/ATtack serpent 2
   attackRangedVolume: 0.2
+  walkSound: event:/Passos Inimigos
+  walkVolume: 0.3
   soundMaxDistance: 40
 --- !u!114 &2016585895
 MonoBehaviour:
@@ -158373,7 +158439,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2143835205
 Transform:
   m_ObjectHideFlags: 0

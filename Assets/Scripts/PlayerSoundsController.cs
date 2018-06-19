@@ -19,7 +19,12 @@ public enum PlayerSounds {
 	BACKGROUND_ELECTRIC = 12,
 	CHECKPOINT = 13,
 	START = 14,
-	DAMAGE = 15
+	DAMAGE = 15,
+	DAMAGE_MONKEY = 16,
+	TRANSFORM = 17,
+	DEAD = 18,
+	HEART_BEAT = 19,
+	CITY_INTRO = 20
 }
 
 public class PlayerSoundsController : MonoBehaviour {

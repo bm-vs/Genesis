@@ -14,15 +14,15 @@ public class Move {
 
 	public void Input() {
 		direction = new Vector3 (UnityEngine.Input.GetAxis ("Horizontal"), 0f, UnityEngine.Input.GetAxis ("Vertical"));
-		Transform cameraTransform = Camera.main.transform;
-		Vector3 cameraRight = (new Vector3 (cameraTransform.right.x, 0f, cameraTransform.right.z)).normalized;
-		Vector3 cameraForward = (new Vector3 (cameraTransform.forward.x, 0f, cameraTransform.forward.z)).normalized;
-		player.moveDirection = (cameraRight * direction.x + cameraForward * direction.z) * Time.fixedDeltaTime * (player.onLedge ? player.ledgeSpeed : player.moveSpeed);
 	}
 
 	public void Action() {
 		Rigidbody rigidbody = player.gameObject.GetComponent<Rigidbody> ();
 
+		Transform cameraTransform = Camera.main.transform;
+		Vector3 cameraRight = (new Vector3 (cameraTransform.right.x, 0f, cameraTransform.right.z)).normalized;
+		Vector3 cameraForward = (new Vector3 (cameraTransform.forward.x, 0f, cameraTransform.forward.z)).normalized;
+		player.moveDirection = (cameraRight * direction.x + cameraForward * direction.z) * Time.fixedDeltaTime * (player.onLedge ? player.ledgeSpeed : player.moveSpeed);
 
 		if (player.onLedge) {
 			rigidbody.velocity = Vector3.Project (new Vector3 (player.moveDirection.x, rigidbody.velocity.y, player.moveDirection.z), Vector3.Cross (ledgeNormal, Vector3.up));
@@ -66,9 +66,9 @@ public class Move {
 		player.gameObject.transform.forward = - ledgeNormal.normalized;
 		Debug.Log (player.z);
 		if (ledgeNormal.x != 0) {
-			player.gameObject.transform.position = new Vector3 (ledgePosition.x + ledgeNormal.x * player.z / 2.0f, ledgePosition.y - 1.0f, player.gameObject.transform.position.z);
+			player.gameObject.transform.position = new Vector3 (ledgePosition.x + ledgeNormal.x * player.z * player.ledgeHelper, ledgePosition.y - 1.0f, player.gameObject.transform.position.z);
 		} else if (ledgeNormal.z != 0) {
-			player.gameObject.transform.position = new Vector3 (player.gameObject.transform.position.x, ledgePosition.y - 1.0f, ledgePosition.z + ledgeNormal.z * player.z / 2.0f);
+			player.gameObject.transform.position = new Vector3 (player.gameObject.transform.position.x, ledgePosition.y - 1.0f, ledgePosition.z + ledgeNormal.z * player.z);
 		}
 	}
 
