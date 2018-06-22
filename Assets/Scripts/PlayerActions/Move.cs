@@ -64,7 +64,6 @@ public class Move {
 		player.gameObject.layer = 9; //PlayerLedge
 		player.gameObject.GetComponent<Rigidbody> ().constraints |= RigidbodyConstraints.FreezePositionY;
 		player.gameObject.transform.forward = - ledgeNormal.normalized;
-		Debug.Log (player.z);
 		if (ledgeNormal.x != 0) {
 			player.gameObject.transform.position = new Vector3 (ledgePosition.x + ledgeNormal.x * player.z * player.ledgeHelper, ledgePosition.y - 1.0f, player.gameObject.transform.position.z);
 		} else if (ledgeNormal.z != 0) {

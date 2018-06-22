@@ -156,7 +156,7 @@
     <object class="MixerBusFader" id="{efb362fd-9c55-4c4f-b125-143153d83029}"/>
     <object class="LowpassEffect" id="{f86232d3-cc69-4ce7-9de8-c6a1a25da00e}">
         <property name="cutoff">
-            <value>1250</value>
+            <value>4400</value>
         </property>
     </object>
 </objects>

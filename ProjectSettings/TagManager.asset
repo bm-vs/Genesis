@@ -25,6 +25,8 @@ TagManager:
   - Metal
   - LevelChange
   - Fade
+  - Ship
+  - SoundStart
   layers:
   - Default
   - TransparentFX

@@ -73,7 +73,7 @@
     </object>
     <object class="EventMixerMaster" id="{69ee3884-7b90-46d4-9688-203a277535aa}">
         <property name="volume">
-            <value>2.5</value>
+            <value>-9</value>
         </property>
         <relationship name="effectChain">
             <destination>{9d322157-1090-40c1-9448-d41d8ee71d94}</destination>
@@ -95,6 +95,9 @@
         <property name="length">
             <value>0.90000000000000002</value>
         </property>
+        <property name="playCount">
+            <value>6</value>
+        </property>
         <relationship name="sounds">
             <destination>{9e03c34c-c9cd-4878-bc54-876c704c215d}</destination>
             <destination>{55d14bc8-8076-4e72-b85b-6a4f47b3c37b}</destination>
@@ -103,9 +106,6 @@
         </relationship>
     </object>
     <object class="EventMixerGroup" id="{30e7696e-5c4d-4389-98b5-17dedac9e20b}">
-        <property name="volume">
-            <value>6</value>
-        </property>
         <property name="name">
             <value>Audio 1</value>
         </property>

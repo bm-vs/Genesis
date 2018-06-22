@@ -24,7 +24,10 @@ public enum PlayerSounds {
 	TRANSFORM = 17,
 	DEAD = 18,
 	HEART_BEAT = 19,
-	CITY_INTRO = 20
+	CITY_INTRO = 20,
+	JUMP_START_MONKEY = 21,
+	DRONE_SEA = 22,
+	REVIVE = 23
 }
 
 public class PlayerSoundsController : MonoBehaviour {

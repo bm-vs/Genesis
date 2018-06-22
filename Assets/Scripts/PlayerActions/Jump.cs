@@ -48,7 +48,12 @@ public class Jump {
 		}
 
 		if (startJump) {
-			player.sounds.PlaySound (PlayerSounds.JUMP_START);
+			if (player.isHuman) {
+				player.sounds.PlaySound (PlayerSounds.JUMP_START);
+			} else {
+				player.sounds.PlaySound (PlayerSounds.JUMP_START_MONKEY);
+			}
+
 			if (player.running) {
 				player.animations.TriggerTransition (player.animations.JUMP_RUN);
 			} else {

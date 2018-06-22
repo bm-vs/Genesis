@@ -293,6 +293,9 @@ MonoBehaviour:
   - event:/Death
   - event:/Heart Beat
   - event:/Intro Cidade
+  - "event:/Pr\xE9 Salto monkey"
+  - event:/DRONE MAR
+  - event:/Voltar a jogo
   volumes:
   - 1
   - 1
@@ -314,6 +317,9 @@ MonoBehaviour:
   - 0.5
   - 0.5
   - 0.5
+  - 0.5
+  - 0.5
+  - 0.2
   - 0.5
   soundMaxDistance: 40
 --- !u!95 &744996
@@ -357,6 +363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ledgeHelper: 0.4
+  healthCanvas: {fileID: 388908256}
   sounds: {fileID: 744995}
   animations: {fileID: 0}
   cutscene: 0
@@ -2407,6 +2414,11 @@ Prefab:
       propertyPath: m_Name
       value: Generator2
       objectReference: {fileID: 0}
+    - target: {fileID: 114198190454030030, guid: 950484b86ba949a4796bac12fe94b0f4,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 744992}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 950484b86ba949a4796bac12fe94b0f4, type: 2}
   m_IsPrefabParent: 0
@@ -3655,6 +3667,10 @@ MonoBehaviour:
   attackRangedVolume: 0.2
   walkSound: event:/Passos Inimigos
   walkVolume: 0.3
+  damageSound: event:/Demage Inimigo
+  damageVolume: 0.5
+  deathSound: event:/Death Inimigos
+  deathVolume: 0.5
   soundMaxDistance: 40
 --- !u!114 &89424562
 MonoBehaviour:
@@ -10335,6 +10351,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pushSound: event:/ARRASTAR
   volume: 0.15
+  fallSound: event:/Impact salto metal
+  fallVolume: 0.5
 --- !u!1 &174837251
 GameObject:
   m_ObjectHideFlags: 0
@@ -10487,6 +10505,10 @@ MonoBehaviour:
   attackRangedVolume: 0.2
   walkSound: event:/Passos Inimigos
   walkVolume: 0.3
+  damageSound: event:/Demage Inimigo
+  damageVolume: 0.5
+  deathSound: event:/Death Inimigos
+  deathVolume: 0.5
   soundMaxDistance: 40
 --- !u!114 &174837258
 MonoBehaviour:
@@ -11049,6 +11071,10 @@ MonoBehaviour:
   attackRangedVolume: 0.2
   walkSound: event:/Passos Inimigos
   walkVolume: 0.3
+  damageSound: event:/Demage Inimigo
+  damageVolume: 0.5
+  deathSound: event:/Death Inimigos
+  deathVolume: 0.5
   soundMaxDistance: 40
 --- !u!114 &186825191
 MonoBehaviour:
@@ -11211,6 +11237,10 @@ MonoBehaviour:
   attackRangedVolume: 0.2
   walkSound: event:/Passos Inimigos
   walkVolume: 0.2
+  damageSound: event:/Demage Inimigo
+  damageVolume: 0.5
+  deathSound: event:/Death Inimigos
+  deathVolume: 0.5
   soundMaxDistance: 40
 --- !u!114 &188474891
 MonoBehaviour:
@@ -12282,6 +12312,10 @@ MonoBehaviour:
   attackRangedVolume: 0.2
   walkSound: event:/Passos Inimigos
   walkVolume: 0.3
+  damageSound: event:/Demage Inimigo
+  damageVolume: 0.5
+  deathSound: event:/Death Inimigos
+  deathVolume: 0.5
   soundMaxDistance: 40
 --- !u!114 &209584861
 MonoBehaviour:
@@ -12570,16 +12604,16 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 230371354}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1455588152}
-  m_RootOrder: 0
+  m_Father: {fileID: 480260067}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -100}
+  m_AnchoredPosition: {x: 0, y: 50}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &230371356
@@ -12749,7 +12783,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4538665333806802, guid: bc4f23d04e42f4b559542ad840db6530, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4538665333806802, guid: bc4f23d04e42f4b559542ad840db6530, type: 2}
       propertyPath: m_LocalScale.x
@@ -14109,6 +14143,8 @@ Transform:
   - {fileID: 168463984}
   - {fileID: 1281204924}
   - {fileID: 450714728}
+  - {fileID: 575892137}
+  - {fileID: 1841939218}
   m_Father: {fileID: 322773393}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -24240,6 +24276,10 @@ MonoBehaviour:
   attackRangedVolume: 0.2
   walkSound: event:/Passos Inimigos
   walkVolume: 0.3
+  damageSound: event:/Demage Inimigo
+  damageVolume: 0.5
+  deathSound: event:/Death Inimigos
+  deathVolume: 0.5
   soundMaxDistance: 40
 --- !u!114 &356845241
 MonoBehaviour:
@@ -24464,6 +24504,11 @@ Prefab:
       propertyPath: m_Name
       value: Generator0
       objectReference: {fileID: 0}
+    - target: {fileID: 114198190454030030, guid: 950484b86ba949a4796bac12fe94b0f4,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 744992}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 950484b86ba949a4796bac12fe94b0f4, type: 2}
   m_IsPrefabParent: 0
@@ -24854,6 +24899,80 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 387083101}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &388908254
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 388908255}
+  - component: {fileID: 388908257}
+  - component: {fileID: 388908256}
+  m_Layer: 5
+  m_Name: Title
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &388908255
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 388908254}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1421674312}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -93, y: -266}
+  m_SizeDelta: {x: 800, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &388908256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 388908254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0.8627451, b: 0.29411766, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 40
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 50
+    m_Alignment: 2
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: '||||||||||||||||||||||||'
+--- !u!222 &388908257
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 388908254}
 --- !u!1 &391165075
 GameObject:
   m_ObjectHideFlags: 0
@@ -24970,6 +25089,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pushSound: event:/ARRASTAR
   volume: 0.15
+  fallSound: event:/Impact salto metal
+  fallVolume: 0.5
 --- !u!4 &392035370 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4134994633124380, guid: 36d21d2d6991daf47aadb189933ebdba,
@@ -25174,7 +25295,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!45 &403067710
 Skybox:
@@ -34344,9 +34465,10 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 1455588152}
+  - {fileID: 1403582914}
+  - {fileID: 230371355}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -34365,6 +34487,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cinematicCamera: {fileID: 1139929508}
+  startSound: event:/Enter inicio
+  startVolume: 1
 --- !u!1 &487676667
 GameObject:
   m_ObjectHideFlags: 0
@@ -34902,6 +35026,10 @@ MonoBehaviour:
   attackRangedVolume: 0.2
   walkSound: event:/Passos Inimigos
   walkVolume: 0.3
+  damageSound: event:/Demage Inimigo
+  damageVolume: 0.5
+  deathSound: event:/Death Inimigos
+  deathVolume: 0.5
   soundMaxDistance: 40
 --- !u!114 &495969509
 MonoBehaviour:
@@ -34945,7 +35073,7 @@ Skybox:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 499808112}
   m_Enabled: 1
-  m_CustomSkybox: {fileID: 0}
+  m_CustomSkybox: {fileID: 2100000, guid: 7d86b6c195a2fa6439a4860759acdf26, type: 2}
 --- !u!20 &499808114
 Camera:
   m_ObjectHideFlags: 0
@@ -34988,12 +35116,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 499808112}
-  m_LocalRotation: {x: -0.3535534, y: 0.35355335, z: 0.14644659, w: 0.8535534}
-  m_LocalPosition: {x: -330, y: -48.86, z: -30}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -267.31693, y: -410.95776, z: 53.583748}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &508655243
 Transform:
@@ -35896,6 +36024,10 @@ MonoBehaviour:
   attackRangedVolume: 0.2
   walkSound: event:/Passos Inimigos
   walkVolume: 0.3
+  damageSound: event:/Demage Inimigo
+  damageVolume: 0.5
+  deathSound: event:/Death Inimigos
+  deathVolume: 0.5
   soundMaxDistance: 40
 --- !u!114 &549585234
 MonoBehaviour:
@@ -36909,6 +37041,11 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 573293206}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &575892137 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4817412660768896, guid: 4188049f3dd48554c965a5d11436cb25,
+    type: 2}
+  m_PrefabInternal: {fileID: 1258085030}
 --- !u!1 &576861072
 GameObject:
   m_ObjectHideFlags: 0
@@ -38953,6 +39090,10 @@ MonoBehaviour:
   attackRangedVolume: 0.2
   walkSound: event:/Passos Inimigos
   walkVolume: 0.3
+  damageSound: event:/Demage Inimigo
+  damageVolume: 0.5
+  deathSound: event:/Death Inimigos
+  deathVolume: 0.5
   soundMaxDistance: 40
 --- !u!114 &643415803
 MonoBehaviour:
@@ -51924,6 +52065,10 @@ MonoBehaviour:
   attackRangedVolume: 0.2
   walkSound: event:/Passos Inimigos
   walkVolume: 0.2
+  damageSound: event:/Demage Inimigo
+  damageVolume: 0.5
+  deathSound: event:/Death Inimigos
+  deathVolume: 0.5
   soundMaxDistance: 40
 --- !u!114 &776028122
 MonoBehaviour:
@@ -52439,6 +52584,10 @@ MonoBehaviour:
   attackRangedVolume: 0.2
   walkSound: event:/Passos Inimigos
   walkVolume: 0.3
+  damageSound: event:/Demage Inimigo
+  damageVolume: 0.5
+  deathSound: event:/Death Inimigos
+  deathVolume: 0.5
   soundMaxDistance: 40
 --- !u!114 &784022249
 MonoBehaviour:
@@ -53981,12 +54130,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 827677530}
-  m_LocalRotation: {x: -0.12896842, y: 0.8689745, z: 0.3682973, w: 0.30431485}
-  m_LocalPosition: {x: -29.84475, y: -179.97812, z: 106.60119}
+  m_LocalRotation: {x: -0.20001327, y: 0.006795112, z: 0.0013954343, w: 0.97976863}
+  m_LocalPosition: {x: 359.11594, y: -206.55464, z: -316.51892}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!45 &827677533
 Skybox:
@@ -54686,6 +54835,10 @@ MonoBehaviour:
   attackRangedVolume: 0.2
   walkSound: event:/Passos Inimigos
   walkVolume: 0.2
+  damageSound: event:/Demage Inimigo
+  damageVolume: 0.5
+  deathSound: event:/Death Inimigos
+  deathVolume: 0.5
   soundMaxDistance: 40
 --- !u!114 &840553775
 MonoBehaviour:
@@ -55855,7 +56008,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 889814733}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.19, y: 13.25, z: 17}
+  m_LocalPosition: {x: 0.27, y: 13.25, z: 17}
   m_LocalScale: {x: 0.25, y: 0.5, z: 0.25}
   m_Children:
   - {fileID: 1251773311}
@@ -55967,6 +56120,10 @@ MonoBehaviour:
   attackRangedVolume: 0.2
   walkSound: event:/Passos Inimigos
   walkVolume: 0.3
+  damageSound: event:/Demage Inimigo
+  damageVolume: 0.5
+  deathSound: event:/Death Inimigos
+  deathVolume: 0.5
   soundMaxDistance: 40
 --- !u!114 &889814740
 MonoBehaviour:
@@ -56136,6 +56293,10 @@ MonoBehaviour:
   attackRangedVolume: 0.2
   walkSound: event:/Passos Inimigos
   walkVolume: 0.3
+  damageSound: event:/Demage Inimigo
+  damageVolume: 0.5
+  deathSound: event:/Death Inimigos
+  deathVolume: 0.5
   soundMaxDistance: 40
 --- !u!114 &892505697
 MonoBehaviour:
@@ -60379,6 +60540,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pushSound: event:/ARRASTAR
   volume: 0.15
+  fallSound: event:/Impact salto metal
+  fallVolume: 0.5
 --- !u!1 &928960814
 GameObject:
   m_ObjectHideFlags: 0
@@ -60806,6 +60969,10 @@ MonoBehaviour:
   attackRangedVolume: 0.2
   walkSound: event:/Passos Inimigos
   walkVolume: 0.3
+  damageSound: event:/Demage Inimigo
+  damageVolume: 0.5
+  deathSound: event:/Death Inimigos
+  deathVolume: 0.5
   soundMaxDistance: 40
 --- !u!114 &940206848
 MonoBehaviour:
@@ -61184,6 +61351,11 @@ Prefab:
       propertyPath: m_Name
       value: Generator1
       objectReference: {fileID: 0}
+    - target: {fileID: 114198190454030030, guid: 950484b86ba949a4796bac12fe94b0f4,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 744992}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 950484b86ba949a4796bac12fe94b0f4, type: 2}
   m_IsPrefabParent: 0
@@ -65300,6 +65472,10 @@ MonoBehaviour:
   attackRangedVolume: 0.2
   walkSound: event:/Passos Inimigos
   walkVolume: 0.3
+  damageSound: event:/Demage Inimigo
+  damageVolume: 0.5
+  deathSound: event:/Death Inimigos
+  deathVolume: 0.5
   soundMaxDistance: 40
 --- !u!114 &975934217
 MonoBehaviour:
@@ -66264,6 +66440,10 @@ MonoBehaviour:
   attackRangedVolume: 0.2
   walkSound: event:/Passos Inimigos
   walkVolume: 0.2
+  damageSound: event:/Demage Inimigo
+  damageVolume: 0.5
+  deathSound: event:/Death Inimigos
+  deathVolume: 0.5
   soundMaxDistance: 40
 --- !u!114 &1009221724
 MonoBehaviour:
@@ -66524,6 +66704,10 @@ MonoBehaviour:
   attackRangedVolume: 0.2
   walkSound: event:/Passos Inimigos
   walkVolume: 0.2
+  damageSound: event:/Demage Inimigo
+  damageVolume: 0.5
+  deathSound: event:/Death Inimigos
+  deathVolume: 0.5
   soundMaxDistance: 40
 --- !u!114 &1013390792
 MonoBehaviour:
@@ -66686,7 +66870,7 @@ RectTransform:
   - {fileID: 1112601221}
   - {fileID: 751107877}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -67031,6 +67215,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pushSound: event:/ARRASTAR
   volume: 0.15
+  fallSound: event:/Impact salto metal
+  fallVolume: 0.5
 --- !u!1 &1021311020
 GameObject:
   m_ObjectHideFlags: 0
@@ -70948,6 +71134,10 @@ MonoBehaviour:
   attackRangedVolume: 0.2
   walkSound: event:/Passos Inimigos
   walkVolume: 0.3
+  damageSound: event:/Demage Inimigo
+  damageVolume: 0.5
+  deathSound: event:/Death Inimigos
+  deathVolume: 0.5
   soundMaxDistance: 40
 --- !u!114 &1049127259
 MonoBehaviour:
@@ -71175,6 +71365,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pushSound: event:/ARRASTAR
   volume: 0.15
+  fallSound: event:/Impact salto metal
+  fallVolume: 0.5
 --- !u!1 &1055398618
 GameObject:
   m_ObjectHideFlags: 0
@@ -76162,10 +76354,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d895e4b71a3a074ea495f512882b70e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthCanvas: {fileID: 1421674308}
   canvas: {fileID: 1115948307}
   playerRenderers:
   - {fileID: 197636868}
   - {fileID: 633471387}
+  endSound: event:/Fim de Nivel
+  endVolume: 1
+  portalSound: 'event:/Portal '
+  portalVolume: 1
 --- !u!1 &1112848817
 GameObject:
   m_ObjectHideFlags: 0
@@ -76310,6 +76507,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cinematicCamera: {fileID: 1139929508}
+  startSound: event:/Fora da cidade
+  startVolume: 0
 --- !u!114 &1115948309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87267,6 +87466,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameCamera: {fileID: 2143835204}
   player: {fileID: 744992}
+  healthCanvas: {fileID: 1421674308}
   firstStop: {x: -340, y: 21, z: 0}
   finalStop: {x: -330, y: 66.875, z: -30.48}
   start: 0
@@ -88010,6 +88210,10 @@ MonoBehaviour:
   attackRangedVolume: 0.2
   walkSound: event:/Passos Inimigos
   walkVolume: 0.2
+  damageSound: event:/Demage Inimigo
+  damageVolume: 0.5
+  deathSound: event:/Death Inimigos
+  deathVolume: 0.5
   soundMaxDistance: 40
 --- !u!114 &1181381746
 MonoBehaviour:
@@ -90090,6 +90294,52 @@ Animator:
   m_PrefabParentObject: {fileID: 9500000, guid: 2407889d2d131504da8b95feb75a06e0,
     type: 3}
   m_PrefabInternal: {fileID: 1256181968}
+--- !u!1001 &1258085030
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 279076521}
+    m_Modifications:
+    - target: {fileID: 4817412660768896, guid: 4188049f3dd48554c965a5d11436cb25, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -33.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817412660768896, guid: 4188049f3dd48554c965a5d11436cb25, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 53.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817412660768896, guid: 4188049f3dd48554c965a5d11436cb25, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 38.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817412660768896, guid: 4188049f3dd48554c965a5d11436cb25, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817412660768896, guid: 4188049f3dd48554c965a5d11436cb25, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817412660768896, guid: 4188049f3dd48554c965a5d11436cb25, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817412660768896, guid: 4188049f3dd48554c965a5d11436cb25, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817412660768896, guid: 4188049f3dd48554c965a5d11436cb25, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1182436326562332, guid: 4188049f3dd48554c965a5d11436cb25, type: 2}
+      propertyPath: m_Name
+      value: Checkpoint1 (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 4188049f3dd48554c965a5d11436cb25, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1269836130
 GameObject:
   m_ObjectHideFlags: 0
@@ -90336,6 +90586,52 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1272636920}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1274643222
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 279076521}
+    m_Modifications:
+    - target: {fileID: 4817412660768896, guid: 4188049f3dd48554c965a5d11436cb25, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 30.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817412660768896, guid: 4188049f3dd48554c965a5d11436cb25, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 53.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817412660768896, guid: 4188049f3dd48554c965a5d11436cb25, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -74.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817412660768896, guid: 4188049f3dd48554c965a5d11436cb25, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817412660768896, guid: 4188049f3dd48554c965a5d11436cb25, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817412660768896, guid: 4188049f3dd48554c965a5d11436cb25, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817412660768896, guid: 4188049f3dd48554c965a5d11436cb25, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817412660768896, guid: 4188049f3dd48554c965a5d11436cb25, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1182436326562332, guid: 4188049f3dd48554c965a5d11436cb25, type: 2}
+      propertyPath: m_Name
+      value: Checkpoint1 (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 4188049f3dd48554c965a5d11436cb25, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1274656036
 GameObject:
   m_ObjectHideFlags: 0
@@ -95733,6 +96029,10 @@ MonoBehaviour:
   attackRangedVolume: 0.2
   walkSound: event:/Passos Inimigos
   walkVolume: 0.3
+  damageSound: event:/Demage Inimigo
+  damageVolume: 0.5
+  deathSound: event:/Death Inimigos
+  deathVolume: 0.5
   soundMaxDistance: 40
 --- !u!114 &1333257134
 MonoBehaviour:
@@ -101097,6 +101397,73 @@ Transform:
   m_Father: {fileID: 1541619090}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1403582913
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1403582914}
+  - component: {fileID: 1403582916}
+  - component: {fileID: 1403582915}
+  m_Layer: 5
+  m_Name: Title
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1403582914
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1403582913}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 480260067}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 151.2}
+  m_SizeDelta: {x: 256, y: 46}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1403582915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1403582913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -98529514, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Texture: {fileID: 2800000, guid: 5dc3e512c8e19024bb07e0df30b12d4f, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &1403582916
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1403582913}
 --- !u!1 &1409876776
 GameObject:
   m_ObjectHideFlags: 0
@@ -101726,6 +102093,10 @@ MonoBehaviour:
   attackRangedVolume: 0.2
   walkSound: event:/Passos Inimigos
   walkVolume: 0.3
+  damageSound: event:/Demage Inimigo
+  damageVolume: 0.5
+  deathSound: event:/Death Inimigos
+  deathVolume: 0.5
   soundMaxDistance: 40
 --- !u!114 &1418235010
 MonoBehaviour:
@@ -101761,6 +102132,100 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1421674308
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1421674312}
+  - component: {fileID: 1421674311}
+  - component: {fileID: 1421674310}
+  - component: {fileID: 1421674309}
+  m_Layer: 5
+  m_Name: CanvasHealth
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1421674309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1421674308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &1421674310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1421674308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+--- !u!223 &1421674311
+Canvas:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1421674308}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!224 &1421674312
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1421674308}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 388908255}
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!1 &1421719765
 GameObject:
   m_ObjectHideFlags: 0
@@ -105908,81 +106373,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1453381286}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1455588151
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1455588152}
-  - component: {fileID: 1455588154}
-  - component: {fileID: 1455588153}
-  m_Layer: 5
-  m_Name: Title
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1455588152
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1455588151}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 230371355}
-  m_Father: {fileID: 480260067}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 150}
-  m_SizeDelta: {x: 300, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1455588153
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1455588151}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.8627451, b: 0.29411766, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 40
-    m_FontStyle: 1
-    m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 50
-    m_Alignment: 1
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: GENESIS
---- !u!222 &1455588154
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1455588151}
 --- !u!1001 &1459353695
 Prefab:
   m_ObjectHideFlags: 0
@@ -118734,6 +119124,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.x
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 100102, guid: 94393bfaba916ae458414a68a66344d5, type: 3}
+      propertyPath: m_TagString
+      value: Ship
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 94393bfaba916ae458414a68a66344d5, type: 3}
   m_IsPrefabParent: 0
@@ -118891,6 +119285,10 @@ MonoBehaviour:
   attackRangedVolume: 0.2
   walkSound: event:/Passos Inimigos
   walkVolume: 0.3
+  damageSound: event:/Demage Inimigo
+  damageVolume: 0.5
+  deathSound: event:/Death Inimigos
+  deathVolume: 0.5
   soundMaxDistance: 40
 --- !u!114 &1566348448
 MonoBehaviour:
@@ -120372,6 +120770,10 @@ MonoBehaviour:
   attackRangedVolume: 0.2
   walkSound: event:/Passos Inimigos
   walkVolume: 0.3
+  damageSound: event:/Demage Inimigo
+  damageVolume: 0.5
+  deathSound: event:/Death Inimigos
+  deathVolume: 0.5
   soundMaxDistance: 40
 --- !u!114 &1608669646
 MonoBehaviour:
@@ -120965,6 +121367,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pushSound: event:/ARRASTAR
   volume: 0.15
+  fallSound: event:/Impact salto metal
+  fallVolume: 0.5
 --- !u!1001 &1639382723
 Prefab:
   m_ObjectHideFlags: 0
@@ -122061,6 +122465,10 @@ MonoBehaviour:
   attackRangedVolume: 0.2
   walkSound: event:/Passos Inimigos
   walkVolume: 0.3
+  damageSound: event:/Demage Inimigo
+  damageVolume: 0.5
+  deathSound: event:/Death Inimigos
+  deathVolume: 0.5
   soundMaxDistance: 40
 --- !u!114 &1670254971
 MonoBehaviour:
@@ -138306,6 +138714,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pushSound: event:/ARRASTAR
   volume: 0.15
+  fallSound: event:/Impact salto metal
+  fallVolume: 0.5
 --- !u!1 &1757742180
 GameObject:
   m_ObjectHideFlags: 0
@@ -140614,6 +141024,11 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1841783971}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1841939218 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4817412660768896, guid: 4188049f3dd48554c965a5d11436cb25,
+    type: 2}
+  m_PrefabInternal: {fileID: 1274643222}
 --- !u!1 &1844785275
 GameObject:
   m_ObjectHideFlags: 0
@@ -142724,6 +143139,10 @@ MonoBehaviour:
   attackRangedVolume: 0.2
   walkSound: event:/Passos Inimigos
   walkVolume: 0.2
+  damageSound: event:/Demage Inimigo
+  damageVolume: 0.5
+  deathSound: event:/Death Inimigos
+  deathVolume: 0.5
   soundMaxDistance: 40
 --- !u!65 &1936873344
 BoxCollider:
@@ -143057,6 +143476,10 @@ MonoBehaviour:
   attackRangedVolume: 0.2
   walkSound: event:/Passos Inimigos
   walkVolume: 0.3
+  damageSound: event:/Demage Inimigo
+  damageVolume: 0.5
+  deathSound: event:/Death Inimigos
+  deathVolume: 0.5
   soundMaxDistance: 40
 --- !u!114 &1937092668
 MonoBehaviour:
@@ -148667,6 +149090,10 @@ MonoBehaviour:
   attackRangedVolume: 0.2
   walkSound: event:/Passos Inimigos
   walkVolume: 0.3
+  damageSound: event:/Demage Inimigo
+  damageVolume: 0.5
+  deathSound: event:/Death Inimigos
+  deathVolume: 0.5
   soundMaxDistance: 40
 --- !u!114 &2016585895
 MonoBehaviour:
@@ -150772,7 +151199,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2105759084
 GameObject:

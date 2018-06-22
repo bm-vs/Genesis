@@ -191,5 +191,12 @@
             <value>1.10000002</value>
         </property>
     </object>
-    <object class="FlangerEffect" id="{672a797e-a339-4d26-ba8e-a3359a89035b}"/>
+    <object class="FlangerEffect" id="{672a797e-a339-4d26-ba8e-a3359a89035b}">
+        <property name="rate">
+            <value>20</value>
+        </property>
+        <property name="mix">
+            <value>100</value>
+        </property>
+    </object>
 </objects>

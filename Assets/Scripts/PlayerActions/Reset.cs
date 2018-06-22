@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +10,10 @@ public class Reset {
     private GameObject level;
     private Transform game; // to add object as its children
 	private float dyingTimeout;
+
+	public bool generator0 = false;
+	public bool generator1 = false;
+	public bool generator2 = false;
 
     public Reset (PlayerController player) {
 		this.player = player;
@@ -54,8 +59,15 @@ public class Reset {
 				GameObject.Destroy(this.level);
 				this.level = GameObject.Instantiate(this.lastLevel, this.game);
 				this.level.SetActive(true);
+				GameObject.Find ("Generator0").GetComponent<GeneratorController> ().activated = generator0;
+				GameObject.Find ("Generator1").GetComponent<GeneratorController> ().activated = generator1;
+				GameObject.Find ("Generator2").GetComponent<GeneratorController> ().activated = generator2;
+				//Debug.Log (generator0 + ";" + generator1 + ";" + generator2);
+
 				this.level.tag = "Level";
 				this.level.name = "Level";
+				player.sounds.PlaySound (PlayerSounds.REVIVE);
+				player.healthCanvas.text = new String ('|', 25);
 			}
         }
 	}
@@ -64,5 +76,6 @@ public class Reset {
 		player.dead = true;
 		player.animations.TriggerTransition (player.animations.DEAD);
 		player.sounds.PlaySound (PlayerSounds.DEAD);
+		player.healthCanvas.text = "";
 	}
 }

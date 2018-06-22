@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 10.67ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 65536, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 49152, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 00000000426ABFE8 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 000000004FEB5098 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Priority: 0, Stack Size: 65536, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -15,23 +15,282 @@
 [LOG] Thread::initThread                       : Init FMOD Studio bank load thread. Priority: 0, Stack Size: 65536, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 100, compatVersion = 99 (oldest = 44, newest = 100)
+[WRN] AsyncCommandBuffer::growBuffer           : Growing command buffer to -760781574 bytes. Initial command buffer size can be tuned to avoid dynamic growth using Studio::System::setAdvancedSettings()
+[WRN] AsyncCommandBuffer::growBuffer           : Growing command buffer to -760781574 bytes. Initial command buffer size can be tuned to avoid dynamic growth using Studio::System::setAdvancedSettings()
+[WRN] AsyncCommandBuffer::growBuffer           : Growing command buffer to -760781574 bytes. Initial command buffer size can be tuned to avoid dynamic growth using Studio::System::setAdvancedSettings()
+[WRN] AsyncCommandBuffer::growBuffer           : Growing command buffer to -760781574 bytes. Initial command buffer size can be tuned to avoid dynamic growth using Studio::System::setAdvancedSettings()
+[LOG] Manager::readBank                        : fileversion = 100, compatVersion = 99 (oldest = 44, newest = 100)
+[WRN] AsyncCommandBuffer::growBuffer           : Growing command buffer to -760781574 bytes. Initial command buffer size can be tuned to avoid dynamic growth using Studio::System::setAdvancedSettings()
+[LOG] Manager::readBank                        : fileversion = 100, compatVersion = 99 (oldest = 44, newest = 100)
+[LOG] SystemI::createSound                     : filename = Assets\FMOD\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000000006D99D4C8 : node = 0000000079D6FD20
+[LOG] SystemI::createSound                     : add node to async list : head = 000000006CF156A8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000006D99D4C8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets\FMOD\Build\Desktop/Master Bank.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 9356544
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 139840
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000000079D6FE38
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSound                     :     filename = Assets\FMOD\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000000006D99D678 : node = 0000000079D6FE70
+[LOG] SystemI::createSound                     :     add node to async list : head = 000000006CF156A8.  list count = 0
+[LOG] SystemI::createSound                     :     filename = Assets\FMOD\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000000006D99D828 : node = 0000000079D6FFC0
+[LOG] SystemI::createSound                     :     add node to async list : head = 000000006CF156A8.  list count = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Energy Ball', format=2, channels=2, frequency=48000, lengthbytes=213344, lengthpcm=851968, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.258575.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000006D99D4C8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000006D99D678
+[LOG] SystemI::createSoundInternal             :     Create name='Assets\FMOD\Build\Desktop/Master Bank.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 9356544
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 139840
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000000079D6FF88
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Energy Ball', format=2, channels=2, frequency=48000, lengthbytes=213344, lengthpcm=851968, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.258575.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000006D99D678
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000006D99D828
+[LOG] SystemI::createSoundInternal             :     Create name='Assets\FMOD\Build\Desktop/Master Bank.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 9356544
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 139840
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000000079D700D8
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Energy Ball', format=2, channels=2, frequency=48000, lengthbytes=213344, lengthpcm=851968, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.258575.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000006D99D828
+[LOG] SoundI::getSubSound                      : sound 000000006D99D4C8.  Subsound index 0 / 1
+[LOG] SoundI::getSubSound                      : sound 000000006D99D678.  Subsound index 0 / 1
+[LOG] SoundI::getSubSound                      : sound 000000006D99D828.  Subsound index 0 / 1
+[LOG] SoundI::release                          : Energy Ball (000000001CFC2728)
+[LOG] SoundI::release                          :     Energy Ball (000000006CF15898)
+[LOG] SoundI::release                          :     Energy Ball (000000004FDAA3B8)
+[LOG] SoundI::release                          : Energy Ball (000000001CFC2578)
+[LOG] SoundI::release                          :     Energy Ball (000000006CF156F8)
+[LOG] SoundI::release                          :     Energy Ball (000000001CFC2218)
+[LOG] SoundI::release                          : Energy Ball (000000001CFC23C8)
+[LOG] SoundI::release                          :     Energy Ball (0000000041B599F8)
+[LOG] SoundI::release                          :     Energy Ball (000000004F97C158)
+[LOG] Manager::readBank                        : fileversion = 100, compatVersion = 99 (oldest = 44, newest = 100)
+[LOG] SystemI::mixerSuspend                    : Suspending output.
+[LOG] SystemI::mixerResume                     : Resuming output.
+[LOG] Manager::readBank                        : fileversion = 100, compatVersion = 99 (oldest = 44, newest = 100)
+[LOG] SystemI::mixerSuspend                    : Suspending output.
 [LOG] Manager::readBank                        : fileversion = 100, compatVersion = 99 (oldest = 44, newest = 100)
 [LOG] Manager::readBank                        : fileversion = 100, compatVersion = 99 (oldest = 44, newest = 100)
 [LOG] Manager::readBank                        : fileversion = 100, compatVersion = 99 (oldest = 44, newest = 100)
 [LOG] Manager::readBank                        : fileversion = 100, compatVersion = 99 (oldest = 44, newest = 100)
 [LOG] Manager::readBank                        : fileversion = 100, compatVersion = 99 (oldest = 44, newest = 100)
-[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] SystemI::mixerResume                     : Resuming output.
+[LOG] Manager::readBank                        : fileversion = 100, compatVersion = 99 (oldest = 44, newest = 100)
+[LOG] SoundI::release                          :  (000000004FC85888)
+[LOG] SoundI::release                          :     Pre Attack Monkey 1 (000000006DA1E058)
+[LOG] SoundI::release                          :  (000000006CCE70C8)
+[LOG] SoundI::release                          :     Pre Attack Monkey 2 (000000004FF7B878)
+[LOG] SoundI::release                          :  (0000000079760658)
+[LOG] SoundI::release                          :     Pre Attack Monkey 3 (000000006D87BDB8)
+[LOG] SoundI::release                          :  (000000004FF23968)
+[LOG] SoundI::release                          :     Enter inicio (00000000795D67D8)
+[LOG] SoundI::release                          :  (000000006CCE6F58)
+[LOG] SoundI::release                          :     Impact metal-001 (000000004FF7B6D8)
+[LOG] SoundI::release                          :  (000000007A18AEF8)
+[LOG] SoundI::release                          :     Impact metal-002 (000000006D949C28)
+[LOG] SoundI::release                          :  (000000004F7BD1C8)
+[LOG] SoundI::release                          :     Impact metal-003 (0000000013C92688)
+[LOG] SoundI::release                          :  (000000004FC85718)
+[LOG] SoundI::release                          :     Snake attack2_bip (000000007965CC38)
+[LOG] SoundI::release                          :  (000000007A18A208)
+[LOG] SoundI::release                          :     Attack snake 3_bip_1 (00000000501948D8)
+[LOG] SoundI::release                          :  (00000000795FA918)
+[LOG] SoundI::release                          :     Snake attack1_bip (000000001CD12F78)
+[LOG] SoundI::release                          :  (000000004FC85438)
+[LOG] SoundI::release                          :     Monkey Impact Attack (000000006DA1DEB8)
+[LOG] SoundI::release                          :  (00000000795FA638)
+[LOG] SoundI::release                          :     Walk5 (000000001CD12C38)
+[LOG] SoundI::release                          :  (000000001CF11CF8)
+[LOG] SoundI::release                          :     Walk7 (00000000760F32E8)
+[LOG] SoundI::release                          :  (000000004F8C8E28)
+[LOG] SoundI::release                          :     jump2 (000000006CF14A38)
+[LOG] SoundI::release                          :  (000000007A18A658)
+[LOG] SoundI::release                          :     jump1 (000000007995F1D8)
+[LOG] SoundI::release                          :  (000000004FF237F8)
+[LOG] SoundI::release                          :     jump4 (00000000795D6498)
+[LOG] SoundI::release                          :  (000000006CCE6828)
+[LOG] SoundI::release                          :     jump3 (000000006D6A76B8)
+[LOG] SoundI::release                          :  (00000000797142B8)
+[LOG] SoundI::release                          :     Walk4 (000000006CF64DB8)
+[LOG] SoundI::release                          :  (000000001CF11B88)
+[LOG] SoundI::release                          :     Walk1 (00000000760F3148)
+[LOG] SoundI::release                          :  (0000000079715B58)
+[LOG] SoundI::release                          :     Walk2 (0000000075D8C498)
+[LOG] SoundI::release                          :  (000000007A18AC18)
+[LOG] SoundI::release                          :     Walk3 (000000006D9498E8)
+[LOG] SoundI::release                          :  (00000000795FA7A8)
+[LOG] SoundI::release                          :     Trepar 1 (000000001CD12DD8)
+[LOG] SoundI::release                          :  (000000004FF233A8)
+[LOG] SoundI::release                          :     Trepar 2 (0000000079D462B8)
+[LOG] SoundI::release                          :  (00000000795FAD68)
+[LOG] SoundI::release                          :     Trepar 3 (000000001CEB5C68)
+[LOG] SoundI::release                          :  (00000000797152B8)
+[LOG] SoundI::release                          :     Trepar 4 (000000006D893828)
+[LOG] SoundI::release                          :  (0000000079715598)
+[LOG] SoundI::release                          :     Impacto 1 (000000006D893B68)
+[LOG] SoundI::release                          :  (000000004F7BD788)
+[LOG] SoundI::release                          :     Impacto 2 (0000000013C92348)
+[LOG] SoundI::release                          :  (000000004FC85158)
+[LOG] SoundI::release                          :     Impacto 3 (0000000079D465F8)
+[LOG] SoundI::release                          :  (000000006CCE73A8)
+[LOG] SoundI::release                          :     Passos metal 1 (0000000050194738)
+[LOG] SoundI::release                          :  (000000004F7BCD78)
+[LOG] SoundI::release                          :     Passos metal 2 (0000000013C921A8)
+[LOG] SoundI::release                          :  (000000004F8C8B48)
+[LOG] SoundI::release                          :     Passos metal 3 (000000006CF146F8)
+[LOG] SoundI::release                          :  (000000006CCE7238)
+[LOG] SoundI::release                          :     Passos metal 4 (0000000050194598)
+[LOG] SoundI::release                          :  (0000000079715CC8)
+[LOG] SoundI::release                          :     Flame1 (0000000075D8C638)
+[LOG] SoundI::release                          :  (0000000079714FD8)
+[LOG] SoundI::release                          :     Flame (000000006CF650F8)
+[LOG] SoundI::release                          :  (0000000079760AA8)
+[LOG] SoundI::release                          :     Vapor (00000000760F47A8)
+[LOG] SoundI::release                          :  (0000000041B09508)
+[LOG] SoundI::release                          :     Classic Electric Piano_bip (000000006CF64F58)
+[LOG] SoundI::release                          :  (000000004FF22DE8)
+[LOG] SoundI::release                          :     Gun1 (00000000795D6638)
+[LOG] SoundI::release                          :  (0000000079715148)
+[LOG] SoundI::release                          :     Gun2 (000000006CF65298)
+[LOG] SoundI::release                          :  (00000000795FABF8)
+[LOG] SoundI::release                          :     Gun4 (000000001CEB5AC8)
+[LOG] SoundI::release                          :  (00000000795FAA88)
+[LOG] SoundI::release                          :     Gun5 (000000001CD13118)
+[LOG] SoundI::release                          :  (000000001CF112E8)
+[LOG] SoundI::release                          :     Gun6 (000000000396B748)
+[LOG] SoundI::release                          :  (000000007A18A938)
+[LOG] SoundI::release                          :     Gun bullet (000000007995F518)
+[LOG] SoundI::release                          :  (000000007A18A7C8)
+[LOG] SoundI::release                          :     Explosion (000000007995F378)
+[LOG] SoundI::release                          :  (0000000079715428)
+[LOG] SoundI::release                          :     Explosion1 (000000006D8939C8)
+[LOG] SoundI::release                          :  (0000000050056F48)
+[LOG] SoundI::release                          :     Explosion2 (00000000760F4C88)
+[LOG] SoundI::release                          :  (000000007A18AAA8)
+[LOG] SoundI::release                          :     Explosion3 (000000006D949748)
+[LOG] SoundI::release                          :  (000000004FC84E78)
+[LOG] SoundI::release                          :     click (0000000079D46458)
+[LOG] SoundI::release                          :  (000000004FC852C8)
+[LOG] SoundI::release                          :     chord drone (000000006DA1DD18)
+[LOG] SoundI::release                          :  (0000000079760938)
+[LOG] SoundI::release                          :     Audio 3_bip (00000000760F4AE8)
+[LOG] SoundI::release                          :  (00000000797607C8)
+[LOG] SoundI::release                          :     325549__archeos__monkey-screaming_bip (000000006D87BF58)
+[LOG] SoundI::release                          :  (000000006CCE66B8)
+[LOG] SoundI::release                          :     396896__pugaeme__monkey-sound-made-by-human-24b_bip (000000006D6A7518)
+[LOG] SoundI::release                          :  (00000000797604E8)
+[LOG] SoundI::release                          :     death in e°.2transform (000000006D87C0F8)
+[LOG] SoundI::release                          :  (000000004FC84D08)
+[LOG] SoundI::release                          :     death in d°transform (000000007965C8F8)
+[LOG] SoundI::release                          :  (000000007A18AD88)
+[LOG] SoundI::release                          :     Attack snake 2_bip (000000006D949A88)
+[LOG] SoundI::release                          :  (0000000079715708)
+[LOG] SoundI::release                          :     Attack snake 3_bip (000000006D893D08)
+[LOG] SoundI::release                          :  (0000000050056DD8)
+[LOG] SoundI::release                          :     Attack snake_bip (000000006D6602F8)
+[LOG] SoundI::release                          :  (000000006CCE6998)
+[LOG] SoundI::release                          :     DOOR OPEN (000000006D6A7858)
+[LOG] SoundI::release                          :  (000000004FF23518)
+[LOG] SoundI::release                          :     Voltar ao Jogo 3 (0000000079D46118)
+[LOG] SoundI::release                          :  (000000004FF22F58)
+[LOG] SoundI::release                          :     Voltar ao Jogo 2 (00000000795D62F8)
+[LOG] SoundI::release                          :  (000000004F7BDA68)
+[LOG] SoundI::release                          :     Voltar a jogar (000000000396BA88)
+[LOG] SoundI::release                          :  (0000000050056AF8)
+[LOG] SoundI::release                          :     spash (000000006D660158)
+[LOG] SoundI::release                          :  (000000004F7BD058)
+[LOG] SoundI::release                          :     splash (000000000396BC28)
+[LOG] SoundI::release                          :  (00000000795FB048)
+[LOG] SoundI::release                          :     splash 2 (000000001CEB5FA8)
+[LOG] SoundI::release                          :  (0000000079714148)
+[LOG] SoundI::release                          :     transform1 (000000006D660638)
+[LOG] SoundI::release                          :  (000000004FC84FE8)
+[LOG] SoundI::release                          :     dmg2 (000000007965CA98)
+[LOG] SoundI::release                          :  (000000004F8C8CB8)
+[LOG] SoundI::release                          :     dmg3 (000000006CF14898)
+[LOG] SoundI::release                          :  (000000007A18A378)
+[LOG] SoundI::release                          :     dmg4 (0000000050194A78)
+[LOG] SoundI::release                          :  (000000004F7BCEE8)
+[LOG] SoundI::release                          :     dmg1 (0000000013C924E8)
+[LOG] SoundI::release                          :  (000000001CF11738)
+[LOG] SoundI::release                          :     Death inimigo 1 (000000006DA1E1F8)
+[LOG] SoundI::release                          : Energy Ball (000000006D99D828)
+[LOG] SoundI::release                          :     Energy Ball (0000000041B59518)
+[LOG] SoundI::release                          :     Energy Ball (000000004F97BDF8)
+[LOG] SoundI::release                          : Energy Ball (000000006D99D678)
+[LOG] SoundI::release                          :     Energy Ball (0000000041B59D38)
+[LOG] SoundI::release                          :     Energy Ball (000000004F97B588)
+[LOG] SoundI::release                          : Energy Ball (000000006D99D4C8)
+[LOG] SoundI::release                          :     Energy Ball (0000000041B5A218)
+[LOG] SoundI::release                          :     Energy Ball (000000004F97B738)
+[LOG] SoundI::release                          :  (000000006CCE6DE8)
+[LOG] SoundI::release                          :     Death Inimigo (000000004FF7B538)
+[LOG] SoundI::release                          :  (000000001CF11A18)
+[LOG] SoundI::release                          :     ATIVATION_bip (00000000760F2FA8)
+[LOG] SoundI::release                          :  (000000006CCE6C78)
+[LOG] SoundI::release                          :     Colisao1 (000000004FF7B398)
+[LOG] SoundI::release                          :  (00000000795FB1B8)
+[LOG] SoundI::release                          :     Colisao 2 (000000006CF143B8)
+[LOG] SoundI::release                          :  (000000001CF115C8)
+[LOG] SoundI::release                          :     Colisao 3 (00000000760F3488)
+[LOG] SoundI::release                          :  (000000007A18A4E8)
+[LOG] SoundI::release                          :     CAIXAS ATIVAR (000000007995F038)
+[LOG] SoundI::release                          :  (00000000795FB328)
+[LOG] SoundI::release                          :     45581__novino__snakeecho2_bip (000000006CF14558)
+[LOG] SoundI::release                          :  (000000001CF118A8)
+[LOG] SoundI::release                          :     Audio 1_bip (000000000396B8E8)
+[LOG] SoundI::release                          :  (0000000079713FD8)
+[LOG] SoundI::release                          :     Audio 2_bip (000000006D660498)
+[LOG] SoundI::release                          :  (000000004F7BD8F8)
+[LOG] SoundI::release                          :     Audio 4_bip (000000006D87BC18)
+[LOG] SoundI::release                          :  (00000000795FAED8)
+[LOG] SoundI::release                          :     ARRASTAR (000000001CEB5E08)
+[LOG] SoundI::release                          :  (000000007975FDB8)
+[LOG] SoundI::release                          :     ARRASTAR1 (00000000760F4948)
+[LOG] SoundI::release                          :  (0000000079715878)
+[LOG] SoundI::release                          :     TUBO UP (0000000075D8C158)
+[LOG] SoundI::release                          :  (00000000797159E8)
+[LOG] SoundI::release                          :     ATIVATION COMPLETE (0000000075D8C2F8)
+[LOG] SoundI::release                          :  (000000004FC855A8)
+[LOG] SoundI::release                          :     Pre Salto 1 (000000007965C758)
+[LOG] SoundI::release                          :  (000000006CCE6B08)
+[LOG] SoundI::release                          :     Pre salto 2 (000000006D6A79F8)
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] SystemI::close                           : Closed.
 [LOG] Manager::readBank                        : fileversion = 100, compatVersion = 99 (oldest = 44, newest = 100)
 [LOG] Manager::readBank                        : fileversion = 100, compatVersion = 99 (oldest = 44, newest = 100)
-[LOG] Manager::readBank                        : fileversion = 100, compatVersion = 99 (oldest = 44, newest = 100)
-[LOG] Manager::readBank                        : fileversion = 100, compatVersion = 99 (oldest = 44, newest = 100)
-[LOG] Manager::readBank                        : fileversion = 100, compatVersion = 99 (oldest = 44, newest = 100)
-[LOG] Manager::readBank                        : fileversion = 100, compatVersion = 99 (oldest = 44, newest = 100)
-[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Thread::callback                         : FMOD Studio sample load thread finished.
 [LOG] LiveUpdate::release                      : 
 [LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
 [LOG] Thread::callback                         : FMOD stream thread finished.
 [LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Thread::callback                         : FMOD nonblocking thread (0) finished.
+[LOG] Thread::callback                         : FMOD file thread finished.
 [LOG] SystemI::close                           : Closed.

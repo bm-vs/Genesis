@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GeneratorController : MonoBehaviour {
-	public bool activated;
+	public GameObject player;
+	public bool activated = false;
 	public float health;
 
 	public GameObject status;
@@ -32,7 +33,6 @@ public class GeneratorController : MonoBehaviour {
 	public float soundMaxDistance;
 
 	void Start() {
-		activated = false;
 		health = 120.0f;
 		electricEvent = FMODUnity.RuntimeManager.CreateInstance (electricSound);
 		explosionEvent = FMODUnity.RuntimeManager.CreateInstance (explosionSound);
@@ -63,6 +63,18 @@ public class GeneratorController : MonoBehaviour {
 			electricEvent.stop (FMOD.Studio.STOP_MODE.IMMEDIATE);
 			gameObject.GetComponent<Renderer> ().enabled = false;
 			gameObject.GetComponent<Collider> ().enabled = false;
+
+			if (gameObject.name == "Generator0") {
+				player.GetComponent<PlayerController> ().reset.generator0 = true;
+				//Debug.Log ("Generator0");
+			} else if (gameObject.name == "Generator1"){
+				player.GetComponent<PlayerController> ().reset.generator1 = true;
+				//Debug.Log ("Generator1");
+			} else if (gameObject.name == "Generator2"){
+				player.GetComponent<PlayerController> ().reset.generator2 = true;
+				//Debug.Log ("Generator2");
+			}
+
 			status.SetActive (false);
 		}
 	}

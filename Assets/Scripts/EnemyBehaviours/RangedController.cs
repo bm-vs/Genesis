@@ -67,6 +67,15 @@ public class RangedController : MonoBehaviour {
 	public float walkVolume;
 	private FMOD.Studio.EventInstance walkEvent;
 
+	[FMODUnity.EventRef]
+	public string damageSound;
+	public float damageVolume;
+	private FMOD.Studio.EventInstance damageEvent;
+
+	[FMODUnity.EventRef]
+	public string deathSound;
+	public float deathVolume;
+	private FMOD.Studio.EventInstance deathEvent;
 
 	public float soundMaxDistance;
 
@@ -100,6 +109,8 @@ public class RangedController : MonoBehaviour {
 		attackEvent = FMODUnity.RuntimeManager.CreateInstance (attackSound);
 		attackRangedEvent = FMODUnity.RuntimeManager.CreateInstance (attackRangedSound);
 		walkEvent = FMODUnity.RuntimeManager.CreateInstance (walkSound);
+		damageEvent = FMODUnity.RuntimeManager.CreateInstance (damageSound);
+		deathEvent = FMODUnity.RuntimeManager.CreateInstance (deathSound);
 	}
 
 	void Update () {
@@ -114,6 +125,14 @@ public class RangedController : MonoBehaviour {
 		FMODUnity.RuntimeManager.AttachInstanceToGameObject (walkEvent, GetComponent<Transform> (), GetComponent<Rigidbody> ());
 		walkEvent.setVolume (walkVolume);
 		walkEvent.setProperty (FMOD.Studio.EVENT_PROPERTY.MAXIMUM_DISTANCE, soundMaxDistance);
+
+		FMODUnity.RuntimeManager.AttachInstanceToGameObject (damageEvent, GetComponent<Transform> (), GetComponent<Rigidbody> ());
+		damageEvent.setVolume (damageVolume);
+		damageEvent.setProperty (FMOD.Studio.EVENT_PROPERTY.MAXIMUM_DISTANCE, soundMaxDistance);
+
+		FMODUnity.RuntimeManager.AttachInstanceToGameObject (deathEvent, GetComponent<Transform> (), GetComponent<Rigidbody> ());
+		deathEvent.setVolume (deathVolume);
+		deathEvent.setProperty (FMOD.Studio.EVENT_PROPERTY.MAXIMUM_DISTANCE, soundMaxDistance);
 
 		if (health > 0.0f) {
 			CheckPlayerOnSight ();
@@ -210,8 +229,10 @@ public class RangedController : MonoBehaviour {
 		health += value;
 		if (health <= 0.0f) {
 			animations.TriggerTransition (animations.DEAD);
+			deathEvent.start ();
 			particles.SetActive (true);
-
+		} else if (value <= 0.0f) {
+			damageEvent.start ();
 		}
 	}
 

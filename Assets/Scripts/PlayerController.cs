@@ -2,9 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
 	public float ledgeHelper;
+	public Text healthCanvas;
 
 	// Sounds and animations
 	public PlayerSoundsController sounds;
@@ -37,7 +39,7 @@ public class PlayerController : MonoBehaviour {
 	private ChangeForm form;
 	private Shoot shoot;
 	private Dash dash;
-	private Reset reset;
+	public Reset reset;
 
 	// Status
 	public bool airborne;
@@ -116,8 +118,11 @@ public class PlayerController : MonoBehaviour {
 		dash = new Dash (this);
 		reset = new Reset (this);
 
+		healthCanvas.text = new String ('|', 25);
+
 		sounds.PlaySound (PlayerSounds.BACKGROUND_SEA);
 		sounds.PlaySound (PlayerSounds.START);
+		sounds.PlaySound (PlayerSounds.DRONE_SEA);
     }
 
 	void Update () {
@@ -289,28 +294,36 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	public void updateHealth (float value) {
-		health += value;
-		if (value < 0.0f) {
-			if (isHuman && !sounds.CheckIfPlaying (PlayerSounds.DAMAGE)) {
-				sounds.PlaySound (PlayerSounds.DAMAGE);
-			} else if (!isHuman && !sounds.CheckIfPlaying (PlayerSounds.DAMAGE_MONKEY)) {
-				sounds.PlaySound (PlayerSounds.DAMAGE_MONKEY);
+		if (!dead) {
+			health += value;
+			if (health <= 0.0f) {
+				healthCanvas.text = "";
+			} else {
+				healthCanvas.text = new String ('|', (int)Math.Ceiling (health / 4.0f));
 			}
-		}
 
-		if (health <= 20.0f) {
-			if (!sounds.CheckIfPlaying (PlayerSounds.HEART_BEAT)) {
-				sounds.PlaySound (PlayerSounds.HEART_BEAT);
+			if (value < 0.0f) {
+				if (isHuman && !sounds.CheckIfPlaying (PlayerSounds.DAMAGE)) {
+					sounds.PlaySound (PlayerSounds.DAMAGE);
+				} else if (!isHuman && !sounds.CheckIfPlaying (PlayerSounds.DAMAGE_MONKEY)) {
+					sounds.PlaySound (PlayerSounds.DAMAGE_MONKEY);
+				}
 			}
-		}
 
-		//Debug.Log (health);
-		if (value < 0.0f) {
-			timeLastHit = 3.0f;
-		}
-		if (health <= 0.0f) {
-			health = 100.0f;
-			reset.Died ();
+			if (health <= 20.0f) {
+				if (!sounds.CheckIfPlaying (PlayerSounds.HEART_BEAT)) {
+					sounds.PlaySound (PlayerSounds.HEART_BEAT);
+				}
+			}
+
+			//Debug.Log (health);
+			if (value < 0.0f) {
+				timeLastHit = 3.0f;
+			}
+			if (health <= 0.0f) {
+				health = 100.0f;
+				reset.Died ();
+			}
 		}
 	}
 

@@ -5,6 +5,7 @@ public class CinematicCameraController : MonoBehaviour
 {
 	public GameObject gameCamera;
 	public GameObject player;
+	public GameObject healthCanvas;
 
 	public Vector3 firstStop;
 	public Vector3 finalStop;
@@ -53,8 +54,9 @@ public class CinematicCameraController : MonoBehaviour
 				if (transform.position == finalStop) {
 					gameObject.SetActive (false);
 					gameCamera.SetActive (true);
+					healthCanvas.SetActive (true);
 				}
 			}
 		}
-}
+	}
 }

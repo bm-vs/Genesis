@@ -100,7 +100,7 @@
     </object>
     <object class="EventMixerGroup" id="{213fc752-2b95-47bd-8e8b-b6f4fa340f79}">
         <property name="volume">
-            <value>-2.5</value>
+            <value>-11</value>
         </property>
         <property name="name">
             <value>Audio 1</value>
@@ -175,5 +175,9 @@
             <value>30</value>
         </property>
     </object>
-    <object class="LowpassSimpleEffect" id="{d2914e91-89c4-40d1-93cf-9fd4725d1e2d}"/>
+    <object class="LowpassSimpleEffect" id="{d2914e91-89c4-40d1-93cf-9fd4725d1e2d}">
+        <property name="cutoff">
+            <value>1150</value>
+        </property>
+    </object>
 </objects>
